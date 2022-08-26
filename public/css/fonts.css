@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecrafter';
+    src: url('/fonts/Minecrafter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecrafter Alt';
+    src: url('/fonts/MinecrafterAlt.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Minecraft Evenings';
+    src: url('/fonts/MinecraftEvenings.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

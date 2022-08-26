@@ -1,0 +1,53 @@
+---
+const {
+    tag: Tag="a",
+    class: classProp,
+    style,
+    ...attrs
+} = Astro.props
+---
+
+<style>
+    .minecraft-button {
+        image-rendering: pixelated;
+        background-size: cover;
+        background-image: url('/imgs/ui/minecraft-button-inside.png');
+        border-width: 2px;
+        border-style: solid;
+        border-image: url('/imgs/ui/minecraft-button-border.png');
+        border-image-width: 6px;
+        border-image-slice: 10% 3.25%;
+        border-image-repeat: stretch;
+    }
+
+    .minecraft-button:hover {
+        background-image: url('/imgs/ui/minecraft-button-inside-hover.png');
+        border-width: 2px;
+        border-style: solid;
+        border-image: url('/imgs/ui/minecraft-button-border-hover.png');
+        border-image-width: 6px;
+        border-image-slice: 10% 3.25%;
+        border-image-repeat: stretch;
+    }
+
+    .minecraft-button:active, .minecraft-button:focus {
+        background-image: url('/imgs/ui/minecraft-button-inside-active.png');
+        border-width: 2px;
+        border-style: solid;
+        border-image: url('/imgs/ui/minecraft-button-border-active.png');
+        border-image-width: 6px;
+        border-image-slice: 10% 3.25%;
+        border-image-repeat: stretch;
+    }
+</style>
+
+<Tag
+    class:list={[
+        classProp,
+        "minecraft-button",
+        style?"select-none cursor-pointer [text-shadow:0.125rem_0.125rem_#000;] text-gray-300 hover:text-yellow-200 active:text-stone-400 focus:text-stone-400":""
+    ]}
+    {...attrs}
+>
+    <slot />
+</Tag>

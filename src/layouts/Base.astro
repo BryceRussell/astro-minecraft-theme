@@ -1,0 +1,52 @@
+---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+
+import Block from "@components/Block.astro";
+
+const {
+	block="stone",
+	size=48,
+	nav=2,
+	footer=3
+} = Astro.props
+
+//If you want to change the responsive height of footer:
+//tweak the `[--footer-height:${x}]` classes inside of footer component
+
+//Smallest height footer will have in # of blocks
+const min_footer_height = 3
+---
+
+<style
+	is:global 
+	define:vars={{ 
+		'block-size': `${size}px`,
+		'nav-height': nav,
+		'footer-height': footer,
+		'main-height': `calc(100vh - (var(--block-size) * (var(--nav-height) + ${min_footer_height})))`
+	}}
+>
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		<link rel="stylesheet" href="/css/fonts.css">
+	</head>
+	<body>
+        <Navbar height={nav}/>
+        <main style="min-height:var(--main-height)">
+			<Block block={block} class="min-h-[var(--main-height)] w-full">
+				<div class="min-h-[var(--main-height)] bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.75)]">
+					<slot />
+				</div>
+			</Block>
+		</main>
+		<Footer />
+	</body>
+</html>

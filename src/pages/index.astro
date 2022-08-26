@@ -1,0 +1,84 @@
+---
+import Base from "@layouts/Base.astro";
+import Block from "@components/Block.astro";
+import Button from "@components/Button.astro";
+---
+
+<Base>
+    <div class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2">
+        <h3 class="font-['Minecrafter'] underline text-4xl text-white">Astro Minecraft Theme</h3>
+        <p class="indent-5 text-white">
+            This theme uses Astro components, a custom tailwindcss config, and in game textures/fonts to create a minecraft themed website, check out the <a href="/docs" class="text-mc-link hover:underline">docs</a> 
+            page for more information on how to use the theme and its features
+        </p>
+        <h3 class="text-center font-['Minecrafter'] underline text-4xl text-white">Features</h3>
+        <h3 class="font-['Minecrafter'] underline text-3xl text-white">Blocks</h3>
+        <div class="flex flex-wrap justify-start">
+            <Block height="1" width="1" block="bedrock"/>
+            <Block height="1" width="1" block="bricks"/>
+            <Block height="1" width="1" block="carved-pumpkin"/>
+            <Block height="1" width="1" block="clay"/>
+            <Block height="1" width="1" block="cobblestone"/>
+            <Block height="1" width="1" block="crafting-table-front"/>
+            <Block height="1" width="1" block="dirt"/>
+            <Block height="1" width="1" block="furnace-front"/>
+            <Block height="1" width="1" block="glass"/>
+            <Block height="1" width="1" block="glowstone"/>
+            <Block height="1" width="1" block="gold-block"/>
+            <Block height="1" width="1" block="grass-side"/>
+            <Block height="1" width="1" block="gravel"/>
+            <Block height="1" width="1" block="ice"/>
+            <Block height="1" width="1" block="mossy-cobblestone"/>
+            <Block height="1" width="1" block="netherrack"/>
+            <Block height="1" width="1" block="oak-leaves"/>
+            <Block height="1" width="1" block="oak-log"/>
+            <Block height="1" width="1" block="oak-planks"/>
+            <Block height="1" width="1" block="oak-sapling"/>
+            <Block height="1" width="1" block="obsidian"/>
+            <Block height="1" width="1" block="poppy"/>
+            <Block height="1" width="1" block="snow"/>
+            <Block height="1" width="1" block="soul-sand"/>
+            <Block height="1" width="1" block="spawner"/>
+            <Block height="1" width="1" block="sponge"/>
+            <Block height="1" width="1" block="stone"/>
+            <Block height="1" width="1" block="web"/>
+        </div>
+        <h3 class="font-['Minecrafter'] underline text-3xl text-white">Buttons</h3>
+        <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
+            <Button style class="py-2 px-4 text-lg">XS</Button>
+            <Button style class="py-2 px-4 text-lg">Small</Button>
+            <Button style class="py-2 px-4 text-lg">Larger Button</Button>
+            <Button style class="py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</Button>
+            <Button style class="py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</Button>
+        </div>
+        <h3 class="font-['Minecrafter'] underline text-3xl text-white">Fonts</h3>
+        <div class="flex flex-col items-start gap-3 whitespace-nowrap text-white">
+            <h3 class="font-['Minecrafter'] text-2xl xs:text-4xl">Minecrafter</h3>
+            <h3 class="font-['Minecrafter_Alt'] text-2xl xs:text-4xl">Minecrafter Alt</h3>
+            <h3 class="font-['Minecraft_Evenings'] text-2xl xs:text-4xl">Minecraft Evenings</h3>
+            <div class="flex flex-wrap justify-center gap-5 whitespace-nowrap">
+                <p class="font-['Minecraft']">Minecraft</p>
+                <p class="italic font-['Minecraft']">Minecraft Italic</p>
+                <p class="font-bold font-['Minecraft']">Minecraft Bold</p>
+                <p class="font-bold italic font-['Minecraft']">Minecraft Bold Italic</p>
+            </div>
+        </div>
+        <h3 class="font-['Minecrafter'] underline text-3xl text-white">Colors</h3>
+        <div class="flex flex-wrap items-center justify-start gap-3 whitespace-nowrap">
+            <p class="text-mc-dark-blue">dark-blue</p>
+            <p class="text-mc-dark-green">dark-green</p>
+            <p class="text-mc-dark-aqua">dark-aqua</p>
+            <p class="text-mc-dark-red">dark-red</p>
+            <p class="text-mc-dark-purple">dark-purple</p>
+            <p class="text-mc-gold">gold</p>
+            <p class="text-mc-gray">gray</p>
+            <p class="text-mc-dark-gray">dark-gray</p>
+            <p class="text-mc-blue">blue</p>
+            <p class="text-mc-green">green</p>
+            <p class="text-mc-aqua">aqua</p>
+            <p class="text-mc-red">red</p>
+            <p class="text-mc-light-purple">light-purple</p>
+            <p class="text-mc-yellow">yellow</p>
+        </div>
+    </div>
+</Base>
