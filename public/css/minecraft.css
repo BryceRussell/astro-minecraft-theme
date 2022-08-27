@@ -13,7 +13,7 @@ mc-markdown
 .mc-markdown {
     font-family: Minecraft;
     font-size: 1rem;
-    color: #fff;
+    color: #d1d5db;
 }
 
 .mc-markdown p {
@@ -30,29 +30,34 @@ mc-markdown
 }
 
 .mc-markdown h1 {
-    font-family: Minecrafter;
+    margin: 0.5rem 0;
+    font-family: 'Minecrafter Alt';
     font-size: 2.75rem;
 }
 
 .mc-markdown h2 {
+    margin: 0.5rem 0;
     font-family: Minecrafter;
     font-size: 2.25rem;
-    color: #fff;
 }
 
 .mc-markdown h3 {
+    margin: 0.5rem 0;
     font-size: 2rem;
 }
 
 .mc-markdown h4 {
+    margin: 0.5rem 0;
     font-size: 1.75rem;
 }
 
 .mc-markdown h5 {
+    margin: 0.5rem 0;
     font-size: 1.5rem;
 }
 
 .mc-markdown h6 {
+    margin: 0.5rem 0;
     font-size: 1.25rem;
 }
 
@@ -90,6 +95,11 @@ mc-markdown
     padding: 0.5rem 1rem;
 }
 
+.mc-markdown hr {
+    margin: 0.5rem 0;
+    border-top: 3px solid #fff;
+}
+
 .mc-table table, .mc-markdown table {
     border-collapse: separate;
     padding: 0.5rem;
@@ -123,7 +133,7 @@ mc-markdown
 .mc-table table td,
 .mc-markdown table td {
     border-width: 2px;
-    border-image: url('/imgs/ui/item-slot.png');
+    border-image: url('../imgs/ui/item-slot.png');
     border-image-width: 2px;
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
@@ -134,7 +144,7 @@ mc-markdown
 .mc-table table,
 .mc-markdown table {
     border-width: 2px;
-    border-image: url('/imgs/ui/gui.png');
+    border-image: url('../imgs/ui/gui.png');
     border-image-width: 6px;
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
@@ -142,7 +152,7 @@ mc-markdown
 
 .mc-gui-dark {
     border-width: 2px;
-    border-image: url('/imgs/ui/gui-dark.png');
+    border-image: url('../imgs/ui/gui-dark.png');
     border-image-width: 6px;
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
@@ -151,7 +161,7 @@ mc-markdown
 .mc-gui-darker,
 .mc-markdown pre {
     border-width: 2px;
-    border-image: url('/imgs/ui/gui-darker.png');
+    border-image: url('../imgs/ui/gui-darker.png');
     border-image-width: 6px;
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
@@ -162,9 +172,9 @@ mc-markdown
     cursor: pointer;
     image-rendering: pixelated;
     background-size: cover;
-    background-image: url('/imgs/ui/minecraft-button-inside.png');
+    background-image: url('../imgs/ui/minecraft-button-inside.png');
     border-width: 2px;
-    border-image: url('/imgs/ui/minecraft-button-border.png');
+    border-image: url('../imgs/ui/minecraft-button-border.png');
     border-image-width: 6px;
     border-image-slice: 10% 3.25%;
     border-image-repeat: stretch;
@@ -173,9 +183,9 @@ mc-markdown
 }
 
 .mc-button:hover {
-    background-image: url('/imgs/ui/minecraft-button-inside-hover.png');
+    background-image: url('../imgs/ui/minecraft-button-inside-hover.png');
     border-width: 2px;
-    border-image: url('/imgs/ui/minecraft-button-border-hover.png');
+    border-image: url('../imgs/ui/minecraft-button-border-hover.png');
     border-image-width: 6px;
     border-image-slice: 10% 3.25%;
     border-image-repeat: stretch;
@@ -183,9 +193,9 @@ mc-markdown
 }
 
 .mc-button:active, .minecraft-button:focus {
-    background-image: url('/imgs/ui/minecraft-button-inside-active.png');
+    background-image: url('../imgs/ui/minecraft-button-inside-active.png');
     border-width: 2px;
-    border-image: url('/imgs/ui/minecraft-button-border-active.png');
+    border-image: url('../imgs/ui/minecraft-button-border-active.png');
     border-image-width: 6px;
     border-image-slice: 10% 3.25%;
     border-image-repeat: stretch;
