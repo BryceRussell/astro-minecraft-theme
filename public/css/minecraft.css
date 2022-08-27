@@ -1,0 +1,193 @@
+/* 
+mc-table
+mc-gui
+mc-gui-dark
+mc-gui-darker
+mc-item-slot
+mc-button
+mc-link
+mc-text-shadow
+mc-markdown
+*/
+
+.mc-markdown {
+    font-family: Minecraft;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.mc-markdown p {
+    margin: 0.25rem 0;
+}
+
+.mc-link, .mc-markdown a {
+    text-shadow: none;
+    color: #aaaaff;
+}
+
+.mc-link, .mc-markdown a:hover {
+    text-decoration: underline;
+}
+
+.mc-markdown h1 {
+    font-family: Minecrafter;
+    font-size: 2.75rem;
+}
+
+.mc-markdown h2 {
+    font-family: Minecrafter;
+    font-size: 2.25rem;
+    color: #fff;
+}
+
+.mc-markdown h3 {
+    font-size: 2rem;
+}
+
+.mc-markdown h4 {
+    font-size: 1.75rem;
+}
+
+.mc-markdown h5 {
+    font-size: 1.5rem;
+}
+
+.mc-markdown h6 {
+    font-size: 1.25rem;
+}
+
+.mc-markdown ul {
+    margin: 0.5rem 1.25rem;
+}
+
+.mc-markdown ul li::marker {
+    content: "- ";
+    font-size: 0.75rem;
+    color: #FFF;
+}
+
+.mc-markdown ol {
+    margin: 0.5rem 2rem;
+    counter-reset: count;
+}
+
+.mc-markdown ol li {
+    color: #fff;
+    counter-increment: count;
+}
+
+.mc-markdown ol li::marker {
+    content: counter(count) ") ";
+    font-size: 1rem;
+    color: #FFF;
+}
+
+.mc-markdown blockquote {
+    padding: 0.5rem 1rem;
+}
+
+.mc-markdown pre {
+    padding: 0.5rem 1rem;
+}
+
+.mc-table table, .mc-markdown table {
+    border-collapse: separate;
+    padding: 0.5rem;
+}
+
+.mc-table th, .mc-markdown th {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #3d3c3d;
+}
+
+.mc-table table td, .mc-markdown table td {
+    padding: 0 0.25rem;
+}
+
+.mc-text-shadow,
+.mc-markdown p,
+.mc-markdown h1,
+.mc-markdown h2,
+.mc-markdown h3,
+.mc-markdown h4,
+.mc-markdown h5,
+.mc-markdown h6,
+.mc-markdown blockquote, 
+.mc-markdown tbody {
+    color: #fff;
+    text-shadow: 1.5px 1.5px #3d3c3d;
+}
+
+.mc-item-slot,
+.mc-table table td,
+.mc-markdown table td {
+    border-width: 2px;
+    border-image: url('/imgs/ui/item-slot.png');
+    border-image-width: 2px;
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui,
+.mc-markdown blockquote,
+.mc-table table,
+.mc-markdown table {
+    border-width: 2px;
+    border-image: url('/imgs/ui/gui.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-dark {
+    border-width: 2px;
+    border-image: url('/imgs/ui/gui-dark.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-darker,
+.mc-markdown pre {
+    border-width: 2px;
+    border-image: url('/imgs/ui/gui-darker.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-button {
+    user-select: none;
+    cursor: pointer;
+    image-rendering: pixelated;
+    background-size: cover;
+    background-image: url('/imgs/ui/minecraft-button-inside.png');
+    border-width: 2px;
+    border-image: url('/imgs/ui/minecraft-button-border.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #d1d5db;
+    text-shadow: 0.125rem 0.125rem #000;
+}
+
+.mc-button:hover {
+    background-image: url('/imgs/ui/minecraft-button-inside-hover.png');
+    border-width: 2px;
+    border-image: url('/imgs/ui/minecraft-button-border-hover.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #fef08a;
+}
+
+.mc-button:active, .minecraft-button:focus {
+    background-image: url('/imgs/ui/minecraft-button-inside-active.png');
+    border-width: 2px;
+    border-image: url('/imgs/ui/minecraft-button-border-active.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #a8a29e;
+}

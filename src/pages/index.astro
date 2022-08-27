@@ -1,12 +1,11 @@
 ---
 import Base from "@layouts/Base.astro";
 import Block from "@components/Block.astro";
-import Button from "@components/Button.astro";
 ---
 
 <Base>
     <div class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2">
-        <h3 class="font-['Minecrafter'] underline text-4xl text-white">Astro Minecraft Theme</h3>
+        <h3 class="font-['Minecrafter'] underline text-2xl sm:text-4xl text-white">Astro Minecraft Theme</h3>
         <p class="indent-5 text-white">
             This theme uses Astro components, a custom tailwindcss config, and in game textures/fonts to create a minecraft themed website, check out the <a href="/docs" class="text-mc-link hover:underline">docs</a> 
             page for more information on how to use the theme and its features
@@ -43,20 +42,35 @@ import Button from "@components/Button.astro";
             <Block height="1" width="1" block="stone"/>
             <Block height="1" width="1" block="web"/>
         </div>
+        <h3 class="font-['Minecrafter'] underline text-3xl text-white">Borders</h3>
+        <div class="flex flex-wrap gap-5">
+            <div class="h-2-block w-2-block mc-gui"></div>
+            <div class="h-2-block w-2-block mc-gui-dark"></div>
+            <div class="h-2-block w-2-block mc-gui-darker"></div>
+            <div class="h-min w-min p-1 mc-gui">
+                <div class="h-1-block w-1-block mc-item-slot"></div>
+            </div>
+            <div class="h-min w-min p-1 mc-gui-dark">
+                <div class="h-1-block w-1-block mc-item-slot"></div>
+            </div>
+            <div class="h-min w-min p-1 mc-gui-darker">
+                <div class="h-1-block w-1-block mc-item-slot"></div>
+            </div>
+        </div>
         <h3 class="font-['Minecrafter'] underline text-3xl text-white">Buttons</h3>
         <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
-            <Button style class="py-2 px-4 text-lg">XS</Button>
-            <Button style class="py-2 px-4 text-lg">Small</Button>
-            <Button style class="py-2 px-4 text-lg">Larger Button</Button>
-            <Button style class="py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</Button>
-            <Button style class="py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</Button>
+            <a class="mc-button py-2 px-4 text-lg">XS</a>
+            <a class="mc-button py-2 px-4 text-lg">Small</a>
+            <a class="mc-button py-2 px-4 text-lg">Larger Button</a>
+            <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+            <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</a>
         </div>
         <h3 class="font-['Minecrafter'] underline text-3xl text-white">Fonts</h3>
         <div class="flex flex-col items-start gap-3 whitespace-nowrap text-white">
             <h3 class="font-['Minecrafter'] text-2xl xs:text-4xl">Minecrafter</h3>
             <h3 class="font-['Minecrafter_Alt'] text-2xl xs:text-4xl">Minecrafter Alt</h3>
             <h3 class="font-['Minecraft_Evenings'] text-2xl xs:text-4xl">Minecraft Evenings</h3>
-            <div class="flex flex-wrap justify-center gap-5 whitespace-nowrap">
+            <div class="flex flex-wrap justify-start gap-5 whitespace-nowrap">
                 <p class="font-['Minecraft']">Minecraft</p>
                 <p class="italic font-['Minecraft']">Minecraft Italic</p>
                 <p class="font-bold font-['Minecraft']">Minecraft Bold</p>

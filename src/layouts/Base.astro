@@ -8,7 +8,7 @@ const {
 	block="stone",
 	size=48,
 	nav=2,
-	footer=3
+	footer=true
 } = Astro.props
 
 //If you want to change the responsive height of footer:
@@ -36,7 +36,8 @@ const min_footer_height = 3
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/minecraft.css">
 	</head>
 	<body>
         <Navbar height={nav}/>
@@ -47,6 +48,6 @@ const min_footer_height = 3
 				</div>
 			</Block>
 		</main>
-		<Footer />
+		{footer && <Footer />}
 	</body>
 </html>

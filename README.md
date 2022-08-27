@@ -4,9 +4,15 @@ A simple Astro theme with a minecraft beta website style
 
 Many people in the minecraft community create mods, plugins, data packs, texture packs, etc but most do not have an easy way to document and describe their creation so other people can use and see what they have made, this theme aims to be an easy introduction to creating a simple website for displaying your minecraft project for everyone to check out
 
-## Features Todo/WIP
+## Features
 
 - Includes Minecraft textures
+- Custom Classes
+  - Text
+  - GUI Panels
+  - Inventory GUI using tables
+  - Menu buttons
+  - Scrollbar
 - Minecraft Tailwind Theme
   - Block backgrounds
   - Block sizes
@@ -21,6 +27,15 @@ Many people in the minecraft community create mods, plugins, data packs, texture
 - Custom Components
   - Block - create panels using blocks
   - Button - create minecraft themed buttons
+
+## Todo
+
+- Docs system
+- Mobile Navigation
+- Item component
+- GUI Panel component
+- Crafting table component for displaying recipes using items
+- Minercaft scrollbar
 
 ## How to use
 

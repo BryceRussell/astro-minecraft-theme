@@ -1,0 +1,21 @@
+---
+import Base from "@layouts/Base.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Base footer={false}>
+    <div class="h-full min-h-[var(--main-height)] flex">
+        <aside class="sticky top-0 overflow-y-auto h-screen w-5-block [image-rendering:pixelated] [background-size:var(--block-size)] bg-oak-planks">
+            <div class="w-full h-full bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.75)]">
+                
+            </div>
+        </aside>
+        <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_5))]">
+            <div class="h-full px-5 mc-markdown">
+                <slot />
+            </div>
+            <Footer />
+        </div>
+    </div>
+</Base>
+

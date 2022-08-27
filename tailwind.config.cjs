@@ -25,8 +25,6 @@ Array.from({length: BLOCK_SPACING_MAX}, (_, i) => i + 1).forEach((i) => {
 	spacing_obj[`${i}-block`] = `calc(var(--block-size) * ${i})`
 })
 
-console.log(JSON.stringify(background_obj))
-
 module.exports = {
 	plugins: [],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
