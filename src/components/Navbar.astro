@@ -1,11 +1,11 @@
 ---
-import Block from "./Block.astro";
-
-const { height } = Astro.props
+const { 
+    height
+} = Astro.props
 ---
 
-<Block block="dirt" height={height} class="w-full">
-    <Block block="grass-side" class="h-full w-full bg-repeat-x">
+<div class={`block h-${height}-block w-full bg-dirt`}>
+    <div class="block h-full w-full bg-grass-side bg-repeat-x">
         <div class="flex items-center justify-around h-full w-full bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.25)]">
             <img src="/imgs/project-logo.png" class="h-full"/>
             <nav class="hidden md:flex items-center gap-3 text-2xl text-white">
@@ -14,5 +14,5 @@ const { height } = Astro.props
                 <a href="https://github.com/BryceRussell/astro-minecraft-theme" class="mc-button py-2 px-3 text-lg" target="_blank">Download</a>
             </nav>
         </div>
-    </Block>
-</Block>
+    </div>
+</div>

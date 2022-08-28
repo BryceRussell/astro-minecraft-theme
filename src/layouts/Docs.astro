@@ -1,20 +1,54 @@
 ---
 import Base from "@layouts/Base.astro";
 import Footer from "@components/Footer.astro";
+
+let docs = await Astro.glob('../pages/docs/*.md');
+const index = docs.pop()
+
+const depth_class_map = {
+    1: "text-lg text-mc-gold",
+    2: "ml-1 text-md",
+    3: "ml-3 italic text-sm",
+    4: "ml-3 text-sm",
+    5: "ml-3 text-sm",
+    6: "ml-3 text-sm",
+}
 ---
 
 <Base footer={false}>
     <div class="h-full min-h-[var(--main-height)] flex">
-        <aside class="sticky top-0 overflow-y-auto h-screen w-5-block [image-rendering:pixelated] [background-size:var(--block-size)] bg-oak-planks">
-            <div class="w-full h-full bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.75)]">
-                
-            </div>
+        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block [image-rendering:pixelated] [background-size:var(--block-size)] bg-obsidian">
+                <div class="flex flex-col gap-3 h-min w-full py-5 px-3 bg-dark-50">
+                {[index, ...docs].map(async(h) => {
+                    const headings = await h.getHeadings();
+                    return (
+                        <Fragment>
+                            {headings.length > 0 &&                        
+                                <nav class="flex flex-col gap-1 py-3 px-5 mc-gui-75">
+                                    { headings.map((heading) => {
+                                        if (heading.depth > 3) return
+                                        return <a 
+                                            href={`${h.url}#${heading.slug}`}
+                                            class:list={[
+                                                depth_class_map[heading.depth],
+                                                "hover:underline mc-text-shadow"
+                                            ]}
+                                        >
+                                            {heading.text}
+                                        </a>
+                                    })}
+                                </nav>
+                            }
+                        </Fragment>
+                    )
+                })}
+                </div>
         </aside>
-        <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_5))]">
-            <div class="h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto px-5 mc-markdown">
+        <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_6))]">
+            <div class="h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 mc-markdown">
                 <slot />
             </div>
-            <Footer />
+            <Footer class="[--block-size:56px]" />
         </div>
     </div>
 </Base>

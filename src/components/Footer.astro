@@ -1,8 +1,13 @@
 ---
-import Block from "./Block.astro";
+const {
+    class: classProp
+} = Astro.props
 ---
 
-<Block block="bedrock" class="h-[calc(var(--block-size)*var(--footer-height))] [--footer-height:6] xs:[--footer-height:5] sm:[--footer-height:4] md:[--footer-height:3] w-full">
+<div class:list={[
+    classProp,
+    "h-[calc(var(--block-size)*var(--footer-height))] [--footer-height:6] xs:[--footer-height:5] sm:[--footer-height:4] md:[--footer-height:3] w-full block bg-bedrock"
+]}>
     <div class="flex flex-col sm:flex-row items-center justify-between h-full p-5 bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.75)] text-white">
         <header class="flex flex-col gap-3 w-full sm:w-[60%]">
             <img src="/imgs/project-logo.png" class="h-[var(--block-size)] w-fit m-[-14px]" />
@@ -15,4 +20,4 @@ import Block from "./Block.astro";
             <a href="" class="hover:underline">CurseForge</a>
         </nav>
     </div>
-</Block>
+</div>

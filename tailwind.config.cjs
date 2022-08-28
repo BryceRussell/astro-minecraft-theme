@@ -56,7 +56,8 @@ module.exports = {
 					'light-purple': '#FF55FF',
 					'yellow': '#FFFF55',
 					//Misc
-					"link": "#aaaaff"
+					"link": "#aaaaff",
+					"gui": "#C6C6C6"
 				}
 			},
 			backgroundImage: {

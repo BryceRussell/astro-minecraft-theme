@@ -1,16 +1,16 @@
 ---
 export interface Props {
-    block?: string;
-    height?: string|number;
-    width?: string|number;
+    bg?: string;
+    h?: string|number;
+    w?: string|number;
     class?: string|[]|{};
 }
 
 const {
-    block="stone",
-    height,
-    width,
-    class:classProp,
+    bg="stone",
+    h,
+    w,
+    class: classProp,
     ...attrs
 } = Astro.props as Props
 ---
@@ -18,10 +18,10 @@ const {
 <div
     class:list={[
         classProp,
-        height?`h-${height}-block`:'',
-        width?`w-${width}-block`:'',
-        '[image-rendering:pixelated] [background-size:var(--block-size)]',
-        block?`bg-${block}`:''
+        'block',
+        h?`h-${h}-block`:'',
+        w?`w-${w}-block`:'',
+        bg?`bg-${bg}`:''
     ]}
     {...attrs}
 >

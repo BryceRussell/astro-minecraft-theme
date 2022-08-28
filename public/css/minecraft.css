@@ -8,9 +8,18 @@ mc-button
 mc-link
 mc-text-shadow
 mc-markdown
+
+bg-dark-25
+bg-dark-50
+bg-dark-75
 */
 
+:where(body) {
+    --block-size: 48px;
+}
+
 .mc-markdown {
+    overflow: hidden;
     font-family: Minecraft;
     font-size: 1rem;
     color: #d1d5db;
@@ -31,12 +40,14 @@ mc-markdown
 
 .mc-markdown h1 {
     margin: 0.5rem 0;
+    text-align: center;
     font-family: 'Minecrafter Alt';
     font-size: 2.75rem;
 }
 
 .mc-markdown h2 {
     margin: 0.5rem 0;
+    text-align: center;
     font-family: Minecrafter;
     font-size: 2.25rem;
 }
@@ -62,7 +73,7 @@ mc-markdown
 }
 
 .mc-markdown ul {
-    margin: 0.5rem 1.25rem;
+    margin: 0 1.25rem;
 }
 
 .mc-markdown ul li::marker {
@@ -88,11 +99,25 @@ mc-markdown
 }
 
 .mc-markdown blockquote {
+    margin: 1rem 0;
     padding: 0.5rem 1rem;
 }
 
 .mc-markdown pre {
+    overflow-x: visible !important;
     padding: 0.5rem 1rem;
+}
+
+.mc-markdown pre code span {
+    font-family: Minecraft !important;
+    white-space: normal;
+}
+
+.mc-markdown :not(pre) code {
+    font-family: Minecraft !important;
+    padding: 0.25rem 0.5rem;
+    letter-spacing: 0.025em;
+    font-size: 0.75rem;
 }
 
 .mc-markdown hr {
@@ -100,7 +125,7 @@ mc-markdown
     border-top: 3px solid #fff;
 }
 
-.mc-table table, .mc-markdown table {
+.mc-table, .mc-markdown table {
     border-collapse: separate;
     padding: 0.5rem;
 }
@@ -111,11 +136,36 @@ mc-markdown
     color: #3d3c3d;
 }
 
-.mc-table table td, .mc-markdown table td {
+.mc-table td, .mc-markdown td {
     padding: 0 0.25rem;
 }
 
+[class*="bg-dark"] {
+    position: relative;
+}
+
+[class*="bg-dark"]::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.bg-dark-25::before {
+    background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25));
+}
+
+.bg-dark-50::before {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+}
+
+.bg-dark-75::before {
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
+}
+
 .mc-text-shadow,
+.mc-table td,
 .mc-markdown p,
 .mc-markdown h1,
 .mc-markdown h2,
@@ -123,15 +173,22 @@ mc-markdown
 .mc-markdown h4,
 .mc-markdown h5,
 .mc-markdown h6,
+.mc-markdown :not(pre) code,
 .mc-markdown blockquote, 
-.mc-markdown tbody {
+.mc-markdown td {
     color: #fff;
-    text-shadow: 1.5px 1.5px #3d3c3d;
+    text-shadow: 1.5px 1.5px #000;
+}
+
+.block {
+    image-rendering: pixelated;
+    background-size: var(--block-size);
 }
 
 .mc-item-slot,
-.mc-table table td,
-.mc-markdown table td {
+.mc-table td,
+.mc-markdown td,
+*::-webkit-scrollbar-track {
     border-width: 2px;
     border-image: url('../imgs/ui/item-slot.png');
     border-image-width: 2px;
@@ -141,10 +198,34 @@ mc-markdown
 
 .mc-gui,
 .mc-markdown blockquote,
-.mc-table table,
+.mc-table,
 .mc-markdown table {
     border-width: 2px;
     border-image: url('../imgs/ui/gui.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-50 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-75.png');
     border-image-width: 6px;
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
@@ -158,10 +239,59 @@ mc-markdown
     border-image-repeat: stretch;
 }
 
+.mc-gui-dark-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-dark-50,
+.mc-markdown :not(pre) code {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-dark-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-75.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
 .mc-gui-darker,
 .mc-markdown pre {
     border-width: 2px;
     border-image: url('../imgs/ui/gui-darker.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-darker-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-darker-50 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.mc-gui-darker-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-75.png');
     border-image-width: 6px;
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
@@ -200,4 +330,24 @@ mc-markdown
     border-image-slice: 10% 3.25%;
     border-image-repeat: stretch;
     color: #a8a29e;
+}
+
+/* width */
+*::-webkit-scrollbar {
+    width: 15px;
+    padding: 1px;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+    border-width: 2px;
+    border-image: url('../imgs/ui/scroll-thumb.png');
+    border-image-width: 2px;
+    border-image-slice: 25% 25% fill;
+    border-image-repeat: stretch;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+background: #555;
 }
