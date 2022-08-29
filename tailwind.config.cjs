@@ -11,7 +11,6 @@ const BLOCK_SPACING_MAX = 99;
 const background_obj = {};
 const spacing_obj = {};
 const safelist_array = [];
-
 //Create backgrounds like 'bg-stone' from a dir and safelist them
 const fs = require('fs');
 fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
@@ -19,11 +18,13 @@ fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
 	background_obj[block_name] = `url('/${BLOCK_DIR}/${file}')`
 	safelist_array.push(`bg-${block_name}`)
 });
-
 //Create spacings like '1-block' '2-block' up to '99-block'
 Array.from({length: BLOCK_SPACING_MAX}, (_, i) => i + 1).forEach((i) => {
 	spacing_obj[`${i}-block`] = `calc(var(--block-size) * ${i})`
 })
+
+
+
 
 module.exports = {
 	plugins: [],
@@ -35,7 +36,10 @@ module.exports = {
 		},
 		fontFamily: {
 			'sans': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
-			'minecraft': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans]
+			'minecraft': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
+			'minecrafter': ['Minecrafter', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
+			'minecrafter-alt': ['Minecrafter Alt', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
+			'minecraft-evenings': ['Minecraft Evenings', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans]
 		},
 		extend: {
 			colors: {

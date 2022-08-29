@@ -5,26 +5,64 @@ layout: '../../layouts/Docs.astro'
 
 # Introduction
 
-This is a Minecraft Theme for Astro, it uses textures from in game to create a class based styling system that makes creating minecraft styled elements super easy
+Build with blocks, display items, create Minecraft GUIs, and more. This is a Minecraft themed website template built for Astro that was created as an introduction to Astro for Minecraft developers in need of documentation for their projects.
 
----
+## **Features**
 
-## How to use
 
-### ***Project Logo***
+- Display items
+- Build with blocks
+- Repeating block backgrounds
+- Block based sizes
+- Create GUIs using panels, slots, and buttons
+- Minecraft typography using the `Minecraft` font, in game text colors, and minecrafts classic text shadows
 
-One of the first things you will want to do is generate a logo for your project using [textstudio](https://www.textstudio.co/logo/minecraft-3d-text-41) with the following settings:
-  - Zoom: `36%`
-  - Line Spacing: `10%`
-  - Use default for character spacing and rotation
-  - Use the `Minecrafter Regular` font
-  - Navigate to the background tab and uncheck `Background or Transparent` to make background transparent
-  - Navigate to the download tab and select `Medium` quality with `fitted` aspect ratio
+###  <u>Assets</u>
 
-  After downloading your project logo all you have to do is rename it to `project-logo.png` and add it to the `./public/imgs` directory in your website folder
+This template comes preloaded with hundreds of common minecraft textures and community made fonts
 
-### ***Favicon***
+**Textures**:
+  - 100+ [blocks](http://127.0.0.1:3000/docs/1#blocks)
+  - 100+ Items
+  - GUI panels, 3 colors and 4 transparecnies
+  - GUI slots, 4 transparencies
+  - Default, hover, active buttons
+  - Default, active scrollbars
 
-The default favicon is a grass block, this can be replaced by converting a texture from the `./assets` folder to a `.ico`, renaming it `favicon.ico`, and then replacing the current favicon inside the `./public` folder
+**Fonts**:
+  - Minecraft
+  - Minecrafter
+  - Minecrafter Alt
+  - Minecraft Evenings
 
-### `Props`
+###  <u>Styles</u>
+  
+#### <u>Tailwindcss Classes</u>
+
+This theme includes a minecraft themed extension for tailwindcss. Tailwind also makes it easy to dynamicaly create classes for blocks and items
+
+**Extends**:
+  - Block sizes
+  - Block background images
+  - Text colors
+  - UI colors
+  - Fonts
+
+#### <u>Custom Classes</u>
+
+Some styles are too complicated for tailwindcss, these styles have been bundled into easy to use classes
+
+**Classes**:
+  - Markdown styling
+  - Default/Hover/Active Buttons
+  - Default/Active Scrollbar
+  - GUI panels with 3 colors and 4 transparencies
+  - GUI slot with 4 transparencies
+  - Dark background with 4 tranparencies
+  - Tables
+  - Links
+  - Text shadow
+
+
+
+

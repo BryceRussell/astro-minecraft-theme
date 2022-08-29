@@ -6,37 +6,36 @@ let docs = await Astro.glob('../pages/docs/*.md');
 const index = docs.pop()
 
 const depth_class_map = {
-    1: "text-lg text-mc-gold",
-    2: "ml-1 text-md",
-    3: "ml-3 italic text-sm",
-    4: "ml-3 text-sm",
-    5: "ml-3 text-sm",
-    6: "ml-3 text-sm",
+    1: "text-lg text-mc-yellow",
+    2: "ml-2 text-md",
+    3: "ml-4 italic text-sm",
 }
 ---
 
 <Base footer={false}>
     <div class="h-full min-h-[var(--main-height)] flex">
-        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block [image-rendering:pixelated] [background-size:var(--block-size)] bg-obsidian">
-                <div class="flex flex-col gap-3 h-min w-full py-5 px-3 bg-dark-50">
+        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block block bg-stone-brick mc-scrollbar">
+                <div class="flex flex-col h-min gap-2 py-5 px-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
                     return (
                         <Fragment>
                             {headings.length > 0 &&                        
-                                <nav class="flex flex-col gap-1 py-3 px-5 mc-gui-75">
-                                    { headings.map((heading) => {
-                                        if (heading.depth > 3) return
-                                        return <a 
-                                            href={`${h.url}#${heading.slug}`}
-                                            class:list={[
-                                                depth_class_map[heading.depth],
-                                                "hover:underline mc-text-shadow"
-                                            ]}
-                                        >
-                                            {heading.text}
-                                        </a>
-                                    })}
+                                <nav class="mc-gui-50 p-1">
+                                    <div class="flex flex-col gap-1 py-2 px-3 mc-gui-slot-75 text-white">                                        
+                                        { headings.map((heading) => {
+                                            if (heading.depth > 3) return
+                                            return <a 
+                                                href={`${h.url}#${heading.slug}`}
+                                                class:list={[
+                                                    depth_class_map[heading.depth],
+                                                    "hover:underline mc-text-shadow"
+                                                ]}
+                                            >
+                                                {heading.text}
+                                            </a>
+                                        })}
+                                    </div>
                                 </nav>
                             }
                         </Fragment>

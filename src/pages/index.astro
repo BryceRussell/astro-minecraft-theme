@@ -1,65 +1,45 @@
 ---
 import Base from "@layouts/Base.astro";
+
+const files = await Astro.glob(`../../public/imgs/blocks/*`)
+
+const blocks = files.map(file => {
+    return file.default.split('/').pop().split('.')[0]
+});
 ---
 
 <Base>
 <div class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2">
-    <h3 class="font-['Minecrafter'] underline text-2xl sm:text-4xl text-white">Astro Minecraft Theme</h3>
+    <h3 class=" underline text-2xl sm:text-4xl text-white">Astro Minecraft Theme</h3>
     <p class="indent-5 text-white">
         This theme uses in game textures/fonts, custom css classes, and tailwindcss to create a class based styling system that makes creating a minecraft themed website super easy! Check out the <a href="/docs" class="text-mc-link hover:underline">docs</a> 
         page for more information on how to use the theme and its features
     </p>
-    <h3 class="text-center font-['Minecrafter'] underline text-4xl text-white">Features</h3>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Blocks</h3>
+    <h3 class="text-center  underline text-4xl text-white">Features</h3>
+    <h3 class=" underline text-3xl text-white">Blocks</h3>
     <div class="flex flex-wrap justify-center">
-        <div class="block h-1-block w-1-block bg-bedrock"/>
-        <div class="block h-1-block w-1-block bg-bricks"/>
-        <div class="block h-1-block w-1-block bg-carved-pumpkin"/>
-        <div class="block h-1-block w-1-block bg-clay"/>
-        <div class="block h-1-block w-1-block bg-cobblestone"/>
-        <div class="block h-1-block w-1-block bg-crafting-table-front"/>
-        <div class="block h-1-block w-1-block bg-dirt"/>
-        <div class="block h-1-block w-1-block bg-furnace-front"/>
-        <div class="block h-1-block w-1-block bg-glass"/>
-        <div class="block h-1-block w-1-block bg-glowstone"/>
-        <div class="block h-1-block w-1-block bg-gold-block"/>
-        <div class="block h-1-block w-1-block bg-grass-side"/>
-        <div class="block h-1-block w-1-block bg-gravel"/>
-        <div class="block h-1-block w-1-block bg-ice"/>
-        <div class="block h-1-block w-1-block bg-mossy-cobblestone"/>
-        <div class="block h-1-block w-1-block bg-netherrack"/>
-        <div class="block h-1-block w-1-block bg-oak-leaves"/>
-        <div class="block h-1-block w-1-block bg-oak-log"/>
-        <div class="block h-1-block w-1-block bg-oak-planks"/>
-        <div class="block h-1-block w-1-block bg-oak-sapling"/>
-        <div class="block h-1-block w-1-block bg-obsidian"/>
-        <div class="block h-1-block w-1-block bg-poppy"/>
-        <div class="block h-1-block w-1-block bg-snow"/>
-        <div class="block h-1-block w-1-block bg-soul-sand"/>
-        <div class="block h-1-block w-1-block bg-spawner"/>
-        <div class="block h-1-block w-1-block bg-sponge"/>
-        <div class="block h-1-block w-1-block bg-stone"/>
-        <div class="block h-1-block w-1-block bg-web"/>
+        {blocks && blocks.map((block) => {
+            return <div class={`block h-1-block w-1-block bg-${block}`}/>
+        })}
     </div>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Borders</h3>
+    <h3 class=" underline text-3xl text-white">Borders</h3>
     <div class="flex flex-wrap justify-center gap-5">
         <div class="h-2-block w-2-block mc-gui"></div>
         <div class="h-2-block w-2-block mc-gui-dark"></div>
         <div class="h-2-block w-2-block mc-gui-darker"></div>
-        <divc class="flex gap-5">
-            <div class="h-min w-min p-1 mc-gui">
-                <div class="h-1-block w-1-block mc-item-slot"></div>
-            </div>
-            <div class="h-min w-min p-1 mc-gui-dark">
-                <div class="h-1-block w-1-block mc-item-slot"></div>
-            </div>
-            <div class="h-min w-min p-1 mc-gui-darker">
-                <div class="h-1-block w-1-block mc-item-slot"></div>
-            </div>
-        </divc>
+        <div class="h-2-block w-2-block mc-gui-75"></div>
+        <div class="h-2-block w-2-block mc-gui-dark-75"></div>
+        <div class="h-2-block w-2-block mc-gui-darker-75"></div>
+        <div class="h-2-block w-2-block mc-gui-50"></div>
+        <div class="h-2-block w-2-block mc-gui-dark-50"></div>
+        <div class="h-2-block w-2-block mc-gui-darker-50"></div>
+        <div class="h-2-block w-2-block mc-gui-25"></div>
+        <div class="h-2-block w-2-block mc-gui-dark-25"></div>
+        <div class="h-2-block w-2-block mc-gui-darker-25"></div>
+        <div class="h-1-block w-1-block mc-item-slot"></div>
     </div>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Tables</h3>
-    <table class="mc-table w-min whitespace-nowrap">
+    <h3 class=" underline text-3xl text-white">Tables</h3>
+    <table class="self-center mc-table w-min whitespace-nowrap">
         <thead>
             <tr>
                 <th>ID</th>
@@ -85,7 +65,7 @@ import Base from "@layouts/Base.astro";
             </tr>
         </tbody>
     </table>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Buttons</h3>
+    <h3 class=" underline text-3xl text-white">Buttons</h3>
     <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
         <a class="mc-button py-2 px-4 text-lg">XS</a>
         <a class="mc-button py-2 px-4 text-lg">Small</a>
@@ -93,9 +73,33 @@ import Base from "@layouts/Base.astro";
         <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
         <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</a>
     </div>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Fonts</h3>
+    <h3 class=" underline text-3xl text-white">Scrollbar</h3>
+    <div class="flex flex-wrap justify-center gap-5">
+        <div class="mc-scrollbar h-1-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-2-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-3-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-4-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-3-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-2-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+        <div class="mc-scrollbar h-1-block w-[1rem] overflow-y-auto">
+            <div class="h-5-block"></div>
+        </div>
+    </div>
+    <h3 class=" underline text-3xl text-white">Fonts</h3>
     <div class="flex flex-col items-center gap-3 whitespace-nowrap text-white">
-        <h3 class="font-['Minecrafter'] text-2xl xs:text-4xl">Minecrafter</h3>
+        <h3 class=" text-2xl xs:text-4xl">Minecrafter</h3>
         <h3 class="font-['Minecrafter_Alt'] text-2xl xs:text-4xl">Minecrafter Alt</h3>
         <h3 class="font-['Minecraft_Evenings'] text-2xl xs:text-4xl">Minecraft Evenings</h3>
         <div class="flex flex-wrap justify-center gap-5 whitespace-nowrap">
@@ -105,7 +109,7 @@ import Base from "@layouts/Base.astro";
             <p class="font-bold italic font-['Minecraft']">Minecraft Bold Italic</p>
         </div>
     </div>
-    <h3 class="font-['Minecrafter'] underline text-3xl text-white">Colors</h3>
+    <h3 class=" underline text-3xl text-white">Colors</h3>
     <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
         <p class="text-mc-dark-blue">dark-blue</p>
         <p class="text-mc-dark-green">dark-green</p>

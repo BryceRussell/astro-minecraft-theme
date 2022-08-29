@@ -2,8 +2,6 @@
 import Navbar from "@components/Navbar.astro";
 import Footer from "@components/Footer.astro";
 
-import Block from "@components/Block.astro";
-
 const {
 	block="stone",
 	size=48,
@@ -39,14 +37,12 @@ const min_footer_height = 3
 		<link rel="stylesheet" href="/css/fonts.css">
 		<link rel="stylesheet" href="/css/minecraft.css">
 	</head>
-	<body>
+	<body class="mc-scrollbar">
         <Navbar height={nav}/>
-        <main style="min-height:var(--main-height)">
-			<Block block={block} class="min-h-[var(--main-height)] w-full">
-				<div class="min-h-[var(--main-height)] bg-gradient-to-t from-[rgba(0,0,0,0.75)] to-[rgba(0,0,0,0.75)]">
-					<slot />
-				</div>
-			</Block>
+        <main class={`min-h-[var(--main-height)] w-full block bg-${block}`}>
+			<div class="bg-dark-75">
+				<slot />
+			</div>
 		</main>
 		{footer && <Footer />}
 	</body>
