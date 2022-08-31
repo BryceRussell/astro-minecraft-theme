@@ -1,9 +1,9 @@
 ---
 import Base from "@layouts/Base.astro";
 
-const files = await Astro.glob(`../../public/imgs/blocks/*`)
+const files = await Astro.glob(`../../public/imgs/items/*`)
 
-const blocks = files.map(file => {
+const items = files.map(file => {
     return file.default.split('/').pop().split('.')[0]
 });
 ---
@@ -12,34 +12,59 @@ const blocks = files.map(file => {
 <div class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2">
     <h3 class=" underline text-2xl sm:text-4xl text-white">Astro Minecraft Theme</h3>
     <p class="indent-5 text-white">
-        This theme uses in game textures/fonts, custom css classes, and tailwindcss to create a class based styling system that makes creating a minecraft themed website super easy! Check out the <a href="/docs" class="text-mc-link hover:underline">docs</a> 
+        This template makes creating a minecraft themed website super easy! Check out the <a href="/docs" class="text-link hover:underline">docs</a> 
         page for more information on how to use the theme and its features
     </p>
     <h3 class="text-center  underline text-4xl text-white">Features</h3>
     <h3 class=" underline text-3xl text-white">Blocks</h3>
     <div class="flex flex-wrap justify-center">
-        {blocks && blocks.map((block) => {
-            return <div class={`block h-1-block w-1-block bg-${block}`}/>
+        <div class="block h-1-block w-1-block bg-andesite-smooth"></div><div class="block h-1-block w-1-block bg-andesite"></div><div class="block h-1-block w-1-block bg-bedrock"></div><div class="block h-1-block w-1-block bg-bookshelf"></div><div class="block h-1-block w-1-block bg-brick"></div><div class="block h-1-block w-1-block bg-bricks-beta"></div><div class="block h-1-block w-1-block bg-carved-pumpkin-on"></div><div class="block h-1-block w-1-block bg-carved-pumpkin"></div><div class="block h-1-block w-1-block bg-clay"></div><div class="block h-1-block w-1-block bg-coal-block"></div><div class="block h-1-block w-1-block bg-coal-ore"></div><div class="block h-1-block w-1-block bg-cobblestone-beta"></div><div class="block h-1-block w-1-block bg-cobblestone-mossy-beta"></div><div class="block h-1-block w-1-block bg-cobblestone-mossy"></div><div class="block h-1-block w-1-block bg-cobblestone"></div><div class="block h-1-block w-1-block bg-command-block"></div><div class="block h-1-block w-1-block bg-crafting-table-front"></div><div class="block h-1-block w-1-block bg-crafting-table-side"></div><div class="block h-1-block w-1-block bg-crafting-table-top"></div><div class="block h-1-block w-1-block bg-diamond-block-beta"></div><div class="block h-1-block w-1-block bg-diamond-block"></div><div class="block h-1-block w-1-block bg-diamond-ore"></div><div class="block h-1-block w-1-block bg-diorite-smooth"></div><div class="block h-1-block w-1-block bg-diorite"></div><div class="block h-1-block w-1-block bg-dirt"></div><div class="block h-1-block w-1-block bg-dispenser-front"></div><div class="block h-1-block w-1-block bg-dropper-front"></div><div class="block h-1-block w-1-block bg-emerald-block"></div><div class="block h-1-block w-1-block bg-emerald-ore-beta"></div><div class="block h-1-block w-1-block bg-emerald-ore"></div><div class="block h-1-block w-1-block bg-end-stone"></div><div class="block h-1-block w-1-block bg-furnace-front-on"></div><div class="block h-1-block w-1-block bg-furnace-front"></div><div class="block h-1-block w-1-block bg-furnace-side"></div><div class="block h-1-block w-1-block bg-glass-black"></div><div class="block h-1-block w-1-block bg-glass-blue"></div><div class="block h-1-block w-1-block bg-glass-brown"></div><div class="block h-1-block w-1-block bg-glass-cyan"></div><div class="block h-1-block w-1-block bg-glass-gray"></div><div class="block h-1-block w-1-block bg-glass-green"></div><div class="block h-1-block w-1-block bg-glass-light-blue"></div><div class="block h-1-block w-1-block bg-glass-lime"></div><div class="block h-1-block w-1-block bg-glass-magenta"></div><div class="block h-1-block w-1-block bg-glass-orange"></div><div class="block h-1-block w-1-block bg-glass-pink"></div><div class="block h-1-block w-1-block bg-glass-purple"></div><div class="block h-1-block w-1-block bg-glass-red"></div><div class="block h-1-block w-1-block bg-glass-silver"></div><div class="block h-1-block w-1-block bg-glass-white"></div><div class="block h-1-block w-1-block bg-glass-yellow"></div><div class="block h-1-block w-1-block bg-glass"></div><div class="block h-1-block w-1-block bg-glowstone"></div><div class="block h-1-block w-1-block bg-gold-block-beta"></div><div class="block h-1-block w-1-block bg-gold-block"></div><div class="block h-1-block w-1-block bg-gold-ore"></div><div class="block h-1-block w-1-block bg-granite-smooth"></div><div class="block h-1-block w-1-block bg-granite"></div><div class="block h-1-block w-1-block bg-grass-side"></div><div class="block h-1-block w-1-block bg-gravel-beta"></div><div class="block h-1-block w-1-block bg-gravel"></div><div class="block h-1-block w-1-block bg-hardened-clay-black"></div><div class="block h-1-block w-1-block bg-hardened-clay-blue"></div><div class="block h-1-block w-1-block bg-hardened-clay-brown"></div><div class="block h-1-block w-1-block bg-hardened-clay-cyan"></div><div class="block h-1-block w-1-block bg-hardened-clay-gray"></div><div class="block h-1-block w-1-block bg-hardened-clay-green"></div><div class="block h-1-block w-1-block bg-hardened-clay-light-blue"></div><div class="block h-1-block w-1-block bg-hardened-clay-lime"></div><div class="block h-1-block w-1-block bg-hardened-clay-magenta"></div><div class="block h-1-block w-1-block bg-hardened-clay-orange"></div><div class="block h-1-block w-1-block bg-hardened-clay-pink"></div><div class="block h-1-block w-1-block bg-hardened-clay-purple"></div><div class="block h-1-block w-1-block bg-hardened-clay-red"></div><div class="block h-1-block w-1-block bg-hardened-clay-silver"></div><div class="block h-1-block w-1-block bg-hardened-clay-white"></div><div class="block h-1-block w-1-block bg-hardened-clay-yellow"></div><div class="block h-1-block w-1-block bg-hardened-clay"></div><div class="block h-1-block w-1-block bg-hay"></div><div class="block h-1-block w-1-block bg-ice-packed"></div><div class="block h-1-block w-1-block bg-ice"></div><div class="block h-1-block w-1-block bg-iron-block"></div><div class="block h-1-block w-1-block bg-iron-ore"></div><div class="block h-1-block w-1-block bg-item-frame"></div><div class="block h-1-block w-1-block bg-jukebox"></div><div class="block h-1-block w-1-block bg-lapis-block-beta"></div><div class="block h-1-block w-1-block bg-lapis-block"></div><div class="block h-1-block w-1-block bg-lapis-ore"></div><div class="block h-1-block w-1-block bg-lava-still"></div><div class="block h-1-block w-1-block bg-leaves-oak-beta"></div><div class="block h-1-block w-1-block bg-log-acacia-top"></div><div class="block h-1-block w-1-block bg-log-acacia"></div><div class="block h-1-block w-1-block bg-log-birch-top"></div><div class="block h-1-block w-1-block bg-log-birch"></div><div class="block h-1-block w-1-block bg-log-dark-oak-top"></div><div class="block h-1-block w-1-block bg-log-dark-oak"></div><div class="block h-1-block w-1-block bg-log-jungle-top"></div><div class="block h-1-block w-1-block bg-log-jungle"></div><div class="block h-1-block w-1-block bg-log-oak-top"></div><div class="block h-1-block w-1-block bg-log-oak"></div><div class="block h-1-block w-1-block bg-log-spruce-top"></div><div class="block h-1-block w-1-block bg-log-spruce"></div><div class="block h-1-block w-1-block bg-melon-side"></div><div class="block h-1-block w-1-block bg-mushroom-block-brown"></div><div class="block h-1-block w-1-block bg-mushroom-block-inside"></div><div class="block h-1-block w-1-block bg-mushroom-block-red"></div><div class="block h-1-block w-1-block bg-mushroom-block-stem"></div><div class="block h-1-block w-1-block bg-mycelium-side"></div><div class="block h-1-block w-1-block bg-mycelium-top"></div><div class="block h-1-block w-1-block bg-nether-brick"></div><div class="block h-1-block w-1-block bg-netherrack"></div><div class="block h-1-block w-1-block bg-obsidian"></div><div class="block h-1-block w-1-block bg-piston-front-sticky"></div><div class="block h-1-block w-1-block bg-piston-front"></div><div class="block h-1-block w-1-block bg-piston-side"></div><div class="block h-1-block w-1-block bg-planks-acacia"></div><div class="block h-1-block w-1-block bg-planks-birch"></div><div class="block h-1-block w-1-block bg-planks-dark-oak"></div><div class="block h-1-block w-1-block bg-planks-jungle"></div><div class="block h-1-block w-1-block bg-planks-oak"></div><div class="block h-1-block w-1-block bg-planks-spruce"></div><div class="block h-1-block w-1-block bg-podzol-side"></div><div class="block h-1-block w-1-block bg-podzol-top"></div><div class="block h-1-block w-1-block bg-portal"></div><div class="block h-1-block w-1-block bg-prismarine-bricks"></div><div class="block h-1-block w-1-block bg-prismarine-dark"></div><div class="block h-1-block w-1-block bg-prismarine-rough-blue"></div><div class="block h-1-block w-1-block bg-prismarine-rough-green"></div><div class="block h-1-block w-1-block bg-prismarine-rough-purple"></div><div class="block h-1-block w-1-block bg-prismarine-rough"></div><div class="block h-1-block w-1-block bg-pumpkin-side"></div><div class="block h-1-block w-1-block bg-quartz-chiseled"></div><div class="block h-1-block w-1-block bg-quartz-ore"></div><div class="block h-1-block w-1-block bg-quartz-pillar"></div><div class="block h-1-block w-1-block bg-quartz"></div><div class="block h-1-block w-1-block bg-red-sand"></div><div class="block h-1-block w-1-block bg-red-sandstone-carved"></div><div class="block h-1-block w-1-block bg-red-sandstone-smooth"></div><div class="block h-1-block w-1-block bg-red-sandstone"></div><div class="block h-1-block w-1-block bg-redstone-block"></div><div class="block h-1-block w-1-block bg-redstone-lamp-on"></div><div class="block h-1-block w-1-block bg-redstone-lamp"></div><div class="block h-1-block w-1-block bg-redstone-ore"></div><div class="block h-1-block w-1-block bg-sand"></div><div class="block h-1-block w-1-block bg-sandstone-carved"></div><div class="block h-1-block w-1-block bg-sandstone-normal"></div><div class="block h-1-block w-1-block bg-sandstone-smooth"></div><div class="block h-1-block w-1-block bg-sea-lantern"></div><div class="block h-1-block w-1-block bg-slime"></div><div class="block h-1-block w-1-block bg-snow"></div><div class="block h-1-block w-1-block bg-soul-sand"></div><div class="block h-1-block w-1-block bg-spawner"></div><div class="block h-1-block w-1-block bg-sponge-beta"></div><div class="block h-1-block w-1-block bg-sponge-wet"></div><div class="block h-1-block w-1-block bg-sponge"></div><div class="block h-1-block w-1-block bg-stone-brick-carved"></div><div class="block h-1-block w-1-block bg-stone-brick-cracked"></div><div class="block h-1-block w-1-block bg-stone-brick-mossy"></div><div class="block h-1-block w-1-block bg-stone-brick"></div><div class="block h-1-block w-1-block bg-stone-slab-double"></div><div class="block h-1-block w-1-block bg-stone-slab-full"></div><div class="block h-1-block w-1-block bg-stone"></div><div class="block h-1-block w-1-block bg-tnt"></div><div class="block h-1-block w-1-block bg-water-flow"></div><div class="block h-1-block w-1-block bg-water-still"></div><div class="block h-1-block w-1-block bg-wool-black"></div><div class="block h-1-block w-1-block bg-wool-blue"></div><div class="block h-1-block w-1-block bg-wool-brown"></div><div class="block h-1-block w-1-block bg-wool-cyan"></div><div class="block h-1-block w-1-block bg-wool-gray"></div><div class="block h-1-block w-1-block bg-wool-green"></div><div class="block h-1-block w-1-block bg-wool-light-blue"></div><div class="block h-1-block w-1-block bg-wool-light-gray"></div><div class="block h-1-block w-1-block bg-wool-lime"></div><div class="block h-1-block w-1-block bg-wool-magenta"></div><div class="block h-1-block w-1-block bg-wool-orange"></div><div class="block h-1-block w-1-block bg-wool-pink"></div><div class="block h-1-block w-1-block bg-wool-purple"></div><div class="block h-1-block w-1-block bg-wool-red"></div><div class="block h-1-block w-1-block bg-wool-white"></div><div class="block h-1-block w-1-block bg-wool-yellow"></div>    
+    </div>
+    <span class="self-center font-bold text-white">...and More!</span>
+    <h3 class=" underline text-3xl text-white">Items</h3>
+    <div class="flex flex-wrap justify-center">
+        { items.map(item => {
+            return <div class={`block h-1-block w-1-block bg-i-${item}`}></div>
         })}
     </div>
-    <h3 class=" underline text-3xl text-white">Borders</h3>
-    <div class="flex flex-wrap justify-center gap-5">
-        <div class="h-2-block w-2-block mc-gui"></div>
-        <div class="h-2-block w-2-block mc-gui-dark"></div>
-        <div class="h-2-block w-2-block mc-gui-darker"></div>
-        <div class="h-2-block w-2-block mc-gui-75"></div>
-        <div class="h-2-block w-2-block mc-gui-dark-75"></div>
-        <div class="h-2-block w-2-block mc-gui-darker-75"></div>
-        <div class="h-2-block w-2-block mc-gui-50"></div>
-        <div class="h-2-block w-2-block mc-gui-dark-50"></div>
-        <div class="h-2-block w-2-block mc-gui-darker-50"></div>
-        <div class="h-2-block w-2-block mc-gui-25"></div>
-        <div class="h-2-block w-2-block mc-gui-dark-25"></div>
-        <div class="h-2-block w-2-block mc-gui-darker-25"></div>
-        <div class="h-1-block w-1-block mc-item-slot"></div>
+    <span class="self-center font-bold text-white">...and More!</span>
+    <h3 class=" underline text-3xl text-white">Buttons</h3>
+    <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
+        <a class="button py-2 px-4 text-lg">XS</a>
+        <a class="button py-2 px-4 text-lg">Small</a>
+        <a class="button py-2 px-4 text-lg">Larger Button</a>
+        <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+        <a class="button py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</a>
     </div>
+    <h3 class=" underline text-3xl text-white">GUIs</h3>
+    <div class="flex flex-col items-center gap-3">
+        <div class="flex gap-3">
+          <div class="h-2-block w-2-block gui"></div>
+          <div class="h-2-block w-2-block gui-75"></div>
+          <div class="h-2-block w-2-block gui-50"></div>
+          <div class="h-2-block w-2-block gui-25"></div>
+        </div>
+        <div class="flex gap-3">
+          <div class="h-2-block w-2-block gui-dark"></div>
+          <div class="h-2-block w-2-block gui-dark-75"></div>
+          <div class="h-2-block w-2-block gui-dark-50"></div>
+          <div class="h-2-block w-2-block gui-dark-25"></div>
+        </div>
+        <div class="flex gap-3">
+          <div class="h-2-block w-2-block gui-darker"></div>
+          <div class="h-2-block w-2-block gui-darker-75"></div>
+          <div class="h-2-block w-2-block gui-darker-50"></div>
+          <div class="h-2-block w-2-block gui-darker-25"></div>
+        </div>
+        <div class="flex gap-3">
+          <div class="h-1-block w-1-block gui-slot"></div>
+          <div class="h-1-block w-1-block gui-slot-75"></div>
+          <div class="h-1-block w-1-block gui-slot-50"></div>
+          <div class="h-1-block w-1-block gui-slot-25"></div>
+        </div>
+      </div>
     <h3 class=" underline text-3xl text-white">Tables</h3>
-    <table class="self-center mc-table w-min whitespace-nowrap">
+    <table class="self-center table w-min whitespace-nowrap">
         <thead>
             <tr>
                 <th>ID</th>
@@ -65,35 +90,34 @@ const blocks = files.map(file => {
             </tr>
         </tbody>
     </table>
-    <h3 class=" underline text-3xl text-white">Buttons</h3>
-    <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
-        <a class="mc-button py-2 px-4 text-lg">XS</a>
-        <a class="mc-button py-2 px-4 text-lg">Small</a>
-        <a class="mc-button py-2 px-4 text-lg">Larger Button</a>
-        <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
-        <a class="mc-button py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</a>
+    <h3 class=" underline text-3xl text-white">Maps</h3>
+    <div class="flex flex-row-reverse flex-wrap items-center justify-center gap-5">
+        <div class="h-1-block w-1-block map"></div>
+        <div class="h-2-block w-2-block map"></div>
+        <div class="h-3-block w-3-block map"></div>
+        <div class="h-5-block w-5-block [--map-zoom:2] map"></div>
     </div>
     <h3 class=" underline text-3xl text-white">Scrollbar</h3>
     <div class="flex flex-wrap justify-center gap-5">
-        <div class="mc-scrollbar h-1-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-1-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-2-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-2-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-3-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-3-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-4-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-4-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-3-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-3-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-2-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-2-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
-        <div class="mc-scrollbar h-1-block w-[1rem] overflow-y-auto">
+        <div class="scrollbar h-1-block w-[1rem] overflow-y-auto">
             <div class="h-5-block"></div>
         </div>
     </div>
@@ -111,20 +135,20 @@ const blocks = files.map(file => {
     </div>
     <h3 class=" underline text-3xl text-white">Colors</h3>
     <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
-        <p class="text-mc-dark-blue">dark-blue</p>
-        <p class="text-mc-dark-green">dark-green</p>
-        <p class="text-mc-dark-aqua">dark-aqua</p>
-        <p class="text-mc-dark-red">dark-red</p>
-        <p class="text-mc-dark-purple">dark-purple</p>
-        <p class="text-mc-gold">gold</p>
-        <p class="text-mc-gray">gray</p>
-        <p class="text-mc-dark-gray">dark-gray</p>
-        <p class="text-mc-blue">blue</p>
-        <p class="text-mc-green">green</p>
-        <p class="text-mc-aqua">aqua</p>
-        <p class="text-mc-red">red</p>
-        <p class="text-mc-light-purple">light-purple</p>
-        <p class="text-mc-yellow">yellow</p>
+        <p class="text-dark-blue">dark-blue</p>
+        <p class="text-dark-green">dark-green</p>
+        <p class="text-dark-aqua">dark-aqua</p>
+        <p class="text-dark-red">dark-red</p>
+        <p class="text-dark-purple">dark-purple</p>
+        <p class="text-gold">gold</p>
+        <p class="text-gray">gray</p>
+        <p class="text-dark-gray">dark-gray</p>
+        <p class="text-blue">blue</p>
+        <p class="text-green">green</p>
+        <p class="text-aqua">aqua</p>
+        <p class="text-red">red</p>
+        <p class="text-light-purple">light-purple</p>
+        <p class="text-yellow">yellow</p>
     </div>
 </div>
 </Base>

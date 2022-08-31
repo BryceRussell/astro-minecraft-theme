@@ -15,7 +15,8 @@ Build with blocks, display items, create Minecraft GUIs, and more. This is a Min
 - Repeating block backgrounds
 - Block based sizes
 - Create GUIs using panels, slots, and buttons
-- Minecraft typography using the `Minecraft` font, in game text colors, and minecrafts classic text shadows
+- Misc UIs like maps, signs, and item frames
+- Minecraft typography using the `Minecraft` font, in game text colors, and minecrafts classic text shadow
 
 ###  <u>Assets</u>
 
@@ -37,7 +38,7 @@ This template comes preloaded with hundreds of common minecraft textures and com
 
 ###  <u>Styles</u>
   
-#### <u>Tailwindcss Classes</u>
+#### Tailwindcss Classes
 
 This theme includes a minecraft themed extension for tailwindcss. Tailwind also makes it easy to dynamicaly create classes for blocks and items
 
@@ -48,7 +49,7 @@ This theme includes a minecraft themed extension for tailwindcss. Tailwind also 
   - UI colors
   - Fonts
 
-#### <u>Custom Classes</u>
+#### Custom Classes
 
 Some styles are too complicated for tailwindcss, these styles have been bundled into easy to use classes
 

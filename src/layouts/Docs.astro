@@ -6,7 +6,7 @@ let docs = await Astro.glob('../pages/docs/*.md');
 const index = docs.pop()
 
 const depth_class_map = {
-    1: "text-lg text-mc-yellow",
+    1: "text-lg text-yellow",
     2: "ml-2 text-md",
     3: "ml-4 italic text-sm",
 }
@@ -14,22 +14,22 @@ const depth_class_map = {
 
 <Base footer={false}>
     <div class="h-full min-h-[var(--main-height)] flex">
-        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block block bg-stone-brick mc-scrollbar">
+        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block block bg-stone-brick scrollbar">
                 <div class="flex flex-col h-min gap-2 py-5 px-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
                     return (
                         <Fragment>
                             {headings.length > 0 &&                        
-                                <nav class="mc-gui-50 p-1">
-                                    <div class="flex flex-col gap-1 py-2 px-3 mc-gui-slot-75 text-white">                                        
+                                <nav class="gui-75 p-1">
+                                    <div class="flex flex-col gap-1 py-2 px-3 gui-slot-75 text-white">                                        
                                         { headings.map((heading) => {
                                             if (heading.depth > 3) return
                                             return <a 
                                                 href={`${h.url}#${heading.slug}`}
                                                 class:list={[
                                                     depth_class_map[heading.depth],
-                                                    "hover:underline mc-text-shadow"
+                                                    "hover:underline text-shadow-sm"
                                                 ]}
                                             >
                                                 {heading.text}
@@ -44,7 +44,7 @@ const depth_class_map = {
                 </div>
         </aside>
         <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_6))]">
-            <div class="h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 mc-markdown">
+            <div class="h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 markdown">
                 <slot />
             </div>
             <Footer class="[--block-size:56px]" />

@@ -1,13 +1,14 @@
 /* 
-mc-table
-mc-gui
-mc-gui-dark
-mc-gui-darker
-mc-gui-slot
-mc-button
-mc-link
-mc-text-shadow
-mc-markdown
+table
+gui
+gui-dark
+gui-darker
+gui-slot
+button
+link
+text-shadow (sm,lg,xl)
+markdown
+map + --map-zoom
 
 bg-dark-25
 bg-dark-50
@@ -18,127 +19,332 @@ bg-dark-75
     --block-size: 48px;
 }
 
-.mc-markdown {
+.block {
+    image-rendering: pixelated;
+    background-size: var(--block-size);
+}
+
+.map {
+    --map-zoom: 4;
+    box-sizing: content-box;
+    border-width: calc(var(--block-size) / var(--map-zoom));
+    border-image: url('../imgs/ui/map.png');
+    border-image-width: calc(var(--block-size) / var(--map-zoom));
+    border-image-slice: 12.5% 12.5% fill;
+    border-image-repeat: repeat;
+}
+
+.button {
+    user-select: none;
+    cursor: pointer;
+    image-rendering: pixelated;
+    background-size: cover;
+    background-image: url('../imgs/ui/minecraft-button-inside.png');
+    border-width: 2px;
+    border-image: url('../imgs/ui/minecraft-button-border.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #d1d5db;
+}
+
+.button:hover {
+    background-image: url('../imgs/ui/minecraft-button-inside-hover.png');
+    border-width: 2px;
+    border-image: url('../imgs/ui/minecraft-button-border-hover.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #fef08a;
+}
+
+.button:active, .minecraft-button:focus {
+    background-image: url('../imgs/ui/minecraft-button-inside-active.png');
+    border-width: 2px;
+    border-image: url('../imgs/ui/minecraft-button-border-active.png');
+    border-image-width: 6px;
+    border-image-slice: 10% 3.25%;
+    border-image-repeat: stretch;
+    color: #a8a29e;
+}
+
+/* width */
+.scrollbar::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    border-width: 2px;
+    border-image: url('../imgs/ui/scroll-thumb.png');
+    border-image-width: 2px;
+    border-image-slice: 25% 25% fill;
+    border-image-repeat: stretch;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:active {
+    border-width: 2px;
+    border-image: url('../imgs/ui/scroll-thumb-active.png');
+    border-image-width: 2px;
+    border-image-slice: 25% 25% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-slot,
+.table td,
+.markdown td,
+.scrollbar::-webkit-scrollbar-track {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-slot.png');
+    border-image-width: 2px;
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
+.markdown {
     overflow: hidden;
     font-family: Minecraft;
     font-size: 1rem;
     color: #fff;
 }
 
-.mc-markdown p {
+.markdown p {
     margin: 1rem 0;
 }
 
-.mc-link, .mc-markdown a:not(.mc-button) {
+.link, .markdown a:not(.button) {
     text-shadow: none;
     color: #aaaaff;
 }
 
-.mc-link, .mc-markdown a:not(.mc-button):hover {
+.link, .markdown a:not(.button):hover {
     text-decoration: underline;
 }
 
-.mc-markdown h1 {
+.markdown h1 {
     margin: 0.5rem 0;
     text-align: center;
-    font-size: 2.75rem;
+    font-size: 3rem;
 }
 
-.mc-markdown h2 {
+.markdown h2 {
     margin: 0.5rem 0;
-    font-size: 2.25rem;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
-.mc-markdown h3 {
+.markdown h3 {
     margin: 0.5rem 0;
-    font-size: 1.75rem;
+    font-size: 2rem;
 }
 
-.mc-markdown h4 {
+.markdown h4 {
     margin: 0.5rem 0;
     font-size: 1.50rem;
 }
 
-.mc-markdown h5 {
+.markdown h5 {
     margin: 0.5rem 0;
     font-size: 1.33rem;
 }
 
-.mc-markdown h6 {
+.markdown h6 {
     margin: 0.5rem 0;
     font-size: 1.2rem;
 }
 
-.mc-markdown ul {
+.markdown ul {
     margin: 0 2rem;
 }
 
-.mc-markdown ul li::marker {
+.markdown ul li::marker {
     content: "- ";
     font-size: 0.75rem;
 }
 
-.mc-markdown ol {
+.markdown ol {
     margin: 0.5rem 2rem;
     counter-reset: count;
 }
 
-.mc-markdown ol li {
+.markdown ol li {
     counter-increment: count;
 }
 
-.mc-markdown ol li::marker {
+.markdown ol li::marker {
     content: counter(count) ") ";
     font-size: 1rem;
 }
 
-.mc-markdown blockquote {
+.markdown blockquote {
     margin: 1rem 0;
     padding: 0.5rem 1rem;
 }
 
-.mc-markdown pre {
+.markdown pre {
     overflow-x: visible !important;
     padding: 0.5rem 1rem;
 }
 
-.mc-markdown pre code span {
+.markdown pre code span {
     font-family: Minecraft !important;
     white-space: normal;
 }
 
-.mc-markdown :not(pre) code {
+.markdown :not(pre) code {
     font-family: Minecraft !important;
     padding: 0.25rem 0.5rem;
     letter-spacing: 0.025em;
     font-size: 0.75rem;
 }
 
-.mc-markdown hr {
+.markdown hr {
     height: 5px;
     margin: 1rem 0;
     border-width: 4px !important;
 }
 
-.mc-table, .mc-markdown table {
+.table, .markdown table {
     border-collapse: separate;
     padding: 0.5rem;
 }
 
-.mc-table th, .mc-markdown th {
+.table th, .markdown th {
     font-weight: normal;
     font-size: 1.2rem;
     color: #3d3c3d;
 }
 
-.mc-table td, .mc-markdown td {
+.table td, .markdown td {
     padding: 0 0.25rem;
-    /* color: #fff; */
+    color: #fff;
 }
 
-[class*="bg-dark"] {
-    height: 100%;
-    width: 100%; 
+.gui-slot-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-slot-75.png');
+    border-image-width: 2px;
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-slot-50 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-slot-50.png');
+    border-image-width: 2px;
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-slot-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-slot-25.png');
+    border-image-width: 2px;
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
+.gui,
+.markdown hr,
+.markdown blockquote,
+.table,
+.markdown table {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-50 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-75.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-dark {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-dark-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-dark-50,
+.markdown :not(pre) code {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-dark-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-dark-75.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-darker,
+.markdown pre {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-darker-25 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-25.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-darker-50 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-50.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
+}
+
+.gui-darker-75 {
+    border-width: 2px;
+    border-image: url('../imgs/ui/gui-darker-75.png');
+    border-image-width: 6px;
+    border-image-slice: 33% 33% fill;
+    border-image-repeat: stretch;
 }
 
 .bg-dark-25 {
@@ -153,218 +359,35 @@ bg-dark-75
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
 }
 
-.mc-text-shadow,
-.mc-table td,
-.mc-button,
-.mc-markdown p,
-.mc-markdown h1,
-.mc-markdown h2,
-.mc-markdown h3,
-.mc-markdown h4,
-.mc-markdown h5,
-.mc-markdown h6,
-.mc-markdown ul,
-.mc-markdown :not(pre) code,
-.mc-markdown blockquote, 
-.mc-markdown td {
+.text-shadow-xs {
+    text-shadow: 0.75px 0.75px #000;
+}
+
+.text-shadow-sm {
+    text-shadow: 1px 1px #000;
+}
+
+.text-shadow,
+.table td,
+.button,
+.markdown p,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown ul,
+.markdown :not(pre) code,
+.markdown blockquote, 
+.markdown td {
     text-shadow: 1.5px 1.5px #000;
 }
 
-.block {
-    image-rendering: pixelated;
-    background-size: var(--block-size);
+.text-shadow-lg {
+    text-shadow: 2px 2px #000;
 }
 
-.mc-gui-slot,
-.mc-table td,
-.mc-markdown td,
-.mc-scrollbar::-webkit-scrollbar-track {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-slot.png');
-    border-image-width: 2px;
-    border-image-slice: 6% 6% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-slot-75 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-slot-75.png');
-    border-image-width: 2px;
-    border-image-slice: 6% 6% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-slot-50 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-slot-50.png');
-    border-image-width: 2px;
-    border-image-slice: 6% 6% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-slot-25 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-slot-25.png');
-    border-image-width: 2px;
-    border-image-slice: 6% 6% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui,
-.mc-markdown hr,
-.mc-markdown blockquote,
-.mc-table,
-.mc-markdown table {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-25 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-25.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-50 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-50.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-75 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-75.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-dark {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-dark.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-dark-25 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-dark-25.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-dark-50,
-.mc-markdown :not(pre) code {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-dark-50.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-dark-75 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-dark-75.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-darker,
-.mc-markdown pre {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-darker.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-darker-25 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-darker-25.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-darker-50 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-darker-50.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-gui-darker-75 {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-darker-75.png');
-    border-image-width: 6px;
-    border-image-slice: 33% 33% fill;
-    border-image-repeat: stretch;
-}
-
-.mc-button {
-    user-select: none;
-    cursor: pointer;
-    image-rendering: pixelated;
-    background-size: cover;
-    background-image: url('../imgs/ui/minecraft-button-inside.png');
-    border-width: 2px;
-    border-image: url('../imgs/ui/minecraft-button-border.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
-    border-image-repeat: stretch;
-    color: #d1d5db;
-}
-
-.mc-button:hover {
-    background-image: url('../imgs/ui/minecraft-button-inside-hover.png');
-    border-width: 2px;
-    border-image: url('../imgs/ui/minecraft-button-border-hover.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
-    border-image-repeat: stretch;
-    color: #fef08a;
-}
-
-.mc-button:active, .minecraft-button:focus {
-    background-image: url('../imgs/ui/minecraft-button-inside-active.png');
-    border-width: 2px;
-    border-image: url('../imgs/ui/minecraft-button-border-active.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
-    border-image-repeat: stretch;
-    color: #a8a29e;
-}
-
-/* width */
-.mc-scrollbar::-webkit-scrollbar {
-    width: 15px;
-}
-
-/* Handle */
-.mc-scrollbar::-webkit-scrollbar-thumb {
-    border-width: 2px;
-    border-image: url('../imgs/ui/scroll-thumb.png');
-    border-image-width: 2px;
-    border-image-slice: 25% 25% fill;
-    border-image-repeat: stretch;
-}
-
-/* Handle on hover */
-.mc-scrollbar::-webkit-scrollbar-thumb:active {
-    border-width: 2px;
-    border-image: url('../imgs/ui/scroll-thumb-active.png');
-    border-image-width: 2px;
-    border-image-slice: 25% 25% fill;
-    border-image-repeat: stretch;
+.text-shadow-xl {
+    text-shadow: 2.5px 2.5px #000;
 }
