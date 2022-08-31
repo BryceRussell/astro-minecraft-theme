@@ -19,51 +19,62 @@ bg-dark-75
     --block-size: 48px;
 }
 
-.block {
+[class*="bg-"] {
     image-rendering: pixelated;
     background-size: var(--block-size);
 }
 
 .map {
-    --map-zoom: 4;
+    --zoom: 4;
     box-sizing: content-box;
-    border-width: calc(var(--block-size) / var(--map-zoom));
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/map.png');
-    border-image-width: calc(var(--block-size) / var(--map-zoom));
-    border-image-slice: 12.5% 12.5% fill;
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 12.75% 15.75% fill;
     border-image-repeat: repeat;
 }
 
+.book,
+.markdown blockquote {
+    --zoom: 1.25;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/book.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 12% 15% fill;
+    border-image-repeat: stretch;
+}
+
 .button {
+    --zoom: 8;
     user-select: none;
     cursor: pointer;
     image-rendering: pixelated;
     background-size: cover;
     background-image: url('../imgs/ui/minecraft-button-inside.png');
-    border-width: 2px;
+    border-width: calc(var(--block-size) / var(--zoom) / 2);
     border-image: url('../imgs/ui/minecraft-button-border.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #d1d5db;
 }
 
 .button:hover {
     background-image: url('../imgs/ui/minecraft-button-inside-hover.png');
-    border-width: 2px;
+    border-width: calc(var(--block-size) / var(--zoom) / 2);
     border-image: url('../imgs/ui/minecraft-button-border-hover.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #fef08a;
 }
 
 .button:active, .minecraft-button:focus {
     background-image: url('../imgs/ui/minecraft-button-inside-active.png');
-    border-width: 2px;
+    border-width: calc(var(--block-size) / var(--zoom) / 2);
     border-image: url('../imgs/ui/minecraft-button-border-active.png');
-    border-image-width: 6px;
-    border-image-slice: 10% 3.25%;
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #a8a29e;
 }
@@ -75,30 +86,21 @@ bg-dark-75
 
 /* Handle */
 .scrollbar::-webkit-scrollbar-thumb {
-    border-width: 2px;
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb.png');
-    border-image-width: 2px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 25% 25% fill;
     border-image-repeat: stretch;
 }
 
 /* Handle on hover */
 .scrollbar::-webkit-scrollbar-thumb:active {
-    border-width: 2px;
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb-active.png');
-    border-image-width: 2px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 25% 25% fill;
-    border-image-repeat: stretch;
-}
-
-.gui-slot,
-.table td,
-.markdown td,
-.scrollbar::-webkit-scrollbar-track {
-    border-width: 2px;
-    border-image: url('../imgs/ui/gui-slot.png');
-    border-image-width: 2px;
-    border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
 }
 
@@ -109,7 +111,7 @@ bg-dark-75
     color: #fff;
 }
 
-.markdown p {
+.markdown > p {
     margin: 1rem 0;
 }
 
@@ -179,7 +181,7 @@ bg-dark-75
 
 .markdown blockquote {
     margin: 1rem 0;
-    padding: 0.5rem 1rem;
+    color: #000;
 }
 
 .markdown pre {
@@ -221,128 +223,154 @@ bg-dark-75
     color: #fff;
 }
 
+.gui-slot,
+.table td,
+.markdown td,
+.scrollbar::-webkit-scrollbar-track {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/gui-slot.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 6% 6% fill;
+    border-image-repeat: stretch;
+}
+
 .gui-slot-75 {
-    border-width: 2px;
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-slot-75.png');
-    border-image-width: 2px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
 }
 
 .gui-slot-50 {
-    border-width: 2px;
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-slot-50.png');
-    border-image-width: 2px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
 }
 
 .gui-slot-25 {
-    border-width: 2px;
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-slot-25.png');
-    border-image-width: 2px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
 }
 
 .gui,
 .markdown hr,
-.markdown blockquote,
 .table,
 .markdown table {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-25 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-25.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-50 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-50.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-75 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-75.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-dark {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-dark.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-dark-25 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-dark-25.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-dark-50,
 .markdown :not(pre) code {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-dark-50.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-dark-75 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-dark-75.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-darker,
 .markdown pre {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-darker.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-darker-25 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-darker-25.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-darker-50 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-darker-50.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
 
 .gui-darker-75 {
-    border-width: 2px;
+    --zoom: 8;
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/gui-darker-75.png');
-    border-image-width: 6px;
+    border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33% 33% fill;
     border-image-repeat: stretch;
 }
@@ -370,7 +398,7 @@ bg-dark-75
 .text-shadow,
 .table td,
 .button,
-.markdown p,
+.markdown > p,
 .markdown h1,
 .markdown h2,
 .markdown h3,
@@ -379,7 +407,6 @@ bg-dark-75
 .markdown h6,
 .markdown ul,
 .markdown :not(pre) code,
-.markdown blockquote, 
 .markdown td {
     text-shadow: 1.5px 1.5px #000;
 }

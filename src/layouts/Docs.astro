@@ -14,7 +14,7 @@ const depth_class_map = {
 
 <Base footer={false}>
     <div class="h-full min-h-[var(--main-height)] flex">
-        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block block bg-stone-brick scrollbar">
+        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block bg-stone-brick scrollbar">
                 <div class="flex flex-col h-min gap-2 py-5 px-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
@@ -44,7 +44,7 @@ const depth_class_map = {
                 </div>
         </aside>
         <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_6))]">
-            <div class="h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 markdown">
+            <div class="flex flex-col h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 markdown">
                 <slot />
             </div>
             <Footer class="[--block-size:56px]" />

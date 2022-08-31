@@ -22,7 +22,7 @@ fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
 });
 //Create item backgrounds like 'bg-i-diamond' from a dir and safelist them
 fs.readdirSync(`./public/${ITEM_DIR}`).forEach(file => {
-	const item_name = `i-${file.split('.')[0]}`
+	const item_name = `item-${file.split('.')[0]}`
 	background_obj[item_name] = `url('/${ITEM_DIR}/${file}')`
 	safelist_array.push(`bg-${item_name}`)
 });
@@ -57,6 +57,7 @@ module.exports = {
 		},
 		extend: {
 			colors: {
+				//Text colors
 				'dark-blue': '#0000AA',
 				'dark-green': '#00AA00',
 				'dark-aqua': '#00AAAA',
@@ -71,9 +72,42 @@ module.exports = {
 				'red': '#FF5555',
 				'light-purple': '#FF55FF',
 				'yellow': '#FFFF55',
+				//Biome colors
+				grass: {
+					'jungle': '#59C93C',
+					'dark-forest': '#507A32',
+					'swamp-green': '#4C763C',
+					'plains': '#91BD59',
+					'forest': '#79C05A',
+					'birch-forest': '#88BB67',
+					'ocean': '#8EB971',
+					'meadow': '#83BB6D',
+					'tiaga': '#86B783',
+					'snowy': '#80B497',
+					'swamp': '#6A7039',
+					'badlands': '#90814D',
+					'desert': '#BFB755'
+				},
+				foilage: {
+					'jungle': '#30BB0B',
+					'dark-forest': '#507A32',
+					'swamp-green': '#4C763C',
+					'plains': '#77AB2F',
+					'forest': '#59AE30',
+					'birch-forest': '#6BA941',
+					'ocean': '#71A74D',
+					'meadow': '#63A948',
+					'tiaga': '#68A464',
+					'snowy': '#60A17B',
+					'swamp': '#6A7039',
+					'badlands': '#9E814D',
+					'desert': '#AEA42A'
+				},
 				//Misc
 				"link": "#aaaaff",
-				"gui": "#C6C6C6"
+				"gui": "#C6C6C6",
+				"gui-dark": "#5F5F5F",
+				"gui-darker": "#373737"
 			},
 			backgroundImage: {
 				...background_obj
@@ -82,6 +116,7 @@ module.exports = {
 				'1/2-block': 'calc(var(--block-size) / 2)',
 				'1/4-block': 'calc(var(--block-size) / 4)',
 				'1/8-block': 'calc(var(--block-size) / 8)',
+				'1/16-block': 'calc(var(--block-size) / 16)',
 				...spacing_obj
 			}
 		},
