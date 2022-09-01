@@ -17,6 +17,26 @@ bg-dark-75
 
 :where(body) {
     --block-size: 48px;
+    
+    --1\/16--block: calc(var(--block-size) / 16);
+    --1\/8-block: calc(var(--block-size) / 8);
+    --1\/4-block: calc(var(--block-size) / 4);
+    --1\/2-block: calc(var(--block-size) / 2);
+    --1-block: calc(var(--block-size) * 1);
+    --2-block: calc(var(--block-size) * 2);
+    --3-block: calc(var(--block-size) * 3);
+    --4-block: calc(var(--block-size) * 4);
+    --5-block: calc(var(--block-size) * 5);
+    --6-block: calc(var(--block-size) * 6);
+    --7-block: calc(var(--block-size) * 7);
+    --8-block: calc(var(--block-size) * 8);
+    --9-block: calc(var(--block-size) * 9);
+    --10-block: calc(var(--block-size) * 10);
+    --11-block: calc(var(--block-size) * 11);
+    --12-block: calc(var(--block-size) * 12);
+
+    --zoom: 1;
+    --zoom-width: calc(var(--block-size) / var(--zoom));
 }
 
 [class*="bg-"] {
@@ -36,12 +56,26 @@ bg-dark-75
 
 .book,
 .markdown blockquote {
-    --zoom: 1.25;
+    --zoom: 1.5;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/book.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 12% 15% fill;
+    border-image-slice: 8.5% 15% 12.75% 10% fill;
     border-image-repeat: stretch;
+    font-size: 0.9rem;
+    color: #000;
+    text-shadow: none;
+}
+
+.sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-image: url('../imgs/ui/sign.png');
+    white-space: pre-line;
+    color: #000;
 }
 
 .button {
@@ -51,7 +85,7 @@ bg-dark-75
     image-rendering: pixelated;
     background-size: cover;
     background-image: url('../imgs/ui/minecraft-button-inside.png');
-    border-width: calc(var(--block-size) / var(--zoom) / 2);
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/minecraft-button-border.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 10% 3%;
@@ -60,8 +94,9 @@ bg-dark-75
 }
 
 .button:hover {
+    background-size: cover;
     background-image: url('../imgs/ui/minecraft-button-inside-hover.png');
-    border-width: calc(var(--block-size) / var(--zoom) / 2);
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/minecraft-button-border-hover.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 10% 3%;
@@ -70,12 +105,13 @@ bg-dark-75
 }
 
 .button:active, .minecraft-button:focus {
+    background-size: cover;
     background-image: url('../imgs/ui/minecraft-button-inside-active.png');
-    border-width: calc(var(--block-size) / var(--zoom) / 2);
+    border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/minecraft-button-border-active.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 10% 3%;
-    border-image-repeat: stretch;
+    border-image-repeat: contain;
     color: #a8a29e;
 }
 
@@ -112,7 +148,7 @@ bg-dark-75
 }
 
 .markdown > p {
-    margin: 1rem 0;
+    margin: 1rem 0.5rem;
 }
 
 .link, .markdown a:not(.button) {
@@ -126,14 +162,12 @@ bg-dark-75
 
 .markdown h1 {
     margin: 0.5rem 0;
-    text-align: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .markdown h2 {
     margin: 0.5rem 0;
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
 }
 
 .markdown h3 {
@@ -142,17 +176,17 @@ bg-dark-75
 }
 
 .markdown h4 {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     font-size: 1.50rem;
 }
 
 .markdown h5 {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     font-size: 1.33rem;
 }
 
 .markdown h6 {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     font-size: 1.2rem;
 }
 
@@ -180,8 +214,10 @@ bg-dark-75
 }
 
 .markdown blockquote {
+    --block-size: 48px;
+    min-height: var(--4-block);
     margin: 1rem 0;
-    color: #000;
+    padding: 0.5rem;
 }
 
 .markdown pre {
@@ -194,12 +230,17 @@ bg-dark-75
     white-space: normal;
 }
 
-.markdown :not(pre) code {
+.markdown code {
     font-family: Minecraft !important;
-    padding: 0.25rem 0.5rem;
-    letter-spacing: 0.025em;
+    padding: 2px 5px;
+    letter-spacing: 0.025rem;
+}
+
+.markdown :not(pre,h1,h2,h3,h4,h5,h6) code {
     font-size: 0.75rem;
 }
+
+
 
 .markdown hr {
     height: 5px;

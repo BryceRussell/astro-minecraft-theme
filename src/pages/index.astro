@@ -15,7 +15,6 @@ const paintings = painting_files.map(file => {
 
 <Base>
 <div class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2">
-    <div class="py-1 px-3 button">Hunter</div>
     <h3 class=" underline text-2xl sm:text-4xl text-white">Astro Minecraft Theme</h3>
     <p class="indent-5 text-white">
         This template makes creating a minecraft themed website super easy! Check out the <a href="/docs" class="text-link hover:underline">docs</a> 
@@ -37,18 +36,19 @@ const paintings = painting_files.map(file => {
     <div class="flex flex-wrap justify-center gap-15">
         {paintings.map(painting => {
             return (
-                <img src={`/imgs/paintings/${painting}.png`} class="object-contain m-14 [transform:scale(2.5)]" />
+                <img src={`/imgs/paintings/${painting}.png`} class="object-contain m-[3rem] [transform:scale(2.5)]" />
             )
         })}
     </div>
     <h3 class=" underline text-3xl text-white">Buttons</h3>
-    <div class="flex flex-wrap items-center justify-center gap-1 whitespace-nowrap">
-        <a class="button py-2 px-4 text-lg">XS</a>
-        <a class="button py-2 px-4 text-lg">Small</a>
-        <a class="button py-2 px-4 text-lg">Larger Button</a>
+    <div class="flex flex-wrap items-center justify-center gap-1">
+        <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
+        <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
+        <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
         <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
         <a class="button py-2 px-4 text-lg whitepsace-nowrap">An Even Looooooooonger Button</a>
         <a class="button py-2 px-4 text-lg whitepsace-nowrap">The absolute Looooooooooooooooooooooongest Button</a>
+        <a class="button py-2 px-4 text-lg">The absolute Looooooooooooooooooooooongest Button The absolute Looooooooooooooooooooooongest Button</a>
     </div>
     <h3 class=" underline text-3xl text-white">GUIs</h3>
     <div class="flex flex-col items-center gap-3">
@@ -109,12 +109,13 @@ const paintings = painting_files.map(file => {
         <div class="h-1-block w-1-block map"></div>
         <div class="h-2-block w-2-block map"></div>
         <div class="h-3-block w-3-block map"></div>
+        <div class="h-5-block w-5-block [--zoom:2] map"></div>
     </div>
     <h3 class=" underline text-3xl text-white">Books</h3>
-    <div class="flex flex-row-reverse flex-wrap items-center justify-center gap-5">
-        <div class="h-12-block w-9-block book"></div>
-        <div class="h-9-block w-7-block book"></div>
-        <div class="h-5-block w-3-block book [--zoom:1.75]"></div>
+    <div class="flex flex-wrap items-center justify-center gap-5">
+        <div class="h-12-block w-9-block book [--zoom:1] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem?</div>
+        <div class="h-9-block w-7-block book">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta quidem nihil nisi inventore, velit vitae ea beatae reprehenderit laboriosam nemo quam, natus architecto possimus tempora?</div>
+        <div class="flex h-5-block w-7-block book [--zoom:1.5] items-center text-center text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum optio officiis reprehenderit recusandae quas amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum optio officiis reprehenderit recusandae quas amet.</div>
     </div>
     <h3 class=" underline text-3xl text-white">Fonts</h3>
     <div class="flex flex-col items-center gap-3 whitespace-nowrap text-white">
@@ -129,6 +130,7 @@ const paintings = painting_files.map(file => {
         </div>
     </div>
     <h3 class=" underline text-3xl text-white">Colors</h3>
+    <h5 class="text-lg text-white">Text</h5>
     <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
         <p class="text-dark-blue">dark-blue</p>
         <p class="text-dark-green">dark-green</p>
@@ -144,6 +146,91 @@ const paintings = painting_files.map(file => {
         <p class="text-red">red</p>
         <p class="text-light-purple">light-purple</p>
         <p class="text-yellow">yellow</p>
+    </div>
+    <h5 class="text-lg text-white">Wool</h5>
+    <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
+        <p class="dd-wool-orange">wool-orange</p>
+        <p class="dd-wool-magenta">wool-magenta</p>
+        <p class="dd-wool-light-blue">wool-light-blue</p>
+        <p class="dd-wool-yellow">wool-yellow</p>
+        <p class="dd-wool-lime">wool-lime</p>
+        <p class="dd-wool-pink">wool-pink</p>
+        <p class="dd-wool-gray">wool-gray</p>
+        <p class="dd-wool-light-gray">wool-light-gray</p>
+        <p class="dd-wool-cyan">wool-cyan</p>
+        <p class="dd-wool-purple">wool-purple</p>
+        <p class="dd-wool-blue">wool-blue</p>
+        <p class="dd-wool-brown">wool-brown</p>
+        <p class="dd-wool-green">wool-green</p>
+        <p class="dd-wool-red">wool-red</p>
+        <p class="dd-wool-black">wool-black</p>
+    </div>
+    <h5 class="dd-lg dd-white">Grass</h5>
+    <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
+        <p class="dd-grass-jungle">grass-jungle</p>
+        <p class="dd-grass-dark-forest">grass-dark-forest</p>
+        <p class="dd-grass-swamp-green">grass-swamp-green</p>
+        <p class="dd-grass-plains">grass-plains</p>
+        <p class="dd-grass-forest">grass-forest</p>
+        <p class="dd-grass-birch-forest">grass-birch-forest</p>
+        <p class="dd-grass-ocean">grass-ocean</p>
+        <p class="dd-grass-meadow">grass-meadow</p>
+        <p class="dd-grass-tiaga">grass-tiaga</p>
+        <p class="dd-grass-snowy">grass-snowy</p>
+        <p class="text-grass-swamp">grass-swamp</p>
+        <p class="text-grass-badlands">grass-badlands</p>
+        <p class="text-grass-desert">grass-desert</p>
+    </div>
+    <h5 class="text-lg text-white">Foilage</h5>
+    <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
+        <p class="text-foilage-jungle">foilage-jungle</p>
+        <p class="text-foilage-dark-forest">foilage-dark-forest</p>
+        <p class="text-foilage-swamp-green">foilage-swamp-green</p>
+        <p class="text-foilage-plains">foilage-plains</p>
+        <p class="text-foilage-forest">foilage-forest</p>
+        <p class="text-foilage-birch-forest">foilage-birch-forest</p>
+        <p class="text-foilage-ocean">foilage-ocean</p>
+        <p class="text-foilage-meadow">foilage-meadow</p>
+        <p class="text-foilage-tiaga">foilage-tiaga</p>
+        <p class="text-foilage-snowy">foilage-snowy</p>
+        <p class="text-foilage-swamp">foilage-swamp</p>
+        <p class="text-foilage-badlands">foilage-badlands</p>
+        <p class="text-foilage-desert">foilage-desert</p>
+    </div>
+    <h5 class="text-lg text-white">Water</h5>
+    <div class="flex flex-wrap items-center justify-center gap-3 whitespace-nowrap">
+        <p class="text-water-ocean-warm">water-ocean-warm</p>
+        <p class="text-water-ocean-lukewarm">water-ocean-lukewarm</p>
+        <p class="text-water-ocean-cold">water-ocean-cold</p>
+        <p class="text-water-ocean-frozen">water-ocean-frozen'
+        <p class="text-water-forest-birch">water-forest-birch</p>
+        <p class="text-water-forest-birch-hills">water-forest-birch-hills</p>
+        <p class="text-water-forest-dark">water-forest-dark</p>
+        <p class="text-water-forest-flower">water-forest-flower</p>
+        <p class="text-water-meadow">water-meadow</p>
+        <p class="text-water-river">water-river</p>
+        <p class="text-water-mountain-gravel">water-mountain-gravel</p>
+        <p class="text-water-mountain">water-mountain</p>
+        <p class="text-water-beach">water-beach</p>
+        <p class="text-water-beach-snowy">water-beach-snowy</p>
+        <p class="text-water-stone-shore">water-stone-shore</p>
+        <p class="text-water-jungle">water-jungle</p>
+        <p class="text-water-jungle-hills">water-jungle-hills</p>
+        <p class="text-water-tiaga">water-tiaga</p>
+        <p class="text-water-tiaga-hills">water-tiaga-hills</p>
+        <p class="text-water-tiaga-snowy">water-tiaga-snowy</p>
+        <p class="text-water-savanna">water-savanna</p>
+        <p class="text-water-savanna-plateau">water-savanna-plateau</p>
+        <p class="text-water-desert">water-desert</p>
+        <p class="text-water-desert-hills">water-desert-hills</p>
+        <p class="text-water-badlands">water-badlands</p>
+        <p class="text-water-badlands-plateau">water-badlands-plateau</p>
+        <p class="text-water-swamp">water-swamp</p>
+        <p class="text-water-swamp-hills">water-swamp-hills</p>
+        <p class="text-water-mushroom">water-mushroom</p>
+        <p class="text-water-mushroom-shore">water-mushroom-shore</p>
+        <p class="text-water-end">water-end</p>
+        <p class="text-water-nether">water-nether</p>
     </div>
 </div>
 </Base>
