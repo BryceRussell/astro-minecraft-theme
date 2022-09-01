@@ -172,13 +172,14 @@ module.exports = {
 				"gui-darker": "#373737"
 			},
 			backgroundImage: {
+				'sign': "url(/imgs/ui/sign.pngs)",
 				...background_obj
 			},
 			spacing: {
-				'1/2-block': 'calc(var(--block-size) / 2)',
-				'1/4-block': 'calc(var(--block-size) / 4)',
-				'1/8-block': 'calc(var(--block-size) / 8)',
 				'1/16-block': 'calc(var(--block-size) / 16)',
+				'1/8-block': 'calc(var(--block-size) / 8)',
+				'1/4-block': 'calc(var(--block-size) / 4)',
+				'1/2-block': 'calc(var(--block-size) / 2)',
 				...spacing_obj
 			}
 		},

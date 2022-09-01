@@ -19,6 +19,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 - Minecraft typography using the `Minecraft` font, text colors, and text shadows
 - 75+ Minecraft themed colors
 - Markdown theme
+- Documentation system
 
 ## Blocks
 
@@ -117,18 +118,18 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
     <h5>Books</h5>
     <div class="h-9-block w-7-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center gap-5">
     <h5>Signs</h5>
-    <div class="h-3-block w-5-block px-1 sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-    <div class="h-4-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg text-dark-blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="h-3-block w-6-block px-1 sign text-2xl text-yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
   </div>
   </div>
   <div class="flex flex-col items-center">
     <h5>Maps</h5>
     <div class="flex items-center gap-3">
-      <div class="h-3-block w-3-block map"></div>
-      <div class="h-2-block w-2-block map"></div>
-      <div class="h-1-block w-1-block map"></div>
+      <div class="h-3-block w-3-block p-1 [--zoom:2] map"><div class="h-full w-full bg-cover bg-painting-burning-skull"></div></div>
+      <div class="h-2-block w-2-block p-1 map"><div class="h-full w-full bg-cover bg-painting-bust"></div></div>
+      <div class="h-1-block w-1-block p-1 map"><div class="h-full w-full bg-cover bg-painting-kebab"></div></div>
     </div>
   </div>
 </div>
@@ -137,7 +138,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 
 ### Text
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-dark-blue">dark-blue</p>
     <p class="text-dark-green">dark-green</p>
     <p class="text-dark-aqua">dark-aqua</p>
@@ -156,7 +157,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 
 ### Wool
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-wool-orange">wool-orange</p>
     <p class="text-wool-magenta">wool-magenta</p>
     <p class="text-wool-light-blue">wool-light-blue</p>
@@ -178,7 +179,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 
 #### Grass
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-grass-jungle">grass-jungle</p>
     <p class="text-grass-dark-forest">grass-dark-forest</p>
     <p class="text-grass-swamp-green">grass-swamp-green</p>
@@ -196,7 +197,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 
 #### Foilage
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-foilage-jungle">foilage-jungle</p>
     <p class="text-foilage-dark-forest">foilage-dark-forest</p>
     <p class="text-foilage-swamp-green">foilage-swamp-green</p>
@@ -214,7 +215,7 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 
 #### Water
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-water-ocean-warm">water-ocean-warm</p>
     <p class="text-water-ocean-lukewarm">water-ocean-lukewarm</p>
     <p class="text-water-ocean-cold">water-ocean-cold</p>
@@ -249,9 +250,9 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
     <p class="text-water-nether">water-nether</p>
 </div>
 
-### Misc colors
+### Misc
 
-<div class="flex flex-wrap gap-3 m-4 whitespace-nowrap">
+<div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-link">link</p>
     <p class="text-gui">gui</p>
     <p class="text-gui-dark">gui-dark</p>
