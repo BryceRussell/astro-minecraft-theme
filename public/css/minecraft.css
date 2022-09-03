@@ -1,22 +1,31 @@
 /* 
-table
-gui
-gui-dark
-gui-darker
-gui-slot
-button
-link
-text-shadow (sm,lg,xl)
-markdown
-map + --map-zoom
-
-bg-dark-25
-bg-dark-50
-bg-dark-75
+Fonts: Minecraft, Minecrafter, Minecraft Alt, Minecraft Evenings
+CSS Variables:
+    --block-size: 48px; all sizing is relative to this property to keep everything tiled together
+    --zoom: 1; Set indiviualy for each class use this property to control how 'zoomed' in or out you want your UI textures to be
+    --1/16-block
+    --1/8-block
+    --1/4-block
+    --1/2-block
+    --(1-32)-block 
+Classes:
+    text-shadow[-(xs|sm|md|lg|xl)]
+    link
+    markdown
+    button
+    scrollbar
+    slot[-(75|50|25)]]
+    bg-dark[-(75|50|25)]
+    panel[-(dark|darker)[-(75|50|25)]]
+    table
+    map
+    book
+    sign
 */
 
 :where(body) {
     --block-size: 48px;
+    --zoom: 1;
     
     --1\/16--block: calc(var(--block-size) / 16);
     --1\/8-block: calc(var(--block-size) / 8);
@@ -34,9 +43,26 @@ bg-dark-75
     --10-block: calc(var(--block-size) * 10);
     --11-block: calc(var(--block-size) * 11);
     --12-block: calc(var(--block-size) * 12);
-
-    --zoom: 1;
-    --zoom-width: calc(var(--block-size) / var(--zoom));
+    --13-block: calc(var(--block-size) * 13);
+    --14-block: calc(var(--block-size) * 14);
+    --15-block: calc(var(--block-size) * 15);
+    --16-block: calc(var(--block-size) * 16);
+    --17-block: calc(var(--block-size) * 17);
+    --18-block: calc(var(--block-size) * 18);
+    --19-block: calc(var(--block-size) * 19);
+    --20-block: calc(var(--block-size) * 20);
+    --21-block: calc(var(--block-size) * 21);
+    --22-block: calc(var(--block-size) * 22);
+    --23-block: calc(var(--block-size) * 23);
+    --24-block: calc(var(--block-size) * 24);
+    --25-block: calc(var(--block-size) * 25);
+    --26-block: calc(var(--block-size) * 26);
+    --27-block: calc(var(--block-size) * 27);
+    --28-block: calc(var(--block-size) * 28);
+    --29-block: calc(var(--block-size) * 29);
+    --30-block: calc(var(--block-size) * 30);
+    --31-block: calc(var(--block-size) * 31);
+    --32-block: calc(var(--block-size) * 32);
 }
 
 [class*="bg-"] {
@@ -90,9 +116,7 @@ bg-dark-75
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #d1d5db;
-}
-
-.button:hover {
+} .button:hover {
     background-size: cover;
     background-image: url('../imgs/ui/button-inside-hover.png');
     border-width: calc(var(--block-size) / var(--zoom));
@@ -101,9 +125,7 @@ bg-dark-75
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #fef08a;
-}
-
-.button:active, .button:focus {
+} .button:active, .button:focus {
     background-size: cover;
     background-image: url('../imgs/ui/button-inside-active.png');
     border-width: calc(var(--block-size) / var(--zoom));
@@ -114,12 +136,10 @@ bg-dark-75
     color: #a8a29e;
 }
 
-/* width */
 .scrollbar::-webkit-scrollbar {
     width: 16px;
 }
 
-/* Handle */
 .scrollbar::-webkit-scrollbar-thumb {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
@@ -127,10 +147,7 @@ bg-dark-75
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 25% 25% fill;
     border-image-repeat: stretch;
-}
-
-/* Handle on hover */
-.scrollbar::-webkit-scrollbar-thumb:active {
+} .scrollbar::-webkit-scrollbar-thumb:active {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb-active.png');
@@ -146,6 +163,32 @@ bg-dark-75
     color: #fff;
 }
 
+.markdown h1 {
+    margin: 1rem 0;
+    font-size: 3.5rem;
+} .markdown h2 {
+    margin: 1rem 0;
+    font-size: 3rem;
+} .markdown h3 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+} .markdown h4 {
+    margin: 1rem 0;
+    font-size: 1.75rem;
+} .markdown h5 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+} .markdown h6 {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.markdown hr {
+    height: 5px;
+    margin: 1rem 0;
+    border-width: 4px !important;
+}
+
 .markdown > p {
     margin: 1rem 0.5rem;
 }
@@ -153,40 +196,8 @@ bg-dark-75
 .link, .markdown a:not(.button) {
     text-shadow: none;
     color: #aaaaff;
-}
-
-.link, .markdown a:not(.button):hover {
+} .link, .markdown a:not(.button):hover {
     text-decoration: underline;
-}
-
-.markdown h1 {
-    margin: 1rem 0;
-    font-size: 3.5rem;
-}
-
-.markdown h2 {
-    margin: 1rem 0;
-    font-size: 3rem;
-}
-
-.markdown h3 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-}
-
-.markdown h4 {
-    margin: 1rem 0;
-    font-size: 1.75rem;
-}
-
-.markdown h5 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-}
-
-.markdown h6 {
-    margin: 1rem 0;
-    font-size: 1.25rem;
 }
 
 .markdown ul {
@@ -205,9 +216,7 @@ bg-dark-75
 
 .markdown ol li {
     counter-increment: count;
-}
-
-.markdown ol li::marker {
+} .markdown ol li::marker {
     content: counter(count) ") ";
     font-size: 1rem;
 }
@@ -238,32 +247,18 @@ bg-dark-75
     font-family: Minecraft !important;
     padding: 2px 5px;
     letter-spacing: 0.025rem;
-}
-
-.markdown :not(pre,h1,h2,h3,h4,h5,h6) code {
+} .markdown :not(pre,h1,h2,h3,h4,h5,h6) code {
     font-size: 0.75rem;
-}
-
-
-
-.markdown hr {
-    height: 5px;
-    margin: 1rem 0;
-    border-width: 4px !important;
 }
 
 .table, .markdown table {
     border-collapse: separate;
     padding: 0.5rem;
-}
-
-.table th, .markdown th {
+} .table th, .markdown th {
     font-weight: normal;
     font-size: 1.2rem;
     color: #3d3c3d;
-}
-
-.table td, .markdown td {
+} .table td, .markdown td {
     padding: 0 0.25rem;
     color: #fff;
 }
@@ -278,27 +273,21 @@ bg-dark-75
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
-}
-
-.slot-75 {
+} .slot-75 {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/slot-75.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
-}
-
-.slot-50 {
+} .slot-50 {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/slot-50.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 6% 6% fill;
     border-image-repeat: stretch;
-}
-
-.slot-25 {
+} .slot-25 {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/slot-25.png');
@@ -316,29 +305,23 @@ bg-dark-75
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-25,
-.markdown hr,
-.markdown :not(pre) code {
+} .panel-25,
+  .markdown hr,
+  .markdown :not(pre) code {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-25.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-50 {
+} .panel-50 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-50.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-75 {
+} .panel-75 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-75.png');
@@ -354,18 +337,14 @@ bg-dark-75
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-dark-25 {
+} .panel-dark-25 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-dark-25.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-dark-50 {
+} .panel-dark-50 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-dark-50.png');
@@ -373,9 +352,7 @@ bg-dark-75
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
     white-space: pre;
-}
-
-.panel-dark-75 {
+} .panel-dark-75 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-dark-75.png');
@@ -392,27 +369,21 @@ bg-dark-75
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-darker-25 {
+} .panel-darker-25 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-darker-25.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-darker-50 {
+} .panel-darker-50 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-darker-50.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 42.85% 42.85% fill;
     border-image-repeat: stretch;
-}
-
-.panel-darker-75 {
+} .panel-darker-75 {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-darker-75.png');
@@ -423,45 +394,76 @@ bg-dark-75
 
 .bg-dark-25 {
     background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25));
-}
-
-.bg-dark-50 {
+}.bg-dark-50 {
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
-}
-
-.bg-dark,
-.bg-dark-75 {
+} .bg-dark, .bg-dark-75 {
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
 }
 
 .text-shadow-xs {
     text-shadow: 0.75px 0.75px #000;
-}
-
-.text-shadow-sm {
+}.text-shadow-sm {
     text-shadow: 1px 1px #000;
-}
-
-.text-shadow,
-.table td,
-.button,
-.markdown > p,
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6,
-.markdown ul,
-.markdown :not(pre) code,
-.markdown td {
+} .text-shadow, .text-shadow-md,
+  .table td,
+  .button,
+  .markdown > p,
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6,
+  .markdown ul,
+  .markdown :not(pre) code,
+  .markdown td {
     text-shadow: 1.5px 1.5px #000;
-}
-
-.text-shadow-lg {
+} .text-shadow-lg {
     text-shadow: 2px 2px #000;
+} .text-shadow-xl {
+    text-shadow: 2.5px 2.5px #000;
 }
 
-.text-shadow-xl {
-    text-shadow: 2.5px 2.5px #000;
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecrafter';
+    src: url('/fonts/Minecrafter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecrafter Alt';
+    src: url('/fonts/MinecrafterAlt.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} @font-face {
+    font-family: 'Minecraft Evenings';
+    src: url('/fonts/MinecraftEvenings.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }

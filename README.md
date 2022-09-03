@@ -17,3 +17,12 @@ Document your projects, build with blocks, display items and paintings, create g
 - Documentation system
 
 The docs for the project are located in `./src/pages/docs`
+
+## To do
+
+- Mobile styles
+- Reformat all textures
+- Add icons
+- Add classes for new ui textures
+- Finish docs (20% left)
+- Polish off everything
