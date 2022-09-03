@@ -24,13 +24,13 @@ fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
 fs.readdirSync(`./public/${ITEM_DIR}`).forEach(file => {
 	const item_name = `item-${file.split('.')[0]}`
 	background_obj[item_name] = `url('/${ITEM_DIR}/${file}')`
-	safelist_array.push(`bg-${item_name}`)
+	//safelist_array.push(`bg-${item_name}`)
 });
 //Create painting backgrounds like 'bg-painting-skull' from a dir and safelist them
 fs.readdirSync(`./public/${PAINTING_DIR}`).forEach(file => {
 	const painting_name = `painting-${file.split('.')[0]}`
 	background_obj[painting_name] = `url('/${PAINTING_DIR}/${file}')`
-	safelist_array.push(`bg-${painting_name}`)
+	//safelist_array.push(`bg-${painting_name}`)
 });
 //Create spacings like '1-block' '2-block' up to '99-block'
 Array.from({length: BLOCK_SPACING_MAX}, (_, i) => i + 1).forEach((i) => {

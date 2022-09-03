@@ -1,6 +1,6 @@
 # Minecraft Theme for Astro
 
-Build with blocks, display items, create Minecraft GUIs, and more, this is a Minecraft themed website template built using Astro and Tailwindcss. This template was created as a way for Minecraft developers to easily create and host documentation for their projects and share it with others.
+Document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## **Features**
 
@@ -14,3 +14,6 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
 - Minecraft typography using the `Minecraft` font, text colors, and text shadows
 - 75+ Minecraft themed colors
 - Markdown theme
+- Documentation system
+
+The docs for the project are located in `./src/pages/docs`

@@ -5,7 +5,7 @@ layout: '../../layouts/Docs.astro'
 
 # Introduction
 
-Build with blocks, display items, create Minecraft GUIs, and more, this is a Minecraft themed website template built using Astro and Tailwindcss. This template was created as a way for Minecraft developers to easily create and host documentation for their projects and share it with others.
+Document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## **Features**
 
@@ -56,29 +56,31 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
   ### Panels
   <div class="flex flex-col items-center gap-5">
     <div class="flex gap-3">
-      <div class="h-2-block w-2-block gui"></div>
-      <div class="h-2-block w-2-block gui-75"></div>
-      <div class="h-2-block w-2-block gui-50"></div>
-      <div class="h-2-block w-2-block gui-25"></div>
+      <div class="h-2-block w-2-block panel"></div>
+      <div class="h-2-block w-2-block panel-75"></div>
+      <div class="h-2-block w-2-block panel-50"></div>
+      <div class="h-2-block w-2-block panel-25"></div>
     </div>
     <div class="flex gap-3">
-      <div class="h-2-block w-2-block gui-dark"></div>
-      <div class="h-2-block w-2-block gui-dark-75"></div>
-      <div class="h-2-block w-2-block gui-dark-50"></div>
-      <div class="h-2-block w-2-block gui-dark-25"></div>
+      <div class="h-2-block w-2-block panel-dark"></div>
+      <div class="h-2-block w-2-block panel-dark-75"></div>
+      <div class="h-2-block w-2-block panel-dark-50"></div>
+      <div class="h-2-block w-2-block panel-dark-25"></div>
     </div>
     <div class="flex gap-3">
-      <div class="h-2-block w-2-block gui-darker"></div>
-      <div class="h-2-block w-2-block gui-darker-75"></div>
-      <div class="h-2-block w-2-block gui-darker-50"></div>
-      <div class="h-2-block w-2-block gui-darker-25"></div>
+      <div class="h-2-block w-2-block panel-darker"></div>
+      <div class="h-2-block w-2-block panel-darker-75"></div>
+      <div class="h-2-block w-2-block panel-darker-50"></div>
+      <div class="h-2-block w-2-block panel-darker-25"></div>
     </div>
-    <div class="flex gap-3">
-      <div class="h-1-block w-1-block gui-slot"></div>
-      <div class="h-1-block w-1-block gui-slot-75"></div>
-      <div class="h-1-block w-1-block gui-slot-50"></div>
-      <div class="h-1-block w-1-block gui-slot-25"></div>
-    </div>
+  </div>
+
+  ### Slots
+  <div class="flex items-center gap-5">
+      <div class="h-1-block w-1-block slot"></div>
+      <div class="h-1-block w-1-block slot-75"></div>
+      <div class="h-1-block w-1-block slot-50"></div>
+      <div class="h-1-block w-1-block slot-25"></div>
   </div>
 
   ##### Example
@@ -108,31 +110,33 @@ Build with blocks, display items, create Minecraft GUIs, and more, this is a Min
           </tr>
       </tbody>
   </table>
-</div>
 
+  ### Other
 
-### Other
-
-<div class="flex flex-wrap items-center justify-center gap-5">
-  <div class="flex flex-col items-center">
-    <h5>Books</h5>
-    <div class="h-9-block w-7-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-  </div>
-  <div class="flex flex-col items-center gap-5">
-    <h5>Signs</h5>
-    <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg text-dark-blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-    <div class="h-3-block w-6-block px-1 sign text-2xl text-yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-  </div>
-  </div>
-  <div class="flex flex-col items-center">
-    <h5>Maps</h5>
-    <div class="flex items-center gap-3">
-      <div class="h-3-block w-3-block p-1 [--zoom:2] map"><div class="h-full w-full bg-cover bg-painting-burning-skull"></div></div>
-      <div class="h-2-block w-2-block p-1 map"><div class="h-full w-full bg-cover bg-painting-bust"></div></div>
-      <div class="h-1-block w-1-block p-1 map"><div class="h-full w-full bg-cover bg-painting-kebab"></div></div>
+  <div class="flex flex-wrap items-center justify-center gap-5">
+    <div class="flex flex-col items-center">
+      <h5>Books</h5>
+      <div class="h-9-block w-7-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    </div>
+    <div class="flex flex-col items-center gap-5">
+      <h5>Signs</h5>
+      <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+      <div class="h-3-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    </div>
+    </div>
+    <div class="flex flex-col items-center">
+      <h5>Maps</h5>
+      <div class="flex items-center gap-3">
+        <div class="h-3-block w-3-block p-1 [--zoom:2] map"></div>
+        <div class="h-2-block w-2-block p-1 map"></div>
+        <div class="h-1-block w-1-block p-1 map"></div>
+      </div>
     </div>
   </div>
+
 </div>
+
+
 
 ## Colors
 
