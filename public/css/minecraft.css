@@ -3,24 +3,25 @@ Fonts: Minecraft, Minecrafter, Minecraft Alt, Minecraft Evenings
 CSS Variables:
     --block-size: 48px; all sizing is relative to this property to keep everything tiled together
     --zoom: 1; Set indiviualy for each class use this property to control how 'zoomed' in or out you want your UI textures to be
-    --1/16-block
-    --1/8-block
-    --1/4-block
-    --1/2-block
-    --(1-32)-block 
+    --( 1/16 | 1/8 | 1/4 | 1/2 )-block
+    --{1-32}-block 
 Classes:
-    text-shadow[-(xs|sm|md|lg|xl)]
+    text-shadow-(xs|sm|md|lg|xl)
     link
-    markdown
-    button
-    scrollbar
-    slot[-(75|50|25)]]
-    bg-dark[-(75|50|25)]
-    panel[-(dark|darker)[-(75|50|25)]]
-    table
+    bg-dark-(75|50|25)
     map
     book
     sign
+    button
+    scrollbar
+    transparent-panel, paenl, panel-dark
+    transparent-achievement panel, achievement panel
+    transparent-slot, slot
+    transparent-raised-slot, raised-slot, raised-slot-hover, raised-slot-active
+    enchanting-slot, enchanting-slot-hover, enchanting-slot-active
+    anvil-textbox, anvil-textbox-active
+    table
+    markdown
 */
 
 :where(body) {
@@ -193,14 +194,23 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 25% 25% fill;
+    border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
 } .scrollbar::-webkit-scrollbar-thumb:active {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb-active.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 25% 25% fill;
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
+
+.transparent-panel {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/transparent-panel.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.86% 42.86% fill;
     border-image-repeat: stretch;
 }
 
@@ -211,7 +221,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 42.85% 42.85% fill;
+    border-image-slice: 42.86% 42.86% fill;
     border-image-repeat: stretch;
 }
 
@@ -219,9 +229,18 @@ Classes:
 .markdown pre {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
-    border-image: url('../imgs/ui/panel-darker.png');
+    border-image: url('../imgs/ui/panel-dark.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 42.85% 42.85% fill;
+    border-image-slice: 42.86% 42.86% fill;
+    border-image-repeat: stretch;
+}
+
+.transparent-achievement-panel {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/transparent-achievement-panel.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 45.5% 45.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -245,7 +264,6 @@ Classes:
     border-image-repeat: stretch;
 }
 
-
 .slot,
 .table td,
 .markdown td,
@@ -267,7 +285,6 @@ Classes:
     border-image-repeat: stretch;
 }
 
-
 .raised-slot,
 .raised-slot-button {
     --zoom: 24;
@@ -276,21 +293,17 @@ Classes:
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
-}
-
-.raised-slot-hover,
-.raised-slot-button:hover {
+} .raised-slot-hover,
+  .raised-slot-button:hover {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot-hover.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
-}
-
-.raised-slot-active,
-.raised-slot-button:active,
-.raised-slot-button:focus {
+} .raised-slot-active,
+  .raised-slot-button:active,
+  .raised-slot-button:focus {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot-active.png');
@@ -307,21 +320,17 @@ Classes:
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
-}
-
-.enchanting-slot-hover,
-.enchanting-slot-button:hover {
+} .enchanting-slot-hover,
+  .enchanting-slot-button:hover {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot-hover.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
-}
-
-.enchanting-slot-active,
-.enchanting-slot-button:active,
-.enchanting-slot-button:focus {
+} .enchanting-slot-active,
+  .enchanting-slot-button:active,
+  .enchanting-slot-button:focus {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot-active.png');
@@ -337,11 +346,9 @@ Classes:
     border-image-width: calc(var(--block-size) / var(--zoom));
     border-image-slice: 40% 40% fill;
     border-image-repeat: stretch;
-}
-
-.anvil-textbox-active,
-.anvil-textbox:active,
-.anvil-textbox:focus {
+} .anvil-textbox-active,
+  .anvil-textbox:active,
+  .anvil-textbox:focus {
     --zoom: 16;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/anvil-textbox-active.png');
@@ -419,6 +426,7 @@ Classes:
 .markdown :not(pre) code {
     --zoom: 12  !important;
     margin: 0 0.25rem;
+    white-space: pre;
 }
 
 .markdown pre {

@@ -46,9 +46,11 @@ Document your projects, build with blocks, display items and paintings, create g
 ### UI Panels
 <div class="flex flex-col gap-5">
   <div class="flex gap-3">
+  <div class="h-2-block w-2-block transparent-panel"></div>
     <div class="h-2-block w-2-block panel"></div>
     <div class="h-2-block w-2-block panel-dark"></div>
-    <div class="h-2-block w-2-block achievement-panel panel"></div>
+    <div class="h-2-block w-2-block transparent-achievement-panel"></div>
+    <div class="h-2-block w-2-block achievement-panel"></div>
   </div>
 
 ### UI Elements
@@ -262,13 +264,12 @@ Document your projects, build with blocks, display items and paintings, create g
     <p class="text-water-nether">water-nether</p>
 </div>
 
-### Misc
+### Website
 
 <div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-link">link</p>
     <p class="text-gui">gui</p>
-    <p class="text-gui-dark">gui-dark</p>
-    <p class="text-gui-darker">gui-darker</p>
+    <p class="text-gui-darker">gui-dark</p>
 </div>
 
 

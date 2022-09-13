@@ -57,21 +57,27 @@ module.exports = {
 		},
 		extend: {
 			colors: {
+				//Misc
+				"link": "#aaaaff",
+				"panel": "#C6C6C6",
+				"panel-dark": "#373737",
 				//Text colors
-				'dark-blue': '#0000AA',
-				'dark-green': '#00AA00',
-				'dark-aqua': '#00AAAA',
-				'dark-red': '#AA0000',
-				'dark-purple': '#AA00AA',
 				'gold': '#FFAA00',
 				'gray': '#AAAAAA',
-				'dark-gray': '#555555',
 				'blue': '#5555FF',
 				'green': '#55FF55',
 				'aqua': '#55FFFF',
 				'red': '#FF5555',
 				'light-purple': '#FF55FF',
 				'yellow': '#FFFF55',
+				dark: {
+					'blue': '#0000AA',
+					'green': '#00AA00',
+					'aqua': '#00AAAA',
+					'red': '#AA0000',
+					'purple': '#AA00AA',
+					'gray': '#555555',
+				},
 				//Wool colors
 				wool: {
 					'orange': '#D87F33',
@@ -164,12 +170,7 @@ module.exports = {
 					'mushroom-shore': '#818193',
 					'end': '#62529E',
 					'nether': '#905957'
-				},
-				//Misc
-				"link": "#aaaaff",
-				"gui": "#C6C6C6",
-				"gui-dark": "#5F5F5F",
-				"gui-darker": "#373737"
+				}
 			},
 			backgroundImage: {
 				'sign': "url(/imgs/ui/sign.pngs)",
