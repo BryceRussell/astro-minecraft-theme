@@ -16,7 +16,7 @@ Document your projects, build with blocks, display items and paintings, create g
 - Block based units/sizes
 - Create GUIs using panels, slots, and buttons
 - Misc UIs like maps, books, signs, and item frames
-- Minecraft typography using the `Minecraft` font, text colors, and text shadows
+- Minecraft typography using the Minecraft's font, text colors, and text shadows
 - 75+ Minecraft themed colors
 - Markdown theme
 - Documentation system
@@ -41,102 +41,110 @@ Document your projects, build with blocks, display items and paintings, create g
   <img src="/imgs/paintings/alban.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/aztec.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/aztec2.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/bomb.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/burning-skull.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/bust.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/courbet.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/creebet.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/fighters.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/graham.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/kebab.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/kong.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/match.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/pigscene.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/plant.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/pointer.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/pool.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/sea.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/skeleton.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/skull.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/stage.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/sunset.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/void.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/wanderer.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/imgs/paintings/wither.png" class="object-contain m-[3rem] [transform:scale(2.5)]">
 </div>
 
-## GUIs
+## UI
 
-<div class="flex flex-col items-center gap-5">
-
-  ### Buttons
-  <div class="flex flex-wrap items-center justify-center gap-1">
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
-    <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+### UI Panels
+<div class="flex flex-col gap-5">
+  <div class="flex gap-3">
+    <div class="h-2-block w-2-block panel"></div>
+    <div class="h-2-block w-2-block panel-dark"></div>
+    <div class="h-2-block w-2-block achievement-panel panel"></div>
   </div>
 
-  ### Panels
-  <div class="flex flex-col items-center gap-5">
-    <div class="flex gap-3">
-      <div class="h-2-block w-2-block panel"></div>
-      <div class="h-2-block w-2-block panel-75"></div>
-      <div class="h-2-block w-2-block panel-50"></div>
-      <div class="h-2-block w-2-block panel-25"></div>
-    </div>
-    <div class="flex gap-3">
-      <div class="h-2-block w-2-block panel-dark"></div>
-      <div class="h-2-block w-2-block panel-dark-75"></div>
-      <div class="h-2-block w-2-block panel-dark-50"></div>
-      <div class="h-2-block w-2-block panel-dark-25"></div>
-    </div>
-    <div class="flex gap-3">
-      <div class="h-2-block w-2-block panel-darker"></div>
-      <div class="h-2-block w-2-block panel-darker-75"></div>
-      <div class="h-2-block w-2-block panel-darker-50"></div>
-      <div class="h-2-block w-2-block panel-darker-25"></div>
-    </div>
-  </div>
+### UI Elements
+<div class="flex flex-wrap gap-5">
+    <div class="h-1-block w-1-block transparent-slot"></div>
+    <div class="h-1-block w-1-block slot"></div>
+    <div class="h-1-block w-1-block transparent-raised-slot"></div>
+    <div class="h-1-block w-1-block raised-slot"></div>
+    <div class="h-1-block w-1-block raised-slot-hover"></div>
+    <div class="h-1-block w-1-block raised-slot-active"></div>
+    <div class="h-1-block w-1-block enchanting-slot"></div>
+    <div class="h-1-block w-1-block enchanting-slot-hover"></div>
+    <div class="h-1-block w-1-block enchanting-slot-active"></div>
+    <div class="h-1/2-block w-3-block anvil-textbox"></div>
+    <div class="h-1/2-block w-3-block anvil-textbox-active"></div>
+</div>
 
-  ### Slots
-  <div class="flex items-center gap-5">
-      <div class="h-1-block w-1-block slot"></div>
-      <div class="h-1-block w-1-block slot-75"></div>
-      <div class="h-1-block w-1-block slot-50"></div>
-      <div class="h-1-block w-1-block slot-25"></div>
-  </div>
+##### Example
+<table class="table w-fit">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>265</td>
+            <td>Iron Ingot</td>
+            <td>A ingot of iron, used for crafting</td>
+        </tr>
+        <tr>
+            <td>266</td>
+            <td>Gold Ingot</td>
+            <td>A ingot of gold, used for crafting</td>
+        </tr>
+        <tr>
+            <td>264</td>
+            <td>Diamond</td>
+            <td>A diamond, used for crafting</td>
+        </tr>
+    </tbody>
+</table>
 
-  ##### Example
-  <table class="self-center table w-min whitespace-nowrap">
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Description</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>265</td>
-              <td>Iron Ingot</td>
-              <td>A ingot of iron, used for crafting</td>
-          </tr>
-          <tr>
-              <td>266</td>
-              <td>Gold Ingot</td>
-              <td>A ingot of gold, used for crafting</td>
-          </tr>
-          <tr>
-              <td>264</td>
-              <td>Diamond</td>
-              <td>A diamond, used for crafting</td>
-          </tr>
-      </tbody>
-  </table>
+<div class="flex items-center justify-around md:justify-between w-full">
+  <div class="hidden md:inline text-3xl"><---</div>
+  
+  ### Scrollbar
 
-  ### Other
+  <div class="text-3xl">---></div>
+</div>
 
-  <div class="flex flex-wrap items-center justify-center gap-5">
-    <div class="flex flex-col items-center">
-      <h5>Books</h5>
-      <div class="h-9-block w-7-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-    </div>
-    <div class="flex flex-col items-center gap-5">
-      <h5>Signs</h5>
-      <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-      <div class="h-3-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-    </div>
-    </div>
-    <div class="flex flex-col items-center">
-      <h5>Maps</h5>
-      <div class="flex items-center gap-3">
-        <div class="h-3-block w-3-block p-1 [--zoom:2] map"></div>
-        <div class="h-2-block w-2-block p-1 map"></div>
-        <div class="h-1-block w-1-block p-1 map"></div>
-      </div>
-    </div>
-  </div>
+### Buttons
+<div class="flex flex-wrap gap-3">
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
+  <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+</div>
 
+<div class="flex flex-wrap gap-3">
+  <a class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  <a class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  <a class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+</div>
+
+<div class="flex flex-wrap gap-3">
+  <a class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  <a class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  <a class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+</div>
+
+### Books
+
+<div class="flex flex-wrap items-center gap-5">
+  <div class="h-9-block w-7-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  <div class="h-5-block w-8-block p-1 book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem?</div>
 </div>
 
 
+### Maps
+
+<div class="flex flex-wrap items-center gap-5">
+  <div class="h-3-block w-3-block p-1 [--zoom:2] map"></div>
+  <div class="h-2-block w-2-block p-1 map"></div>
+  <div class="h-1-block w-1-block p-1 map"></div>
+</div>
+
+### Signs
+
+<div class="flex flex-wrap items-center gap-5">
+  <div class="h-3-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+  <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+</div>
 
 ## Colors
 

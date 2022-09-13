@@ -6,5 +6,10 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     tailwind()
-  ]
+  ],
+  markdown: {
+    shikiConfig: {
+      theme: 'one-dark-pro',
+    },
+  },
 });

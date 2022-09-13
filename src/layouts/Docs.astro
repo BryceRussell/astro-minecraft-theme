@@ -13,16 +13,16 @@ const depth_class_map = {
 ---
 
 <Base footer={false}>
-    <div class="h-full min-h-[var(--main-height)] flex">
-        <aside class="sticky top-0 overflow-y-auto h-screen w-6-block bg-stone-brick scrollbar">
+    <div class="flex flex-col md:flex-row h-full min-h-[var(--main-height)]">
+        <aside class="hidden overflow-y-auto w-full bg-stone-brick scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
                 <div class="flex flex-col h-min gap-2 py-5 px-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
                     return (
                         <Fragment>
                             {headings.length > 0 &&                        
-                                <nav class="panel-75 p-1">
-                                    <div class="flex flex-col gap-1 py-2 px-3 slot-75 text-white">                                        
+                                <nav class="panel p-1">
+                                    <div class="flex flex-col gap-1 py-2 px-3 slot text-white">                                        
                                         { headings.map((heading) => {
                                             if (heading.depth > 3) return
                                             return <a 
@@ -43,7 +43,7 @@ const depth_class_map = {
                 })}
                 </div>
         </aside>
-        <div class="h-full w-[calc(100vw_-_(var(--block-size)_*_6))]">
+        <div class="h-full w-full md:w-[calc(100vw_-_(var(--block-size)_*_6))]">
             <div class="flex flex-col h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 overflow-visible markdown">
                 <slot />
             </div>

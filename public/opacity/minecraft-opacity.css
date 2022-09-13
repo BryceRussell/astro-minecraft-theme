@@ -1,0 +1,192 @@
+/* 
+Transparent classes for:
+    - panel, panel-dark, panel-darker
+    - transparent slot, slot
+    - raised-slot, raised-slot-hover, raised-slot-active,
+*/
+
+
+.panel-25 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+} .panel-50 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+} .panel-75 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+}
+
+.panel-dark-25 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-dark-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+} .panel-dark-50 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-dark-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+    white-space: pre;
+} .panel-dark-75 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-dark-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+}
+
+.panel-darker-25 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-darker-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+} .panel-darker-50 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-darker-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+} .panel-darker-75 {
+    --zoom: 10;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/panel-darker-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 42.85% 42.85% fill;
+    border-image-repeat: stretch;
+}
+
+.transparent-slot-75 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/transparent-slot-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .transparent-slot-50 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/transparent-slot-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .transparent-slot-25 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/transparent-slot-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
+
+.slot-75 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/slot-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .slot-50 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/slot-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .slot-25 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/slot-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
+
+.raised-slot-75 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-50 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-25 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
+
+.raised-slot-hover-75 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-hover-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-hover-50 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-hover-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-hover-25 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-hover-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
+
+.raised-slot-active-75 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-active-75.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-active-50 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-active-50.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+} .raised-slot-active-25 {
+    --zoom: 24;
+    border-width: calc(var(--block-size) / var(--zoom));
+    border-image: url('../imgs/ui/raised-slot-active-25.png');
+    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-slice: 33.33% 33.33% fill;
+    border-image-repeat: stretch;
+}
