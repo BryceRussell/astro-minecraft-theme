@@ -6,23 +6,24 @@ let docs = await Astro.glob('../pages/docs/*.md');
 const index = docs.pop()
 
 const depth_class_map = {
-    1: "text-lg text-yellow",
+    1: "text-lg underline text-yellow",
     2: "ml-2 text-md",
     3: "ml-4 italic text-sm",
 }
 ---
 
-<Base footer={false}>
-    <div class="flex flex-col md:flex-row h-full min-h-[var(--main-height)] px-3">
-        <aside class="hidden overflow-y-auto w-full bg-stone-brick scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
-                <div class="flex flex-col h-min gap-2 py-5 px-3 bg-dark-50">
+<Base noFooter>
+    <div class="flex flex-col md:flex-row h-full min-h-[var(--main-height)]">
+        <button class="button flex items-center justify-center md:hidden w-min my-3 pb-1 p-1.5 whitespace-nowrap leading-none text-xl text-shadow-lg" onclick="document.getElementById('sidebar').classList.toggle('hidden')">On This Page ></button>
+        <aside id="sidebar" class="hidden overflow-y-auto h-[50vh] md:h-screen w-full bg-stone-slab-double scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
+                <div class="flex flex-col h-min gap-2 p-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
                     return (
                         <Fragment>
                             {headings.length > 0 &&                        
-                                <nav class="panel p-1">
-                                    <div class="flex flex-col gap-1 py-2 px-3 slot text-white">                                        
+                                <nav class="achievement-panel p-1">
+                                    <div class="flex flex-col gap-1 py-2 px-3 text-white">                                        
                                         { headings.map((heading) => {
                                             if (heading.depth > 3) return
                                             return <a 

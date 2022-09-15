@@ -5,14 +5,13 @@ import Footer from "@components/Footer.astro";
 const {
 	block="stone",
 	size=48,
-	nav=2,
-	footer=true
+	navHeight=2,
+	noNav,
+	noFooter=false
 } = Astro.props
 
-//If you want to change the responsive height of footer:
-//tweak the `[--footer-height:${x}]` classes inside of footer component
-
-//Smallest height footer will have in # of blocks
+// Used to calculate the min height for main element
+const min_navbar_height = 2
 const min_footer_height = 3
 ---
 
@@ -20,9 +19,8 @@ const min_footer_height = 3
 	is:global 
 	define:vars={{ 
 		'block-size': `${size}px`,
-		'nav-height': nav,
-		'footer-height': footer,
-		'main-height': `calc(100vh - (var(--block-size) * (var(--nav-height) + ${min_footer_height})))`
+		'nav-height': `var(--${navHeight}-block)`,
+		'main-height': `calc(100vh - (var(--block-size) * (${min_navbar_height} + ${min_footer_height})))`
 	}}
 >
 </style>
@@ -37,12 +35,22 @@ const min_footer_height = 3
 		<link rel="stylesheet" href="/css/minecraft.css">
 	</head>
 	<body class="scrollbar">
-        <Navbar height={nav}/>
+		<slot name="first"/>
+        {!noNav &&
+			<Navbar height={navHeight}>
+				<slot name="navbar"/>
+			</Navbar>
+		}
         <main class={`min-h-[var(--main-height)] w-full bg-${block}`}>
-			<div class="bg-dark-75">
+			<div class="min-h-[var(--main-height)] h-full w-full bg-dark-75">
 				<slot />
 			</div>
 		</main>
-		{footer && <Footer />}
+		{!noFooter &&
+			<Footer>
+				<slot name="footer"/>
+			</Footer>
+		}
+		<slot name="last"/>
 	</body>
 </html>

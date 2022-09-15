@@ -21,7 +21,7 @@ The docs for the project are located in `./src/pages/docs`
 ## To do
 
 - Mobile styles 50%
-- Reformat all textures
+- Reformat all textures to better format
 - Add icons
 - Finish docs (10% left)
 - Polish off everything

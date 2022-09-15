@@ -268,8 +268,8 @@ Document your projects, build with blocks, display items and paintings, create g
 
 <div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
     <p class="text-link">link</p>
-    <p class="text-gui">gui</p>
-    <p class="text-gui-darker">gui-dark</p>
+    <p class="text-panel">panel</p>
+    <p class="text-panel-dark">panel-dark</p>
 </div>
 
 

@@ -68,7 +68,9 @@ Classes:
 
 
 /* Typogrpahy */
-.text-shadow-xs {
+.text-shadow-none {
+    text-shadow: none;
+} .text-shadow-xs {
     text-shadow: 0.75px 0.75px #000;
 }.text-shadow-sm {
     text-shadow: 1px 1px #000;
@@ -87,9 +89,9 @@ Classes:
   .markdown td {
     text-shadow: 1.5px 1.5px #000;
 } .text-shadow-lg {
-    text-shadow: 2px 2px #000;
+    text-shadow: 1.75px 1.75px #000;
 } .text-shadow-xl {
-    text-shadow: 2.5px 2.5px #000;
+    text-shadow: 2px 2px #000;
 }
 
   .link,
@@ -140,8 +142,7 @@ Classes:
     border-image-repeat: repeat;
 }
 
-.book,
-.markdown blockquote {
+.book {
     --zoom: 1.5;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/book.png');
@@ -174,7 +175,7 @@ Classes:
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: #fef08a;
-} .button:active, .button:focus {
+} .button:active {
     background-size: cover;
     background-image: url('../imgs/ui/button-inside-active.png');
     border-width: calc(var(--block-size) / var(--zoom));
@@ -187,9 +188,7 @@ Classes:
 
 .scrollbar::-webkit-scrollbar {
     width: 16px;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
+} .scrollbar::-webkit-scrollbar-thumb {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb.png');
@@ -225,8 +224,7 @@ Classes:
     border-image-repeat: stretch;
 }
 
-.panel-dark,
-.markdown pre {
+.panel-dark {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-dark.png');
@@ -244,9 +242,11 @@ Classes:
     border-image-repeat: stretch;
 }
 
-.achievement-panel ,
+.achievement-panel,
 .markdown hr,
-.markdown :not(pre) code {
+.markdown pre,
+.markdown :not(pre) code,
+.markdown blockquote {
     --zoom: 10;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/achievement-panel.png');
@@ -286,7 +286,8 @@ Classes:
 }
 
 .raised-slot,
-.raised-slot-button {
+.raised-slot-button,
+.scrollbar::-webkit-scrollbar-corner {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot.png');
@@ -302,8 +303,7 @@ Classes:
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
 } .raised-slot-active,
-  .raised-slot-button:active,
-  .raised-slot-button:focus {
+  .raised-slot-button:active {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot-active.png');
@@ -329,8 +329,7 @@ Classes:
     border-image-slice: 33.33% 33.33% fill;
     border-image-repeat: stretch;
 } .enchanting-slot-active,
-  .enchanting-slot-button:active,
-  .enchanting-slot-button:focus {
+  .enchanting-slot-button:active {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot-active.png');
@@ -365,23 +364,26 @@ Classes:
     color: #fff;
 }
 
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    margin: 0.75rem 0;
+}
+
 .markdown h1 {
-    margin: 1rem 0;
     font-size: 3.5rem;
 } .markdown h2 {
-    margin: 1rem 0;
     font-size: 3rem;
 } .markdown h3 {
-    margin: 1rem 0;
     font-size: 2.5rem;
 } .markdown h4 {
-    margin: 1rem 0;
     font-size: 1.75rem;
 } .markdown h5 {
-    margin: 1rem 0;
     font-size: 1.5rem;
 } .markdown h6 {
-    margin: 1rem 0;
     font-size: 1.25rem;
 }
 
@@ -392,7 +394,7 @@ Classes:
 }
 
 .markdown > p {
-    margin: 1rem 0.5rem;
+    margin: 0.75rem 0;
 }
 
 .markdown ul {
@@ -417,15 +419,13 @@ Classes:
 }
 
 .markdown blockquote {
-    --block-size: 48px;
-    min-height: var(--4-block);
     margin: 1rem 0;
     padding: 0.5rem;
 }
 
 .markdown :not(pre) code {
     --zoom: 12  !important;
-    margin: 0 0.25rem;
+    text-align: center;
     white-space: pre;
 }
 
@@ -435,12 +435,12 @@ Classes:
 }
 
 .markdown pre code span {
-    font-family: Minecraft !important;
+    font-family: Monocraft !important;
     white-space: pre-wrap;
 }
 
 .markdown code {
-    font-family: Minecraft !important;
+    font-family: Monocraft !important;
     padding: 2px 5px;
     letter-spacing: 0.025rem;
 } .markdown :not(pre,h1,h2,h3,h4,h5,h6) code {
@@ -483,6 +483,12 @@ Classes:
     font-family: 'Minecraft';
     src: url('/fonts/Minecraft-Regular.woff2') format('woff2');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} @font-face {
+    font-family: 'Monocraft';
+    src: url('/fonts/Monocraft.woff2') format('woff2');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 } @font-face {

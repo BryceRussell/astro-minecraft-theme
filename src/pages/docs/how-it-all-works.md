@@ -5,9 +5,11 @@ layout: '../../layouts/Docs.astro'
 
 # How it works
 
-The `./public` folder contains all the themes assets including textures, fonts, CSS, etc. The `./tailwind.config.cjs` file uses the `./public` folder to extend the default tailwind classes into minecraft themed classes
+The `./public` folder contains all of the themes assets including textures, fonts, CSS, etc.
 
-The `./src` folder includes two components, two layouts, and a few pages. These are the files that make up this very website and serve as examples on how to use the Minecraft theme and create your own pages. All examples use HTML with classes, zero JS and CSS
+The `./tailwind.config.cjs` file uses the `./public` folder to extend the default tailwind classes into minecraft themed classes
+
+The `./src` folder is the main  and contains examples on how to use the Minecraft theme and create your own pages. All examples use HTML with classes, zero JS and CSS
 
 ## Styles
 
@@ -20,21 +22,21 @@ In order to access classes and textures your page must include the following lin
 ### CSS variables
 
 
-###### `--block-size`:
+##### `--block-size`:
 
 **Default:** `48px`
 
 All minecraft classes and textures are sized relative to this property to keep everything the same size. Its value should be a multiple of the 16 since the standard block size is 16px, it makes image scaling look way better Use the class `[--block-size:{number}]`
 
 
-###### `--zoom`:
+##### `--zoom`:
 
 **Default:** `1`
 
 This property allows you to zoom the custom UI classes in and out by increasing or decreasing the widths of border-images, the global default is 1 but every class uses a different zoom value. Use the class `[--zoom:{number}]` to easily 'zoom' and elements texture in and out
 
 
-###### `--{number}-block`:
+##### `--{number}-block`:
 
 **Varients:** `1/16 / 1/8 / 1/4 / 1/2 / 1-32`
 
@@ -50,23 +52,23 @@ The tailwind config in this theme automatically reads files from `./public` to e
 
 Use the `./public` folder to lookup filenames in order to use these classes
 
-###### `bg-{filename}`:
+##### `bg-{filename}`:
 
 All blocks in the `./public/imgs/block` folder will create a block background class that look like: `bg-{filename}` Ex: `bg-dirt` `bg-gold-block`
 
-###### `bg-item-{filename}`:
+##### `bg-item-{filename}`:
 
 All items in the `./public/imgs/items` folder will create a item background class that look like: `bg-item-{filename}` Ex: `bg-item-cake` `bg-item-diamond`
 
-###### `bg-painting-{filename}`:
+##### `bg-painting-{filename}`:
 
 All paintings in the `./public/imgs/paintings` folder will create a painting background class that look like: `bg-painting-{filename}`Ex: `bg-painting-skull` `bg-painting-kebab`
 
-###### `bg-icon-{filename}`:
+##### `bg-icon-{filename}`:
 
 All icons in the `./public/imgs/paintings` folder will create a icon background class that look like: `bg-icon-{filename}` Ex: `bg-icon-heart-full` `bg-icon-bubble`
 
-###### `{number}-block`:
+##### `{number}-block`:
 
 `(1/16 | 1/8 | 1/4 | 1/2 | 1-99)-block`
 
@@ -76,33 +78,33 @@ This theme extends tailwinds `spacing` property to add block based spacing/sizes
 
 Many of the minecraft styles and textures are hard to write as tailwindcss classes, these classes make it easy and simple to add minecraft styles to your elements without tailwindcss
 
-###### `link`:
+##### `link`:
 
 Styles <a>links</a> with the link color from minecrafts old website and adds underline on hover
 
-###### `text-shadow`:
+##### `text-shadow`:
 
-**Varients:** `xs / sm / md / lg / xl`
+**Varients:** `none / xs / sm / md / lg / xl`
 
 Applys the classic black text shadow from minecraft to text, use larger text shadows `text-shadow-xl` on larger text sizes for a better minecraft look
 
-###### `markdown`:
+##### `markdown`:
 
 Classless styling on all child elements, used to style html that is parsed from `.md` files, use on a parent that wraps your markdown html
 
-###### `bg-dark`:
+##### `bg-dark`:
 
 **Varients:** `75 / 50 / 25`
 
 Transparent black backgrounds, used to darken block backgrounds
 
-###### `scrollbar`:
+##### `scrollbar`:
 
 **Zoom:** `24` (scrollbar-thumb)
 
 Minecraft styled scrollbar
 
-###### `button`:
+##### `button`:
 
 **Zoom:** `8`
 
@@ -112,7 +114,7 @@ Minecraft styled scrollbar
 
 Minecraft styled menu/option button
 
-###### `raised-slot-button`:
+##### `raised-slot-button`:
 
 **Zoom:** `24`
 
@@ -123,7 +125,7 @@ Minecraft styled menu/option button
 
 The raised slot UI element can be used an an interactable button
 
-###### `enchainting-slot-button`:
+##### `enchainting-slot-button`:
 
 **Zoom:** `24`
 
@@ -134,7 +136,7 @@ The raised slot UI element can be used an an interactable button
 
 The enchanting slot UI element can be used an an interactable button
 
-###### `transparent-panel`:
+##### `transparent-panel`:
 
 **Zoom:** `10`
 
@@ -142,7 +144,7 @@ The enchanting slot UI element can be used an an interactable button
 
 UI panel with a transparent background
 
-###### `panel`:
+##### `panel`:
 
 **Zoom:** `10`
 
@@ -150,7 +152,7 @@ UI panel with a transparent background
 
 UI panels that look like the background of an inventory or chest
 
-###### `panel-dark`:
+##### `panel-dark`:
 
 **Zoom:** `10`
 
@@ -158,7 +160,7 @@ UI panels that look like the background of an inventory or chest
 
 UI panel but dark
 
-###### `transparent-achievement-panel`:
+##### `transparent-achievement-panel`:
 
 **Zoom:** `10`
 
@@ -166,7 +168,7 @@ UI panel but dark
 
 UI achievement panel with a transparent background
 
-###### `achievement-panel`:
+##### `achievement-panel`:
 
 **Zoom:** `10`
 
@@ -174,7 +176,7 @@ UI achievement panel with a transparent background
 
 UI panel that looks like an achievement notification
 
-###### `transparent-slot`:
+##### `transparent-slot`:
 
 **Zoom:** `24`
 
@@ -182,7 +184,7 @@ UI panel that looks like an achievement notification
 
 Inventory/Chest item slot border
 
-###### `slot`:
+##### `slot`:
 
 **Zoom:** `24`
 
@@ -190,7 +192,7 @@ Inventory/Chest item slot border
 
 Inventory/Chest item slot border with background
 
-###### `raised-slot`:
+##### `raised-slot`:
 
 **Zoom:** `24`
 
@@ -198,7 +200,7 @@ Inventory/Chest item slot border with background
 
 The raised slot UI element with a transparent background
 
-###### `raised-slot`:
+##### `raised-slot`:
 
 **Zoom:** `24`
 
@@ -206,7 +208,7 @@ The raised slot UI element with a transparent background
 
 The opposite of the slot UI element, looks like a raised area instead of a recessed one
 
-###### `raised-slot-hover`:
+##### `raised-slot-hover`:
 
 **Zoom:** `24`
 
@@ -214,7 +216,7 @@ The opposite of the slot UI element, looks like a raised area instead of a reces
 
 The raised slot button when on hover
 
-###### `raised-slot-active`:
+##### `raised-slot-active`:
 
 **Zoom:** `24`
 
@@ -222,7 +224,7 @@ The raised slot button when on hover
 
 The raised slot button when active or focused
 
-###### `enchanting-slot`:
+##### `enchanting-slot`:
 
 **Zoom:** `24`
 
@@ -230,7 +232,7 @@ The raised slot button when active or focused
 
 The slot UI element used in game when choosing an enchant
 
-###### `enchanting-slot-hover`:
+##### `enchanting-slot-hover`:
 
 **Zoom:** `24`
 
@@ -238,7 +240,7 @@ The slot UI element used in game when choosing an enchant
 
 The enchanting slot button when on hover
 
-###### `enchanting-slot-active`:
+##### `enchanting-slot-active`:
 
 **Zoom:** `24`
 
@@ -246,7 +248,7 @@ The enchanting slot button when on hover
 
 The enchanting slot button when active or focused
 
-###### `anvil-textbox`:
+##### `anvil-textbox`:
 
 **Zoom:** `16`
 
@@ -254,7 +256,7 @@ The enchanting slot button when active or focused
 
 The textbox used in anvils
 
-###### `anvil-textbox-active`:
+##### `anvil-textbox-active`:
 
 **Zoom:** `16`
 
@@ -262,13 +264,13 @@ The textbox used in anvils
 
 Active version of anvil textbox
 
-###### `table`:
+##### `table`:
 
 <table class="table w-min m-2 whitespace-nowrap"><thead><tr><th>ID</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>265</td><td>Iron Ingot</td><td>A ingot of iron, used for crafting</td></tr><tr><td>266</td><td>Gold Ingot</td><td>A ingot of gold, used for crafting</td></tr><tr><td>264</td><td>Diamond</td><td>A diamond, used for crafting</td></tr></tbody></table>
 
 Styles table elements to look like in game inventories like chests
 
-###### `map`:
+##### `map`:
 
 **Zoom:** `4`
 
@@ -280,7 +282,7 @@ Styles table elements to look like in game inventories like chests
 
 Styles the borders and background of an element to look like a minecraft map
 
-###### `book`:
+##### `book`:
 
 **Zoom:** `1.5`
 
@@ -288,7 +290,7 @@ Styles the borders and background of an element to look like a minecraft map
 
 Styles the borders and background of an element to look like a minecraft book
 
-###### `sign`:
+##### `sign`:
 
 <div class="flex flex-wrap items-center gap-5 m-2">
   <div class="h-3-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
