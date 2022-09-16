@@ -1,11 +1,13 @@
 ---
-import Base from "@layouts/Base.astro";
-import Footer from "@components/Footer.astro";
+import Base from "~/layouts/Base.astro";
+import Footer from "~/components/Footer.astro";
 
 let docs = await Astro.glob('../pages/docs/*.md');
+docs = docs.filter((post) => !post.frontmatter.draft);
+
 const index = docs.pop()
 
-const depth_class_map = {
+const heading_depth_class_map = {
     1: "text-lg underline text-yellow",
     2: "ml-2 text-md",
     3: "ml-4 italic text-sm",
@@ -13,8 +15,8 @@ const depth_class_map = {
 ---
 
 <Base noFooter>
+    <button slot="navbar" class="button flex items-center justify-center md:hidden mr-auto pt-1 pl-1.5 pr-2 text-4xl text-shadow-lg" onclick="document.getElementById('sidebar').classList.toggle('hidden')">☰</button>
     <div class="flex flex-col md:flex-row h-full min-h-[var(--main-height)]">
-        <button class="button flex items-center justify-center md:hidden w-min my-3 pb-1 p-1.5 whitespace-nowrap leading-none text-xl text-shadow-lg" onclick="document.getElementById('sidebar').classList.toggle('hidden')">On This Page ></button>
         <aside id="sidebar" class="hidden overflow-y-auto h-[50vh] md:h-screen w-full bg-stone-slab-double scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
                 <div class="flex flex-col h-min gap-2 p-3 bg-dark-50">
                 {[index, ...docs].map(async(h) => {
@@ -29,7 +31,7 @@ const depth_class_map = {
                                             return <a 
                                                 href={`${h.url}#${heading.slug}`}
                                                 class:list={[
-                                                    depth_class_map[heading.depth],
+                                                    heading_depth_class_map[heading.depth],
                                                     "hover:underline text-shadow-sm"
                                                 ]}
                                             >
@@ -45,7 +47,7 @@ const depth_class_map = {
                 </div>
         </aside>
         <div class="h-full w-full md:w-[calc(100vw_-_(var(--block-size)_*_6))]">
-            <div class="flex flex-col h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto py-5 overflow-visible markdown">
+            <div class="flex flex-col h-full min-h-screen w-full md:w-[90%] lg:w-[80%] mx-auto px-3 overflow-visible markdown">
                 <slot />
             </div>
             <Footer class="[--block-size:56px]" />

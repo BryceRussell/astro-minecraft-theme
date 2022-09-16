@@ -1,5 +1,5 @@
 ---
-import Base from "@layouts/Base.astro";
+import Base from "~/layouts/Base.astro";
 
 const item_files = await Astro.glob(`../../public/imgs/items/*`)
 const painting_files = await Astro.glob(`../../public/imgs/paintings/*`)
@@ -38,12 +38,5 @@ const paintings = painting_files.map(file => {
         </ul>
     </div>
     <a href="/docs" class="self-center py-2 px-5 my-5 button text-shadow-lg text-2xl">Get started</a>
-    <div class="flex flex-wrap items-center justify-center my-5">
-        {paintings.map(painting => {
-            return (
-                <img src={`/imgs/paintings/${painting}.png`} class="object-contain m-[3.25rem] [transform:scale(2.5)]" />
-            )
-        })}
-    </div>
 </div>
 </Base>

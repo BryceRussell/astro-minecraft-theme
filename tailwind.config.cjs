@@ -18,7 +18,7 @@ const fs = require('fs');
 fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
 	const block_name = file.split('.')[0]
 	background_obj[block_name] = `url('/${BLOCK_DIR}/${file}')`
-	safelist_array.push(`bg-${block_name}`)
+	// safelist_array.push(`bg-${block_name}`)
 });
 //Create item backgrounds like 'bg-i-diamond' from a dir and safelist them
 fs.readdirSync(`./public/${ITEM_DIR}`).forEach(file => {
@@ -53,7 +53,9 @@ module.exports = {
 			'minecraft': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecrafter': ['Minecrafter', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecrafter-alt': ['Minecrafter Alt', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
-			'minecraft-evenings': ['Minecraft Evenings', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans]
+			'minecraft-evenings': ['Minecraft Evenings', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
+			'mono': ['Monocraft', ...defaultTheme.fontFamily.mono],
+			'monocraft': ['Monocraft', 'Minecraft', ...defaultTheme.fontFamily.mono],
 		},
 		extend: {
 			colors: {
@@ -185,10 +187,10 @@ module.exports = {
 			}
 		},
 	},
-	safelist: [
-		{
-			pattern: /(w|h)-([0-9]+)-block/
-		},
-		...safelist_array
-	]
+	// safelist: [
+	// 	{
+	// 		pattern: /(w|h)-([0-9]+)-block/
+	// 	},
+	// 	...safelist_array
+	// ]
 }

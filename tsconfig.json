@@ -14,8 +14,7 @@
     //Import aliases
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "~/*": ["src/*"]
     }
   }
 }

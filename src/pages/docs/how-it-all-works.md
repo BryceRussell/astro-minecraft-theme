@@ -7,9 +7,9 @@ layout: '../../layouts/Docs.astro'
 
 The `./public` folder contains all of the themes assets including textures, fonts, CSS, etc.
 
-The `./tailwind.config.cjs` file uses the `./public` folder to extend the default tailwind classes into minecraft themed classes
+The `./tailwind.config.cjs` file uses the `./public` folder to extend tailwinds classes into minecraft themed classes
 
-The `./src` folder is the main  and contains examples on how to use the Minecraft theme and create your own pages. All examples use HTML with classes, zero JS and CSS
+The `./src` folder contains the structure of your website. It comes with some examples on how to use the Minecraft theme to create your own pages, layouts, and components. All examples use HTML with classes, zero JS and CSS
 
 ## Styles
 
@@ -26,31 +26,46 @@ In order to access classes and textures your page must include the following lin
 
 **Default:** `48px`
 
-All minecraft classes and textures are sized relative to this property to keep everything the same size. Its value should be a multiple of the 16 since the standard block size is 16px, it makes image scaling look way better Use the class `[--block-size:{number}]`
+<div class="h-1-block w-1-block bg-cobblestone"></div>
+
+The size of a block on your website, controls the sizing of all minecraft styling (UI, Blocks, Items, etc), every class is sized relative to this property to keep everything the same size. Its value should be a multiple of the 16px, the size of a block texture, to avoid image scaling issues 
+
+You can set the block size of an element using a class like: `[--block-size:{number}]`
 
 
 ##### `--zoom`:
 
-**Default:** `1`
+<div class="flex flex-wrap items-center gap-5 m-2">
+  <div class="h-1-block w-1-block p-1 [--zoom:1] map"></div>
+  <div class="h-1-block w-1-block p-1 [--zoom:2.5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--zoom:5] map"></div>
+</div>
 
-This property allows you to zoom the custom UI classes in and out by increasing or decreasing the widths of border-images, the global default is 1 but every class uses a different zoom value. Use the class `[--zoom:{number}]` to easily 'zoom' and elements texture in and out
+This property allows you to zoom the UI classes in and out by increasing or decreasing the widths of border-images.
+
+Use the class `[--zoom:{number}]` to easily 'zoom' UI textures in and out
 
 
 ##### `--{number}-block`:
 
 **Varients:** `1/16 / 1/8 / 1/4 / 1/2 / 1-32`
 
-`var(--1/16-block)`
-`var(--1-block)`
-`var(--32-block)`
+<div class="flex flex-wrap items-center gap-3">
+  <div class="h-[var(--2-block)] w-[var(--2-block)] bg-cobblestone"></div>
+  <div class="h-[var(--2-block)] w-[var(--1-block)] bg-cobblestone"></div>
+  <div class="h-[var(--1-block)] w-[var(--2-block)] bg-cobblestone"></div>
+</div>
 
 CSS variables for sizing properties relative to `--block-size`
 
+**EX**: `var(--1/2-block)`, `var(--1-block)`, `var(--32-block)`
+
 ### Tailwindcss Classes
 
-The tailwind config in this theme automatically reads files from `./public` to extend tailwinds `bg-` property to provide easy to use classes for using minecraft images instead of having to use \<img\> tags
+One of the main jobs of the tailwind config is to read all file names inside the `./public/imgs` folder and assign each file a `bg-` class. This makes it easy to use the textures inside `./public/imgs` by calling a class like `bg-stone` or `bg-item-diamond`
 
-Use the `./public` folder to lookup filenames in order to use these classes
+
+**Note**: Use the `./public` folder to lookup filenames in order to use these classes
 
 ##### `bg-{filename}`:
 
@@ -64,13 +79,15 @@ All items in the `./public/imgs/items` folder will create a item background clas
 
 All paintings in the `./public/imgs/paintings` folder will create a painting background class that look like: `bg-painting-{filename}`Ex: `bg-painting-skull` `bg-painting-kebab`
 
-##### `bg-icon-{filename}`:
-
-All icons in the `./public/imgs/paintings` folder will create a icon background class that look like: `bg-icon-{filename}` Ex: `bg-icon-heart-full` `bg-icon-bubble`
-
 ##### `{number}-block`:
 
-`(1/16 | 1/8 | 1/4 | 1/2 | 1-99)-block`
+`(1/16 | 1/8 | 1/4 | 1/2 | (1-99)-block`
+
+<div class="flex flex-wrap items-center gap-3">
+  <div class="h-2-block w-2-block bg-cobblestone"></div>
+  <div class="h-2-block w-1-block bg-cobblestone"></div>
+  <div class="h-1-block w-2-block bg-cobblestone"></div>
+</div>
 
 This theme extends tailwinds `spacing` property to add block based spacing/sizes Ex: `w-1-block` `p-1/2-block` `h-9-block`
 
@@ -108,9 +125,11 @@ Minecraft styled scrollbar
 
 **Zoom:** `8`
 
-<a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
-<a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
-<a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
+<div class="flex flex-wrap items-center gap-3">
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
+  <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
+</div>
 
 Minecraft styled menu/option button
 
@@ -118,7 +137,7 @@ Minecraft styled menu/option button
 
 **Zoom:** `24`
 
-<div class="flex flex-wrap items-cener gap-3">
+<div class="flex flex-wrap items-center gap-3">
   <div class="raised-slot-button h-1-block w-1-block"></div>
   <div class="raised-slot-button h-1-block w-4-block"></div>
 </div>
@@ -129,7 +148,7 @@ The raised slot UI element can be used an an interactable button
 
 **Zoom:** `24`
 
-<div class="flex flex-wrap items-cener gap-3">
+<div class="flex flex-wrap items-center gap-3">
   <div class="enchanting-slot-button h-1-block w-1-block"></div>
   <div class="enchanting-slot-button h-1-block w-4-block"></div>
 </div>
@@ -284,9 +303,9 @@ Styles the borders and background of an element to look like a minecraft map
 
 ##### `book`:
 
-**Zoom:** `1.5`
+**Zoom:** `4`
 
-<div class="h-9-block w-7-block book">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+<div class="h-9-block w-7-block pl-2 book [--zoom:4]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
 
 Styles the borders and background of an element to look like a minecraft book
 
@@ -339,9 +358,9 @@ The theme comes preloaded with 4 different community made fonts located in `./pu
 
 ### Project Logo
 
-located at `./public/imgs/project-logo.png`
+The logo located at `./public/imgs/project-logo.png` was generated using [textstudio](https://www.textstudio.co/logo/minecraft-3d-text-41)
 
-To replace the placeholder logo, generate one using [textstudio](https://www.textstudio.co/logo/minecraft-3d-text-41) with the following settings:
+This project used the following settings:
 
   - Zoom: `36%`
   - Line Spacing: `10%`
@@ -349,8 +368,8 @@ To replace the placeholder logo, generate one using [textstudio](https://www.tex
   - Use the `Minecrafter Regular` font
   - Navigate to the background tab and uncheck `Background or Transparent` to make background transparent
   - Navigate to the download tab and select `Medium` quality with `fitted` aspect ratio
+  - Crop image after downloading
 
-After downloading your logo rename it to `project-logo.png` and add it to the `./public/imgs` folder
 
 ### Favicon
 

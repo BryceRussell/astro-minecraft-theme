@@ -4,9 +4,10 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/test',
   integrations: [
-    tailwind()
+    tailwind({
+      config: { applyBaseStyles: false },
+    })
   ],
   markdown: {
     shikiConfig: {

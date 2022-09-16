@@ -64,6 +64,17 @@ Classes:
     --30-block: calc(var(--block-size) * 30);
     --31-block: calc(var(--block-size) * 31);
     --32-block: calc(var(--block-size) * 32);
+
+    --fluid-0: clamp(0.72rem, calc(0.67rem + 0.24vw), 0.87rem);
+    --fluid-1: clamp(0.91rem, calc(0.87rem + 0.22vw), 1.04rem);
+    --fluid-2: clamp(1.09rem, calc(1.04rem + 0.26vw), 1.25rem);
+    --fluid-3: clamp(1.31rem, calc(1.25rem + 0.31vw), 1.50rem);
+    --fluid-4: clamp(1.58rem, calc(1.50rem + 0.38vw), 1.80rem);
+    --fluid-5: clamp(1.89rem, calc(1.80rem + 0.45vw), 2.16rem);
+    --fluid-6: clamp(2.27rem, calc(2.16rem + 0.54vw), 2.59rem);
+    --fluid-7: clamp(2.72rem, calc(2.59rem + 0.65vw), 3.11rem);
+    --fluid-8: clamp(3.27rem, calc(3.11rem + 0.78vw), 3.73rem);
+    --fluid-9: clamp(3.73rem, calc(3.48rem + 1.24vw), 4.48rem);
 }
 
 
@@ -143,10 +154,13 @@ Classes:
 }
 
 .book {
-    --zoom: 1.5;
-    border-width: calc(var(--block-size) / var(--zoom));
+    --zoom: 4;
+    --size: calc((var(--block-size) / var(--zoom) * 3));
+    border-width: var(--size);
+    border-style: solid;
+    border-left-width: calc(var(--size) / 1.5);
     border-image: url('../imgs/ui/book.png');
-    border-image-width: calc(var(--block-size) / var(--zoom));
+    border-image-width: var(--size) var(--size) var(--size) calc(var(--size) / 1.5);
     border-image-slice: 8.5% 15% 12.75% 10% fill;
     border-image-repeat: stretch;
     color: #000;
@@ -374,17 +388,17 @@ Classes:
 }
 
 .markdown h1 {
-    font-size: 3.5rem;
+    font-size: var(--fluid-7);
 } .markdown h2 {
-    font-size: 3rem;
+    font-size: var(--fluid-6);
 } .markdown h3 {
-    font-size: 2.5rem;
+    font-size: var(--fluid-5);
 } .markdown h4 {
-    font-size: 1.75rem;
+    font-size: var(--fluid-4);
 } .markdown h5 {
-    font-size: 1.5rem;
+    font-size: var(--fluid-3);
 } .markdown h6 {
-    font-size: 1.25rem;
+    font-size: var(--fluid-2);
 }
 
 .markdown hr {
@@ -395,6 +409,8 @@ Classes:
 
 .markdown > p {
     margin: 0.75rem 0;
+    font-size: 0.875rem;
+    font-size: var(--fluid-1);
 }
 
 .markdown ul {
@@ -425,13 +441,14 @@ Classes:
 
 .markdown :not(pre) code {
     --zoom: 12  !important;
+    font-family: Minecraft !important;
     text-align: center;
-    white-space: pre;
 }
 
 .markdown pre {
     overflow-x: visible !important;
     padding: 0.5rem;
+    font-size: var(--fluid-0);
 }
 
 .markdown pre code span {
@@ -440,11 +457,7 @@ Classes:
 }
 
 .markdown code {
-    font-family: Monocraft !important;
-    padding: 2px 5px;
-    letter-spacing: 0.025rem;
-} .markdown :not(pre,h1,h2,h3,h4,h5,h6) code {
-    font-size: 0.75rem;
+    padding: 0 0.2rem;
 }
 
 .table, .markdown table {
@@ -452,7 +465,7 @@ Classes:
     padding: 0.5rem;
 } .table th, .markdown th {
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: var(--fluid-2);
     color: #3d3c3d;
 } .table td, .markdown td {
     padding: 0 0.25rem;
