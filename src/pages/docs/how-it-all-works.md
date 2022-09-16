@@ -285,7 +285,7 @@ Active version of anvil textbox
 
 ##### `table`:
 
-<table class="table w-min m-2 whitespace-nowrap"><thead><tr><th>ID</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>265</td><td>Iron Ingot</td><td>A ingot of iron, used for crafting</td></tr><tr><td>266</td><td>Gold Ingot</td><td>A ingot of gold, used for crafting</td></tr><tr><td>264</td><td>Diamond</td><td>A diamond, used for crafting</td></tr></tbody></table>
+<table class="table w-fit m-2"><thead><tr><th>ID</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>265</td><td>Iron Ingot</td><td>A ingot of iron, used for crafting</td></tr><tr><td>266</td><td>Gold Ingot</td><td>A ingot of gold, used for crafting</td></tr><tr><td>264</td><td>Diamond</td><td>A diamond, used for crafting</td></tr></tbody></table>
 
 Styles table elements to look like in game inventories like chests
 

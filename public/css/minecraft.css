@@ -1,5 +1,5 @@
 /* 
-Fonts: Minecraft, Minecrafter, Minecraft Alt, Minecraft Evenings
+Fonts: Minecraft, Monocraft, Minecrafter, Minecraft Alt, Minecraft Evenings
 CSS Variables:
     --block-size: 48px; all sizing is relative to this property to keep everything tiled together
     --zoom: 1; Set indiviualy for each class use this property to control how 'zoomed' in or out you want your UI textures to be
@@ -24,7 +24,7 @@ Classes:
     markdown
 */
 
-:where(body) {
+:root {
     --block-size: 48px;
     --zoom: 1;
     
@@ -116,7 +116,7 @@ Classes:
 
 
 /* Backgrounds */
-[class*="bg-"] {
+*[class*="bg-"] {
     image-rendering: pixelated;
     background-size: var(--block-size);
 }
