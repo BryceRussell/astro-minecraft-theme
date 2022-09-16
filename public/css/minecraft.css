@@ -116,9 +116,16 @@ Classes:
 
 
 /* Backgrounds */
-*[class*="bg-"] {
+[class*="bg-"] {
+    image-rendering: crisp-edges;
     image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    background-attachment: fixed;
     background-size: var(--block-size);
+    -o-background-size: var(--block-size);
+    -moz-background-size: var(--block-size);
+    -webkit-background-size: var(--block-size);
 }
 
   .bg-dark-25 {
@@ -419,20 +426,8 @@ Classes:
 
 .markdown ul li::marker {
     content: "- ";
-    font-size: 0.75rem;
 }
 
-.markdown ol {
-    margin: 0.5rem 2rem;
-    counter-reset: count;
-}
-
-.markdown ol li {
-    counter-increment: count;
-} .markdown ol li::marker {
-    content: counter(count) ") ";
-    font-size: 1rem;
-}
 
 .markdown blockquote {
     margin: 1rem 0;

@@ -5,7 +5,7 @@ layout: '../../layouts/Docs.astro'
 
 # Introduction
 
-Show of your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
+Show off your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and provides a few pages pages, two layouts, and two components as examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## **Features**
 
@@ -112,22 +112,22 @@ Show of your server, document your projects, build with blocks, display items an
 ### Buttons
 <div class="flex flex-col gap-5">
   <div class="flex flex-wrap gap-3">
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
-    <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
-    <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+    <button class="button py-2 px-4 text-lg whitespace-nowrap">XS</button>
+    <button class="button py-2 px-4 text-lg whitespace-nowrap">Small</button>
+    <button class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</button>
+    <button class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</button>
   </div>
 
   <div class="flex flex-wrap gap-3">
-    <a class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
-    <a class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
-    <a class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <button class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></button>
+    <button class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></button>
+    <button class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></button>
   </div>
 
   <div class="flex flex-wrap gap-3">
-    <a class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
-    <a class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
-    <a class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <button class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></button>
+    <button class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></button>
+    <button class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></button>
   </div>
 </div>
 
