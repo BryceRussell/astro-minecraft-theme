@@ -81,7 +81,7 @@ All paintings in the `./public/imgs/paintings` folder will create a painting bac
 
 ##### `{number}-block`:
 
-`(1/16 | 1/8 | 1/4 | 1/2 | (1-99)-block`
+`1/16 / 1/8 / 1/4 / 1/2 / (1-99)-block`
 
 <div class="flex flex-wrap items-center gap-3">
   <div class="h-2-block w-2-block bg-cobblestone"></div>

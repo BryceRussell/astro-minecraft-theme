@@ -5,7 +5,7 @@ layout: '../../layouts/Docs.astro'
 
 # Introduction
 
-Document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
+Show of your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## **Features**
 
@@ -15,7 +15,7 @@ Document your projects, build with blocks, display items and paintings, create g
 - All 25 paintings
 - Block based units/sizes
 - Create GUIs using panels, slots, and buttons
-- Misc UIs like maps, books, signs, and item frames
+- Misc UIs like maps, books, signs, and more
 - Minecraft typography using the Minecraft's font, text colors, and text shadows
 - 75+ Minecraft themed colors
 - Markdown theme
@@ -50,14 +50,13 @@ Document your projects, build with blocks, display items and paintings, create g
 ## UI
 
 ### UI Panels
-<div class="flex flex-col gap-5">
-  <div class="flex gap-3">
-  <div class="h-2-block w-2-block transparent-panel"></div>
+<div class="flex flex-wrap gap-5">
+    <div class="h-2-block w-2-block transparent-panel"></div>
     <div class="h-2-block w-2-block panel"></div>
     <div class="h-2-block w-2-block panel-dark"></div>
     <div class="h-2-block w-2-block transparent-achievement-panel"></div>
     <div class="h-2-block w-2-block achievement-panel"></div>
-  </div>
+</div>
 
 ### UI Elements
 <div class="flex flex-wrap gap-5">
@@ -111,23 +110,25 @@ Document your projects, build with blocks, display items and paintings, create g
 </div>
 
 ### Buttons
-<div class="flex flex-wrap gap-3">
-  <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
-  <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
-  <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
-  <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
-</div>
+<div class="flex flex-col gap-5">
+  <div class="flex flex-wrap gap-3">
+    <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
+    <a class="button py-2 px-4 text-lg whitespace-nowrap">Small</a>
+    <a class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</a>
+    <a class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</a>
+  </div>
 
-<div class="flex flex-wrap gap-3">
-  <a class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
-  <a class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
-  <a class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
-</div>
+  <div class="flex flex-wrap gap-3">
+    <a class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <a class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <a class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  </div>
 
-<div class="flex flex-wrap gap-3">
-  <a class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
-  <a class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
-  <a class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  <div class="flex flex-wrap gap-3">
+    <a class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <a class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></a>
+    <a class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></a>
+  </div>
 </div>
 
 ### Books
