@@ -117,7 +117,8 @@ Classes:
 
 
 /* Backgrounds */
-[class*="bg-"] {
+[class*="bg-block"],
+[class*="bg-item"] {
     image-rendering: pixelated;
     background-repeat: repeat;
     background-size: var(--block-size);
@@ -125,6 +126,15 @@ Classes:
     -moz-background-size: var(--block-size);
     -webkit-background-size: var(--block-size);
 }
+
+[class*="bg-painting"] {
+    image-rendering: pixelated;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
 
   .bg-dark-25 {
     background-size: cover;

@@ -16,7 +16,7 @@ const safelist_array = [];
 const fs = require('fs');
 //Create block backgrounds like 'bg-stone' from a dir and safelist them
 fs.readdirSync(`./public/${BLOCK_DIR}`).forEach(file => {
-	const block_name = file.split('.')[0]
+	const block_name = `block-${file.split('.')[0]}`
 	background_obj[block_name] = `url('/${BLOCK_DIR}/${file}')`
 	// safelist_array.push(`bg-${block_name}`)
 });

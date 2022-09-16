@@ -23,3 +23,9 @@ Document your projects, build with blocks, display items and paintings, create g
 ## Docs
 
 This template is its own docs, You can read the docs using the [DEMO](https://minecraft-theme.netlify.app) or from the file at [./src/pages/docs/how-it-all-works.md](https://github.com/BryceRussell/astro-minecraft-theme/blob/master/src/pages/docs/how-it-all-works.md)
+
+## Todo
+
+- Fix, the first `\<code\>` in all `\<pre\>` is indented
+- Blurry repeating backgrounds on mobile
+- Sidebar button spacing/padding issues on mobile

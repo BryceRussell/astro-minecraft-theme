@@ -26,7 +26,7 @@ In order to access classes and textures your page must include the following lin
 
 **Default:** `48px`
 
-<div class="h-1-block w-1-block bg-cobblestone"></div>
+<div class="h-1-block w-1-block bg-block-cobblestone"></div>
 
 The size of a block on your website, controls the sizing of all minecraft styling (UI, Blocks, Items, etc), every class is sized relative to this property to keep everything the same size. Its value should be a multiple of the 16px, the size of a block texture, to avoid image scaling issues 
 
@@ -36,7 +36,7 @@ You can set the block size of an element using a class like: `[--block-size:{num
 ##### `--zoom`:
 
 <div class="flex flex-wrap items-center gap-5 m-2">
-  <div class="h-1-block w-1-block p-1 [--zoom:1] map"></div>
+  <div class="h-1-block w-1-block p-1 [--zoom:1.5] map"></div>
   <div class="h-1-block w-1-block p-1 [--zoom:2.5] map"></div>
   <div class="h-1-block w-1-block p-1 [--zoom:5] map"></div>
 </div>
@@ -51,9 +51,9 @@ Use the class `[--zoom:{number}]` to easily 'zoom' UI textures in and out
 **Varients:** `1/16 / 1/8 / 1/4 / 1/2 / 1-32`
 
 <div class="flex flex-wrap items-center gap-3">
-  <div class="h-[var(--2-block)] w-[var(--2-block)] bg-cobblestone"></div>
-  <div class="h-[var(--2-block)] w-[var(--1-block)] bg-cobblestone"></div>
-  <div class="h-[var(--1-block)] w-[var(--2-block)] bg-cobblestone"></div>
+  <div class="h-[var(--2-block)] w-[var(--2-block)] bg-block-cobblestone"></div>
+  <div class="h-[var(--2-block)] w-[var(--1-block)] bg-block-cobblestone"></div>
+  <div class="h-[var(--1-block)] w-[var(--2-block)] bg-block-cobblestone"></div>
 </div>
 
 CSS variables for sizing properties relative to `--block-size`
@@ -84,9 +84,9 @@ All paintings in the `./public/imgs/paintings` folder will create a painting bac
 `1/16 / 1/8 / 1/4 / 1/2 / (1-99)-block`
 
 <div class="flex flex-wrap items-center gap-3">
-  <div class="h-2-block w-2-block bg-cobblestone"></div>
-  <div class="h-2-block w-1-block bg-cobblestone"></div>
-  <div class="h-1-block w-2-block bg-cobblestone"></div>
+  <div class="h-2-block w-2-block bg-block-cobblestone"></div>
+  <div class="h-2-block w-1-block bg-block-cobblestone"></div>
+  <div class="h-1-block w-2-block bg-block-cobblestone"></div>
 </div>
 
 This theme extends tailwinds `spacing` property to add block based spacing/sizes Ex: `w-1-block` `p-1/2-block` `h-9-block`
@@ -334,7 +334,7 @@ The tailwind configuration located at projects root `./tailwind.config.cjs` read
 
 #### Blocks
 
-Blocks textures are stored in the `./public/imgs/blocks` folder. All textures from this folder are parsed into classes like `bg-{filename}`, to add blocks to the theme just add a texture to the block folder
+Blocks textures are stored in the `./public/imgs/blocks` folder. All textures from this folder are parsed into classes like `bg-block-{filename}`, to add blocks to the theme just add a texture to the block folder
 
 #### Items
 
@@ -354,7 +354,7 @@ Icon textures are stored in the `./public/imgs/icons` folder. All textures from 
 
 ### Fonts
 
-The theme comes preloaded with 4 different community made fonts located in `./public/fonts` and are imported into the project using `./public/css/minecraft.css`, if you want to add your own fonts add your font files to `./public/fonts` and define a `@fontface` rule inside the `minecraft.css` file
+The theme comes preloaded with 5 different community made fonts located in `./public/fonts` and are imported into the project using `./public/css/minecraft.css`, if you want to add your own fonts add your font files to `./public/fonts` and define a `@fontface` rule inside the `minecraft.css` file
 
 ### Project Logo
 

@@ -15,10 +15,10 @@ const heading_depth_class_map = {
 ---
 
 <Base noFooter>
-    <a slot="navbar" class="button flex items-center justify-center md:hidden mr-auto text-shadow-lg" onclick="document.getElementById('sidebar').classList.toggle('hidden')"><span class="mt-1.5 mr-2.5 mb-1 ml-2">☰</span></a>
+    <button slot="navbar" class="button grid place-items-center md:hidden mr-auto text-shadow-lg" onclick="document.getElementById('sidebar').classList.toggle('hidden')"><span class="mt-1.5 mr-2.5 mb-1 ml-2 leading-none">☰</span></button>
     <div class="flex flex-col md:flex-row h-full min-h-[var(--main-height)]">
-        <aside id="sidebar" class="hidden overflow-y-auto h-[50vh] md:h-screen w-full bg-stone-slab-double scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
-                <div class="flex flex-col h-min gap-2 p-3 bg-dark-50">
+        <aside id="sidebar" class="hidden overflow-y-auto h-[50vh] md:h-screen w-full bg-block-stone-slab-double scrollbar md:block md:sticky md:top-0 md:h-screen md:w-6-block">
+                <div class="flex flex-col h-min gap-2 p-3 bg-fixed bg-dark-50">
                 {[index, ...docs].map(async(h) => {
                     const headings = await h.getHeadings();
                     return (

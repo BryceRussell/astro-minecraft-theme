@@ -1,6 +1,7 @@
 /*
-  This is a regular base.css for tailwind with only one block of css commented out
-  Stops tailwind from styling 'code' elements for customizing markdown code blocks
+  This is a regular base.css with the following changes:
+    - Removed styles for 'code' and 'pre' tags
+    - Removed 'list-style-none' from list-items
 */
 
 @tailwind components;
