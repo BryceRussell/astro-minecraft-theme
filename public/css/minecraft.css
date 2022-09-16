@@ -115,9 +115,11 @@ Classes:
 }
 
 
+
 /* Backgrounds */
 [class*="bg-"] {
     image-rendering: pixelated;
+    background-repeat: repeat;
     background-size: var(--block-size);
     -o-background-size: var(--block-size);
     -moz-background-size: var(--block-size);
@@ -125,11 +127,14 @@ Classes:
 }
 
   .bg-dark-25 {
+    background-size: cover;
     background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25));
 } .bg-dark-50 {
+    background-size: cover;
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
 } .bg-dark,
   .bg-dark-75 {
+    background-size: cover;
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
 }
 
