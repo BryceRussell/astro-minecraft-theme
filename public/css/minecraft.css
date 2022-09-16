@@ -117,11 +117,7 @@ Classes:
 
 /* Backgrounds */
 [class*="bg-"] {
-    image-rendering: crisp-edges;
     image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    background-attachment: fixed;
     background-size: var(--block-size);
     -o-background-size: var(--block-size);
     -moz-background-size: var(--block-size);
