@@ -16,7 +16,7 @@ The `./src` folder contains the structure of your website. It comes with some ex
 In order to access classes and textures your page must include the following link tags on your page:
 
 ```html
-  <link rel="stylesheet" href="/css/minecraft.css">
+<link rel="stylesheet" href="/css/minecraft.css">
 ```
 
 ### CSS variables
@@ -60,16 +60,20 @@ CSS variables for sizing properties relative to `--block-size`
 
 **EX**: `var(--1/2-block)`, `var(--1-block)`, `var(--32-block)`
 
+##### `--fluid-(0-9)`:
+
+Responsive font sizes used for markdown
+
 ### Tailwindcss Classes
 
-One of the main jobs of the tailwind config is to read all file names inside the `./public/imgs` folder and assign each file a `bg-` class. This makes it easy to use the textures inside `./public/imgs` by calling a class like `bg-stone` or `bg-item-diamond`
+One of the main jobs of the tailwind config is to read all file names inside the `./public/imgs` folder and assign each file a `bg-` class. This makes it easy to use the textures inside `./public/imgs` by calling a class like `bg-block-stone` or `bg-item-diamond`
 
 
 **Note**: Use the `./public` folder to lookup filenames in order to use these classes
 
 ##### `bg-{filename}`:
 
-All blocks in the `./public/imgs/block` folder will create a block background class that look like: `bg-{filename}` Ex: `bg-dirt` `bg-gold-block`
+All blocks in the `./public/imgs/block` folder will create a block background class that look like: `bg-block-{filename}` Ex: `bg-block-dirt` `bg-block-gold-block`
 
 ##### `bg-item-{filename}`:
 
