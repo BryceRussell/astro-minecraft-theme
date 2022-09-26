@@ -5,7 +5,7 @@ layout: '../../layouts/Docs.astro'
 
 # Introduction
 
-Show off your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and provides a few pages pages, two layouts, and two components as examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
+Show off your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a complete Minecraft theme with a documentation template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and provides a few pages pages, two layouts, and two components as examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## **Features**
 

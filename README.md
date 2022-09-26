@@ -26,6 +26,6 @@ This template is its own docs, You can read the docs using the [DEMO](https://mi
 
 ## Todo
 
-- Fix, the first `\<code\>` in all `\<pre\>` is indented
+- Fix, the first `<code>` in all `<pre>` is indented
 - Blurry repeating backgrounds on mobile
 - Sidebar button spacing/padding issues on mobile
