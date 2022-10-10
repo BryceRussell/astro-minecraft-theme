@@ -186,7 +186,7 @@ Classes:
 }
 
 .button {
-    --zoom: 8;
+    --zoom: 10;
     user-select: none;
     cursor: pointer;
     image-rendering: pixelated;
@@ -218,21 +218,24 @@ Classes:
     color: #a8a29e;
 }
 
-.scrollbar::-webkit-scrollbar {
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #909090 #bfbfbf;
+} .scrollbar::-webkit-scrollbar {
     width: 16px;
 } .scrollbar::-webkit-scrollbar-thumb {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 } .scrollbar::-webkit-scrollbar-thumb:active {
     --zoom: 24;
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/scroll-thumb-active.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -241,7 +244,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/transparent-panel.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 42.86% 42.86% fill;
+    border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
 }
 
@@ -252,7 +255,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 42.86% 42.86% fill;
+    border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
 }
 
@@ -261,7 +264,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/panel-dark.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 42.86% 42.86% fill;
+    border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
 }
 
@@ -292,7 +295,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/transparent-slot.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -304,7 +307,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/slot.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -313,7 +316,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/transparent-raised-slot.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -324,7 +327,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 } .raised-slot-hover,
   .raised-slot-button:hover {
@@ -332,7 +335,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot-hover.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 } .raised-slot-active,
   .raised-slot-button:active {
@@ -340,7 +343,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/raised-slot-active.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -350,7 +353,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 } .enchanting-slot-hover,
   .enchanting-slot-button:hover {
@@ -358,7 +361,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot-hover.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 } .enchanting-slot-active,
   .enchanting-slot-button:active {
@@ -366,7 +369,7 @@ Classes:
     border-width: calc(var(--block-size) / var(--zoom));
     border-image: url('../imgs/ui/enchanting-slot-active.png');
     border-image-width: calc(var(--block-size) / var(--zoom));
-    border-image-slice: 33.33% 33.33% fill;
+    border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
 }
 
@@ -474,6 +477,7 @@ Classes:
     font-size: var(--fluid-2);
     color: #3d3c3d;
 } .table td, .markdown td {
+    position: relative;
     padding: 0 0.25rem;
     color: #fff;
 }

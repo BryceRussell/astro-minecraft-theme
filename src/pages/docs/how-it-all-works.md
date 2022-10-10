@@ -127,7 +127,7 @@ Minecraft styled scrollbar
 
 ##### `button`:
 
-**Zoom:** `8`
+**Zoom:** `10`
 
 <div class="flex flex-wrap items-center gap-3">
   <a class="button py-2 px-4 text-lg whitespace-nowrap">XS</a>
