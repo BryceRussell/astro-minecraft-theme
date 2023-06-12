@@ -1,0 +1,26 @@
+---
+---
+
+<header class="h-3-block md:h-2-block w-full bg-block-dirt">
+    <div class="h-full w-full bg-block-grass-side bg-repeat-x">
+        <div
+            class="flex flex-col md:flex-row items-center justify-end h-full w-full p-5 pt-0 md:pb-0 bg-gradient-to-t from-black/75 to-black/25"
+        >
+            <a href="/" class="h-auto w-6-block md:w-9-block mx-auto md:ml-0"
+                ><img src="/assets/project-logo.png" alt="logo" class="" /></a
+            >
+            <nav
+                class="flex items-center justify-end w-full md:w-min gap-3 text-2xl text-white"
+            >
+                <slot />
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/docs" class="hover:underline">Docs</a>
+                <a
+                    href="https://github.com/BryceRussell/astro-minecraft-theme"
+                    class="button py-1 px-2 text-lg"
+                    target="_blank">Github</a
+                >
+            </nav>
+        </div>
+    </div>
+</header>

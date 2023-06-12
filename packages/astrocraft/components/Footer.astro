@@ -1,0 +1,42 @@
+---
+const { class: classProp } = Astro.props;
+
+//If you want to change the responsive height of footer:
+//tweak the `[--footer-height:${x}]` classes inside of footer component
+---
+
+<footer
+    class:list={[
+        classProp,
+        "h-6-block xs:h-5-block sm:h-4-block md:h-3-block w-full bg-block-bedrock",
+    ]}
+>
+    <div
+        class="flex flex-col sm:flex-row items-center justify-between h-full py-4 px-6 bg-black/75 text-white"
+    >
+        <header class="flex flex-col gap-3 w-full sm:w-[60%] my-auto">
+            <img
+                src="/assets/project-logo.png"
+                class="h-full max-w-[30ch] m-[-14px]"
+            />
+            <p class="text-sm">
+                Show off your server, document your projects, build with blocks,
+                display items and paintings, create game like GUIs, and tons
+                more! This is the Minecraft Theme for Astro
+            </p>
+        </header>
+        <nav
+            class="flex sm:flex-col items-center sm:items-end justify-center gap-2 sm:gap-1 text-link"
+        >
+            <a
+                href="https://github.com/BryceRussell/astro-minecraft-theme"
+                class="link">Download</a
+            >
+            <a href="https://github.com/BryceRussell" class="link">Github</a>
+            <a href="https://astro.build" class="link">Astro</a>
+            <a href="https://discord.com/invite/grF4GTXXYm" class="link"
+                >Discord</a
+            >
+        </nav>
+    </div>
+</footer>

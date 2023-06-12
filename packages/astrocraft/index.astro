@@ -1,0 +1,24 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import { getCollection } from 'astro:content'
+import MinecraftPage from './layouts/MinecraftPage.astro'
+
+export async function getStaticPaths() {
+  const normalizeIndexSlug = (slug: string) => (slug === 'index' ? '' : slug);
+  const pages = await getCollection('pages')
+  return pages.map(page => {
+    return {
+      params: { slug: normalizeIndexSlug(page.slug) || undefined },
+      props: { page }
+    }
+  })
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { Content } = await Astro.props.page.render()
+---
+
+<MinecraftPage>
+  <Content />
+</MinecraftPage>

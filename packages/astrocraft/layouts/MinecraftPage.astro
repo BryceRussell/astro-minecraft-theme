@@ -1,0 +1,64 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const { noNav, noFooter = false } = Astro.props;
+
+// Used to calculate the min height for main element
+const min_navbar_height = 2;
+const min_footer_height = 3;
+
+import config from "virtual:astrocraft/user-config";
+---
+
+<html
+	lang="en"
+	style={config.blockSize && `--block-size:${config.blockSize}px;`}
+	class="h-full"
+>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Minecraft Theme</title>
+		<link
+			rel="icon"
+			type="image/png"
+			href=`/assets/${config.favicon.type}/${config.favicon.name}.png`
+		/>
+	</head>
+	<body class="flex flex-col h-full scrollbar bg-block-stone text-white">
+		<slot name="first" />
+		{
+			!noNav && (
+				<Navbar>
+					<slot name="navbar" />
+				</Navbar>
+			)
+		}
+		<main class="grow bg-black/75">
+			<div class="max-w-[90ch] mx-auto py-8 px-4 prose">
+				<slot />
+			</div>
+		</main>
+		{
+			!noFooter && (
+				<Footer>
+					<slot name="footer" />
+				</Footer>
+			)
+		}
+		<slot name="last" />
+	</body>
+</html>
+
+<style>
+	:root {
+		height: 100%;
+	}
+
+	body {
+		height: 100%;
+		flex-grow: 1;
+	}
+</style>
