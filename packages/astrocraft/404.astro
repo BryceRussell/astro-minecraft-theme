@@ -1,7 +1,67 @@
 ---
-import MinecraftPage from './layouts/MinecraftPage.astro'
+import { pathWithBase } from './utils/base'
+import MinecraftBaseLayout from "./layouts/MinecraftBaseLayout.astro";
 ---
 
-<MinecraftPage>
-  <h1>404 ERROR</h1>
-</MinecraftPage>
+<MinecraftBaseLayout>
+  <Fragment slot="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Not found</title>
+  </Fragment>
+
+  <div class="flex flex-col items-center justify-center h-full gap-8 mb-24">
+    <h1 class="text-shadow-sm text-7xl md:text-9xl text-text-dark-red">404</h1>
+    <div
+      class="flex flex-col items-center max-w-3xl w-full gap-1 px-12 md:px-24"
+    >
+      <p id="_error-top" class="text-center text-gray-2">
+        Failed to connect to the server
+      </p>
+      <p id="_error-bottom" class="text-center text-white">
+        Error: internal server error
+      </p>
+      <a href={pathWithBase('/')} class="button text-center w-full py-2 px-8 mt-1 text-lg"
+        >Back to title screen</a
+      >
+    </div>
+  </div>
+
+  <script is:inline>
+    const topMessageElement = document.getElementById("_error-top");
+    const bottomMessageElement = document.getElementById("_error-bottom");
+
+    const messages = {
+      "Failed to connect to the server": [
+        "Failed to verify username!",
+        "Failed to authenticate your connection",
+        "Connection timed out: connect",
+        "Internal Exception: io.netty.handler.timeout.ReadTimeOutException",
+        "Failed to login: The server encountered an unexpected condition which prevented it from fulfilling the request",
+      ],
+      "Connection Lost": [
+        "Timed out",
+        "Disconnected",
+        "Server closed",
+        "Too many packets (extreme lag?)",
+        "Error: internal server error",
+        "A fatal error has occured, this connection has been teminated",
+        "Internal Exception: java.IOException: An existing connection was forcibly closed by the remote host",
+      ],
+      "Diconnected by server": [
+        "Internal server error",
+        "Outdated server!",
+        "You logged in from another location",
+        "Banned: GRIEFER!!!",
+      ],
+    };
+
+    const randomItem = (array) =>
+      array[Math.floor(Math.random() * array.length)];
+    const randomMessageTop = randomItem(Object.keys(messages));
+    const randomMessageBottom = randomItem(messages[randomMessageTop]);
+
+    topMessageElement.textContent = randomMessageTop;
+    bottomMessageElement.textContent = randomMessageBottom;
+  </script>
+</MinecraftBaseLayout>

@@ -46,10 +46,10 @@ export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] 
           entryPoint: 'astrocraft/404.astro',
         });
         
-        // injectRoute({
-        //   pattern: '[...slug]',
-        //   entryPoint: 'astrocraft/index.astro',
-        // });
+        injectRoute({
+          pattern: '[...slug]',
+          entryPoint: 'astrocraft/index.astro',
+        });
 
         injectScript('page-ssr', `
           import "astrocraft/styles/base.css";
@@ -109,7 +109,7 @@ function vitePluginUserConfig(
     'virtual:astrocraft/user-config': `export default ${JSON.stringify(opts)}`,
     'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
   };
-  
+
   const resolutionMap = Object.fromEntries(
     (Object.keys(modules) as (keyof typeof modules)[]).map((key) => [
       resolveVirtualModuleId(key),

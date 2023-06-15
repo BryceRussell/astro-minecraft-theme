@@ -17,7 +17,10 @@
 
     --mc-font: 'Minecraft';
     --mc-font-mono: 'Monocraft';
-    --mc-text-shadow: 0.075rem 0.075rem var(--mc-color-black);
+    --mc-text-shadow-sm: 0.05em 0.05em var(--mc-color-black);
+    --mc-text-shadow: 0.075em 0.075em var(--mc-color-black);
+    --mc-text-shadow-lg: 0.15em 0.15em var(--mc-color-black);
+    --mc-text-shadow-xl: 0.225em 0.225em var(--mc-color-black);
     --mc-content-width: 75ch;
 }
 
@@ -50,6 +53,23 @@ table td {
     position: relative;
     padding: 0 0.25rem;
     color: var(--mc-color-white);
+}
+
+.text-shadow-sm {
+    text-shadow: var(--mc-text-shadow)
+}
+
+.text-shadow,
+.text-shadow-md {
+    text-shadow: var(--mc-text-shadow)
+}
+
+.text-shadow-lg {
+    text-shadow: var(--mc-text-shadow-lg)
+}
+
+.text-shadow-xl {
+    text-shadow: var(--mc-text-shadow-xl)
 }
 
 /* Backgrounds */
@@ -98,6 +118,7 @@ table td {
 .book {
     --mc-ui-zoom: 4;
     --size: calc((var(--mc-block-size) / var(--mc-ui-zoom) * 3));
+    overflow: hidden;
     border-width: var(--size);
     border-style: solid;
     border-left-width: calc(var(--size) / 1.5);
@@ -134,6 +155,10 @@ table td {
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
     color: var(--mc-color-text-active);
+}
+
+a.button:hover {
+    text-decoration: none;
 }
 
 .button:active {

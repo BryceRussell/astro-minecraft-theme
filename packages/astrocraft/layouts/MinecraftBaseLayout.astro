@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import HeadSEO from "../components/HeadSEO.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import config from "virtual:astrocraft/user-config";
+
+type Props = {
+	data?: CollectionEntry<'pages'>['data'];
+	navbar?: boolean;
+	footer?: boolean;
+}
+
+const {
+	lang,
+	blockSize
+} = config
+
+const {
+	data,
+	navbar = true,
+	footer = true
+} = Astro.props
+---
+
+<html
+	{lang}
+	style={blockSize && `--mc-block-size:${blockSize}px;` || null}
+	class="h-full"
+>
+	<head>
+		{data && <HeadSEO {data} />}
+		<slot name="head">
+	</head>
+	<body class="flex flex-col h-full scrollbar bg-block-stone">
+		{navbar && <Navbar />}
+		<div class="grow bg-black/75">
+			<slot />
+		</div>
+		{footer && <Footer />}
+	</body>
+</html>
+
+<style>
+	:root {
+		height: 100%;
+	}
+</style>

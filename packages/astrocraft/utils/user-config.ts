@@ -3,6 +3,9 @@ import { HeadConfigSchema } from '../schemas/head';
 import { LogoConfigSchema } from '../schemas/logo';
 
 const UserConfigSchema = z.object({
+
+  lang: z.string().default('en'),
+
   /** Title for your website. Will be used in metadata and as browser tab title. */
   title: z
     .string()
@@ -26,14 +29,25 @@ const UserConfigSchema = z.object({
 
   favicon: z.object({
     type: z.enum(['block', 'item']).default('block'),
-    name: z.string().default('grass-side'),
+    name: z.string(),
   }).default({
     type: 'block',
     name: 'grass-side'
   }),
 
-  /** Size of a block in pixels, all assets are sized relative to this value */
-  blockSize: z.number().optional(),
+  /** Optional details about the social media accounts for this site. */
+  social: z
+    .object({
+      /** Link to the main Twitter profile for this site, e.g. `'https://twitter.com/astrodotbuild'`. */
+      twitter: z.string().url().optional(),
+      /** Link to the main Mastodon profile for this site, e.g. `'https://m.webtoo.ls/@astro'`. */
+      mastodon: z.string().url().optional(),
+      /** Link to the main GitHub org or repo for this site, e.g. `'https://github.com/withastro/starlight'`. */
+      github: z.string().url().optional(),
+      /** Link to the Discord server for this site, e.g. `'https://astro.build/chat'`. */
+      discord: z.string().url().optional(),
+    })
+    .optional(),
 
   /**
    * Add extra tags to your site’s `<head>`.
@@ -56,6 +70,9 @@ const UserConfigSchema = z.object({
    * })
    */
   head: HeadConfigSchema(),
+
+  /** Size of a block in pixels, all assets are sized relative to this value */
+  blockSize: z.number().optional(),
 
   /**
    * Provide CSS files to customize the look and feel of your site.
