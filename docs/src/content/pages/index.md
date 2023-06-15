@@ -73,7 +73,7 @@ Show off your server, document your projects, build with blocks, display items a
 </div>
 
 ##### Example
-<table class="table w-fit">
+<table class="w-fit">
     <thead>
         <tr>
             <th>ID</th>
@@ -142,7 +142,7 @@ Show off your server, document your projects, build with blocks, display items a
 ### Maps
 
 <div class="flex flex-wrap items-center gap-5">
-  <div class="h-3-block w-3-block p-1 [--zoom:2] map"></div>
+  <div class="h-3-block w-3-block p-1 [--mc-ui-zoom:2] map"></div>
   <div class="h-2-block w-2-block p-1 map"></div>
   <div class="h-1-block w-1-block p-1 map"></div>
 </div>
@@ -159,20 +159,20 @@ Show off your server, document your projects, build with blocks, display items a
 ### Text
 
 <div class="flex flex-wrap items-center justify-center gap-3 m-4 whitespace-nowrap">
-    <p class="text-dark-blue">dark-blue</p>
-    <p class="text-dark-green">dark-green</p>
-    <p class="text-dark-aqua">dark-aqua</p>
-    <p class="text-dark-red">dark-red</p>
-    <p class="text-dark-purple">dark-purple</p>
-    <p class="text-gold">gold</p>
-    <p class="text-gray">gray</p>
-    <p class="text-dark-gray">dark-gray</p>
-    <p class="text-blue">blue</p>
-    <p class="text-green">green</p>
-    <p class="text-aqua">aqua</p>
-    <p class="text-red">red</p>
-    <p class="text-light-purple">light-purple</p>
-    <p class="text-yellow">yellow</p>
+    <p class="text-text-dark-blue">text-dark-blue</p>
+    <p class="text-text-dark-green">text-dark-green</p>
+    <p class="text-text-dark-aqua">text-dark-aqua</p>
+    <p class="text-text-dark-red">text-dark-red</p>
+    <p class="text-text-dark-purple">text-dark-purple</p>
+    <p class="text-text-gold">text-gold</p>
+    <p class="text-text-gray">text-gray</p>
+    <p class="text-text-dark-gray">text-dark-gray</p>
+    <p class="text-text-blue">text-blue</p>
+    <p class="text-text-green">text-green</p>
+    <p class="text-text-aqua">text-aqua</p>
+    <p class="text-text-red">text-red</p>
+    <p class="text-text-light-purple">text-light-purple</p>
+    <p class="text-text-yellow">text-yellow</p>
 </div>
 
 ### Wool

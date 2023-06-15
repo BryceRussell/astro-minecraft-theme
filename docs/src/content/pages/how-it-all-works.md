@@ -21,7 +21,7 @@ In order to access classes and textures your page must include the following lin
 ### CSS variables
 
 
-##### `--block-size`:
+##### `--mc-block-size`:
 
 **Default:** `48px`
 
@@ -29,20 +29,20 @@ In order to access classes and textures your page must include the following lin
 
 The size of a block on your website, controls the sizing of all minecraft styling (UI, Blocks, Items, etc), every class is sized relative to this property to keep everything the same size. Its value should be a multiple of the 16px, the size of a block texture, to avoid image scaling issues 
 
-You can set the block size of an element using a class like: `[--block-size:{number}]`
+You can set the block size of an element using a class like: `[--mc-block-size:{number}]`
 
 
-##### `--zoom`:
+##### `--mc-ui-zoom`:
 
 <div class="flex flex-wrap items-center gap-5 m-2">
-  <div class="h-1-block w-1-block p-1 [--zoom:1.5] map"></div>
-  <div class="h-1-block w-1-block p-1 [--zoom:2.5] map"></div>
-  <div class="h-1-block w-1-block p-1 [--zoom:5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:1.5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:2.5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:5] map"></div>
 </div>
 
 This property allows you to zoom the UI classes in and out by increasing or decreasing the widths of border-images.
 
-Use the class `[--zoom:{number}]` to easily 'zoom' UI textures in and out
+Use the class `[--mc-ui-zoom:{number}]` to easily 'zoom' UI textures in and out
 
 
 ##### `--{number}-block`:
@@ -55,7 +55,7 @@ Use the class `[--zoom:{number}]` to easily 'zoom' UI textures in and out
   <div class="h-[var(--1-block)] w-[var(--2-block)] bg-block-cobblestone"></div>
 </div>
 
-CSS variables for sizing properties relative to `--block-size`
+CSS variables for sizing properties relative to `--mc-block-size`
 
 **EX**: `var(--1/2-block)`, `var(--1-block)`, `var(--32-block)`
 
@@ -282,7 +282,7 @@ Active version of anvil textbox
 
 ##### `table`:
 
-<table class="table w-fit m-2"><thead><tr><th>ID</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>265</td><td>Iron Ingot</td><td>A ingot of iron, used for crafting</td></tr><tr><td>266</td><td>Gold Ingot</td><td>A ingot of gold, used for crafting</td></tr><tr><td>264</td><td>Diamond</td><td>A diamond, used for crafting</td></tr></tbody></table>
+<table class="w-fit m-2"><thead><tr><th>ID</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>265</td><td>Iron Ingot</td><td>A ingot of iron, used for crafting</td></tr><tr><td>266</td><td>Gold Ingot</td><td>A ingot of gold, used for crafting</td></tr><tr><td>264</td><td>Diamond</td><td>A diamond, used for crafting</td></tr></tbody></table>
 
 Styles table elements to look like in game inventories like chests
 
@@ -291,7 +291,7 @@ Styles table elements to look like in game inventories like chests
 **Zoom:** `4`
 
 <div class="flex flex-wrap items-center gap-5 m-2">
-  <div class="h-3-block w-3-block p-1 [--zoom:2] map"></div>
+  <div class="h-3-block w-3-block p-1 [--mc-ui-zoom:2] map"></div>
   <div class="h-2-block w-2-block p-1 map"></div>
   <div class="h-1-block w-1-block p-1 map"></div>
 </div>
@@ -302,7 +302,7 @@ Styles the borders and background of an element to look like a minecraft map
 
 **Zoom:** `4`
 
-<div class="h-9-block w-7-block pl-2 book [--zoom:4]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+<div class="h-9-block w-7-block pl-2 book [--mc-ui-zoom:4]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
 
 Styles the borders and background of an element to look like a minecraft book
 

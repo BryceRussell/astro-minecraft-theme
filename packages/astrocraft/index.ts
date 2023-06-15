@@ -22,7 +22,7 @@ export function MinecraftTheme(opts) : AstroIntegration[] {
       'astro:config:setup': ({ config: _config, updateConfig, injectScript, injectRoute, addWatchFile }) => {
         config = _config
 
-        addWatchFile(new URL('./tailwind.config.js', config.root))
+        addWatchFile(new URL('./tailwind.config.cjs', config.root))
 
         injectRoute({
           pattern: '404',

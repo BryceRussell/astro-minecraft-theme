@@ -13,7 +13,7 @@ import config from "virtual:astrocraft/user-config";
 
 <html
 	lang="en"
-	style={config.blockSize && `--block-size:${config.blockSize}px;`}
+	style={config.blockSize && `--mc-block-size:${config.blockSize}px;`}
 	class="h-full"
 >
 	<head>
@@ -24,10 +24,10 @@ import config from "virtual:astrocraft/user-config";
 		<link
 			rel="icon"
 			type="image/png"
-			href=`/assets/${config.favicon.type}/${config.favicon.name}.png`
+			href=`/assets/${config.favicon.type || 'block'}/${config.favicon.name || 'grass-side'}.png`
 		/>
 	</head>
-	<body class="flex flex-col h-full scrollbar bg-block-stone text-white">
+	<body class="flex flex-col h-full scrollbar bg-red-500 text-white">
 		<slot name="first" />
 		{
 			!noNav && (
@@ -37,7 +37,7 @@ import config from "virtual:astrocraft/user-config";
 			)
 		}
 		<main class="grow bg-black/75">
-			<div class="max-w-[90ch] mx-auto py-8 px-4 prose">
+			<div class="max-w-[var(--mc-content-width)] mx-auto py-8 px-4 prose">
 				<slot />
 			</div>
 		</main>

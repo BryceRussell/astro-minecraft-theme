@@ -12,6 +12,9 @@ export default defineConfig({
         type: 'item',
         name: 'beef-cooked'
       },
+      styles: {
+        prose: null
+      },
       customCSS: [],
       head: []
     })

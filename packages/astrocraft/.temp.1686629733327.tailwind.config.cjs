@@ -1,5 +1,5 @@
 const fs = require('fs');
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const blockSpacingClasses = Array.from({ length: 99 }).reduce(
   (obj, _, i) => {
@@ -22,37 +22,25 @@ function createBackgroundImageClasses(folder) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.{astro,js,md,mdx,ts}'],
-	corePlugins: {
-    preflight: false,
-  },
+	plugins: [],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		screens: {
 			'xs': '480px',
 			...defaultTheme.screens
 		},
 		fontFamily: {
-			'sans': ['var(--mc-font)', 'Arial', 'Helvetica', ...defaultTheme.fontFamily.sans],
-			'mono': ['var(--mc-font-mono)', ...defaultTheme.fontFamily.mono],
+			'sans': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecraft': ['Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecrafter': ['Minecrafter', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecrafter-alt': ['Minecrafter Alt', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
 			'minecraft-evenings': ['Minecraft Evenings', 'Minecraft', 'Arial', ...defaultTheme.fontFamily.sans],
+			'mono': ['Monocraft', ...defaultTheme.fontFamily.mono],
 			'monocraft': ['Monocraft', 'Minecraft', ...defaultTheme.fontFamily.mono],
-		},
-		color: {
-			white: 'var(--mc-color-white)',
-			black: 'var(--mc-color-black)',
 		},
 		extend: {
 			colors: {
-				'gray-1': 'var(--mc-color-gray-1)',
-				'gray-2': 'var(--mc-color-gray-2)',
-				'gray-3': 'var(--mc-color-gray-3)',
-				'gray-4': 'var(--mc-color-gray-4)',
-				'gray-5': 'var(--mc-color-gray-5)',
 				link: 'var(--mc-color-text-accent)',
-				active: 'var(--mc-color-text-active)',
 				light: 'var(--mc-color-light)',
 				dark: 'var(--mc-color-dark)',
 				//Text colors
@@ -183,9 +171,9 @@ module.exports = {
 				...blockSpacingClasses
 			},
 			typography: {
-				DEFAULT: {
-					css: {
-						textShadow: '0.095rem 0.095rem var(--mc-color-black)',
+        DEFAULT: {
+          css: {
+						textShadow: '0.095rem 0.095rem #000',
 						'--tw-prose-body': "var(--mc-color-text)",
 						'--tw-prose-headings': "var(--mc-color-text)",
 						'--tw-prose-bold': "var(--mc-color-text)",
@@ -231,20 +219,17 @@ module.exports = {
 							content: '""',
 							display: 'none',
 						},
-						'thead th': {
-							color: 'var(--mc-color-gray-4)',
-							fontWeight: 'normal',
+						thead: {
 							textShadow: 'none',
-						},
-						'tbody td': {
-							padding: '.25rem .5rem !important' // !important is needed here due to the way the typoragphy plugin styles padding on td elements
-						},
-					},
-				},
-			},
+							fontSize: '1.2rem'
+						}
+          },
+        },
+      },
 		},
 	},
   plugins: [
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+    // ...
   ],
 }
