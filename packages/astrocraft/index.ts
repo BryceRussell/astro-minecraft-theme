@@ -108,6 +108,9 @@ function vitePluginUserConfig(
   const modules = {
     'virtual:astrocraft/user-config': `export default ${JSON.stringify(opts)}`,
     'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
+    'virtual:astrocraft/user-css': opts.customCss
+      .map((id) => `import "${id}";`)
+      .join(''),
   };
 
   const resolutionMap = Object.fromEntries(

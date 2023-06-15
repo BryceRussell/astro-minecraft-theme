@@ -6,3 +6,5 @@ declare module 'virtual:astrocraft/user-config' {
 declare module 'virtual:astrocraft/project-context' {
   export default { root: string };
 }
+
+declare module 'virtual:starlight/user-css' {}
