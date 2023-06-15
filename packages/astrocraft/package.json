@@ -4,8 +4,6 @@
   "description": "Minecraft theme for Astro",
   "scripts": {},
   "keywords": [
-    "docs",
-    "documentation",
     "astro",
     "withastro"
   ],
@@ -14,19 +12,21 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/brycerussell/astrocraft",
-    "directory": "packages/starlight"
+    "directory": "packages/astrocraft"
   },
   "bugs": "https://github.com/brycerussell/astrocraft/issues",
   "homepage": "https://minecraft-theme.netlify.app",
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./styles/base.css": "./styles/base.css",
-    "./styles/minecraft.css": "./styles/minecraft.css",
+    "./types": "./types.ts",
+    "./schema": "./schema.ts",
     "./layouts": "./layouts.ts",
     "./components": "./components.ts",
     "./index.astro": "./index.astro",
-    "./404.astro": "./404.astro"
+    "./404.astro": "./404.astro",
+    "./styles/base.css": "./styles/base.css",
+    "./styles/minecraft.css": "./styles/minecraft.css"
   },
   "peerDependencies": {
     "astro": "^2.6.2",
