@@ -12,10 +12,10 @@ const blockSpacingClasses = Array.from({ length: 99 }).reduce(
 
 function createBackgroundImageClasses(folder) {
 	const values = {}
-	const files = fs.readdirSync(`./node_modules/astrocraft/assets/${folder}`)
+	const files = fs.readdirSync(`./node_modules/astrocraft/dist/_mc/${folder}`)
 	for (const file of files) {
 		const key = folder + '-' + file.split('.')[0]
-		values[key] = `url('/assets/${folder}/${file}')`
+		values[key] = `url('/_mc/${folder}/${file}')`
 	}
 	return values
 }
@@ -173,7 +173,7 @@ module.exports = {
 				...createBackgroundImageClasses('block'),
 				...createBackgroundImageClasses('item'),
 				...createBackgroundImageClasses('painting'),
-				'sign': "url(/assets/ui/sign.png)",
+				'sign': 'url("/_mc/ui/sign.png")',
 			},
 			spacing: {
 				'1/16-block': 'calc(var(--mc-block-size) / 16)',
@@ -204,7 +204,7 @@ module.exports = {
 						pre: {
 							'--mc-ui-zoom': '10',
 							borderWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
-							borderImage: 'url("/assets/ui/achievement-panel.png")',
+							borderImage: 'url("/_mc/ui/achievement-panel.png")',
 							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
@@ -217,7 +217,7 @@ module.exports = {
 							textAlign: 'center',
 							padding: '0.075rem 0.15rem 0.025rem 0.2rem',
 							borderWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
-							borderImage: 'url("/assets/ui/achievement-panel.png")',
+							borderImage: 'url("/_mc/ui/achievement-panel.png")',
 							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',

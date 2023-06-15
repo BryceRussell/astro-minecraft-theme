@@ -79,7 +79,7 @@ table td {
     text-shadow: none;
     text-align: center;
     background-size: cover;
-    background-image: url('/assets/ui/sign.png');
+    background-image: url('/_mc/ui/sign.png');
     white-space: pre-line;
     color: var(--mc-color-black);
 }
@@ -89,7 +89,7 @@ table td {
     --mc-ui-zoom: 4;
     box-sizing: content-box;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/map.png');
+    border-image: url('/_mc/ui/map.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 12.75% 15.75% fill;
     border-image-repeat: repeat;
@@ -101,7 +101,7 @@ table td {
     border-width: var(--size);
     border-style: solid;
     border-left-width: calc(var(--size) / 1.5);
-    border-image: url('/assets/ui/book.png');
+    border-image: url('/_mc/ui/book.png');
     border-image-width: var(--size) var(--size) var(--size) calc(var(--size) / 1.5);
     border-image-slice: 8.5% 15% 12.75% 10% fill;
     border-image-repeat: stretch;
@@ -115,9 +115,9 @@ table td {
     cursor: pointer;
     image-rendering: pixelated;
     background-size: cover;
-    background-image: url('/assets/ui/button-inside.png');
+    background-image: url('/_mc/ui/button-inside.png');
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/button-border.png');
+    border-image: url('/_mc/ui/button-border.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
@@ -127,9 +127,9 @@ table td {
 
 .button:hover {
     background-size: cover;
-    background-image: url('/assets/ui/button-inside-hover.png');
+    background-image: url('/_mc/ui/button-inside-hover.png');
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/button-border-hover.png');
+    border-image: url('/_mc/ui/button-border-hover.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
@@ -138,9 +138,9 @@ table td {
 
 .button:active {
     background-size: cover;
-    background-image: url('/assets/ui/button-inside-active.png');
+    background-image: url('/_mc/ui/button-inside-active.png');
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/button-border-active.png');
+    border-image: url('/_mc/ui/button-border-active.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: contain;
@@ -159,7 +159,7 @@ table td {
 .scrollbar::-webkit-scrollbar-thumb {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/scroll-thumb.png');
+    border-image: url('/_mc/ui/scroll-thumb.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -168,7 +168,7 @@ table td {
 .scrollbar::-webkit-scrollbar-thumb:active {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/scroll-thumb-active.png');
+    border-image: url('/_mc/ui/scroll-thumb-active.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -177,7 +177,7 @@ table td {
 .transparent-panel {
     --mc-ui-zoom: 10;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/transparent-panel.png');
+    border-image: url('/_mc/ui/transparent-panel.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
@@ -187,7 +187,7 @@ table,
 .panel {
     --mc-ui-zoom: 10;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/panel.png');
+    border-image: url('/_mc/ui/panel.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
@@ -196,7 +196,7 @@ table,
 .panel-dark {
     --mc-ui-zoom: 10;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/panel-dark.png');
+    border-image: url('/_mc/ui/panel-dark.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 43% 43% fill;
     border-image-repeat: stretch;
@@ -205,7 +205,7 @@ table,
 .transparent-achievement-panel {
     --mc-ui-zoom: 10;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/transparent-achievement-panel.png');
+    border-image: url('/_mc/ui/transparent-achievement-panel.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 45.5% 45.5% fill;
     border-image-repeat: stretch;
@@ -214,7 +214,7 @@ table,
 .achievement-panel {
     --mc-ui-zoom: 10;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/achievement-panel.png');
+    border-image: url('/_mc/ui/achievement-panel.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 45.5% 45.5% fill;
     border-image-repeat: stretch;
@@ -223,7 +223,7 @@ table,
 .transparent-slot {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/transparent-slot.png');
+    border-image: url('/_mc/ui/transparent-slot.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -234,7 +234,7 @@ table td,
 .scrollbar::-webkit-scrollbar-track {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/slot.png');
+    border-image: url('/_mc/ui/slot.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -243,7 +243,7 @@ table td,
 .transparent-raised-slot {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/transparent-raised-slot.png');
+    border-image: url('/_mc/ui/transparent-raised-slot.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -254,7 +254,7 @@ table td,
 .scrollbar::-webkit-scrollbar-corner {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/raised-slot.png');
+    border-image: url('/_mc/ui/raised-slot.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -264,7 +264,7 @@ table td,
 .raised-slot-button:hover {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/raised-slot-hover.png');
+    border-image: url('/_mc/ui/raised-slot-hover.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -274,7 +274,7 @@ table td,
 .raised-slot-button:active {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/raised-slot-active.png');
+    border-image: url('/_mc/ui/raised-slot-active.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -284,7 +284,7 @@ table td,
 .enchanting-slot-button {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/enchanting-slot.png');
+    border-image: url('/_mc/ui/enchanting-slot.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -294,7 +294,7 @@ table td,
 .enchanting-slot-button:hover {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/enchanting-slot-hover.png');
+    border-image: url('/_mc/ui/enchanting-slot-hover.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -304,7 +304,7 @@ table td,
 .enchanting-slot-button:active {
     --mc-ui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/enchanting-slot-active.png');
+    border-image: url('/_mc/ui/enchanting-slot-active.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
@@ -313,7 +313,7 @@ table td,
 .anvil-textbox {
     --mc-ui-zoom: 16;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/anvil-textbox.png');
+    border-image: url('/_mc/ui/anvil-textbox.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 40% 40% fill;
     border-image-repeat: stretch;
@@ -324,7 +324,7 @@ table td,
 .anvil-textbox:focus {
     --mc-ui-zoom: 16;
     border-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
-    border-image: url('/assets/ui/anvil-textbox-active.png');
+    border-image: url('/_mc/ui/anvil-textbox-active.png');
     border-image-width: calc(var(--mc-block-size) / var(--mc-ui-zoom));
     border-image-slice: 40% 40% fill;
     border-image-repeat: stretch;
@@ -333,7 +333,7 @@ table td,
 /* Fonts */
 @font-face {
     font-family: 'Minecraft';
-    src: url('/assets/font/Minecraft-Bold.woff2') format('woff2');
+    src: url('/_mc/font/Minecraft-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -341,7 +341,7 @@ table td,
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('/assets/font/Minecraft-BoldItalic.woff2') format('woff2');
+    src: url('/_mc/font/Minecraft-BoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -349,7 +349,7 @@ table td,
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('/assets/font/Minecraft-Italic.woff2') format('woff2');
+    src: url('/_mc/font/Minecraft-Italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -357,7 +357,7 @@ table td,
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('/assets/font/Minecraft-Regular.woff2') format('woff2');
+    src: url('/_mc/font/Minecraft-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -365,7 +365,7 @@ table td,
 
 @font-face {
     font-family: 'Monocraft';
-    src: url('/assets/font/Monocraft.woff2') format('woff2');
+    src: url('/_mc/font/Monocraft.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -373,7 +373,7 @@ table td,
 
 @font-face {
     font-family: 'Minecrafter';
-    src: url('/assets/font/Minecrafter.woff2') format('woff2');
+    src: url('/_mc/font/Minecrafter.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -381,7 +381,7 @@ table td,
 
 @font-face {
     font-family: 'Minecrafter Alt';
-    src: url('/assets/font/MinecrafterAlt.woff2') format('woff2');
+    src: url('/_mc/font/MinecrafterAlt.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -389,7 +389,7 @@ table td,
 
 @font-face {
     font-family: 'Minecraft Evenings';
-    src: url('/assets/fonts/MinecraftEvenings.woff2') format('woff2');
+    src: url('/_mc/fonts/MinecraftEvenings.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

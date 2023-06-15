@@ -3,20 +3,37 @@ import type {
   AstroIntegration,
   ViteUserConfig,
 } from 'astro';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFile } from 'node:fs'
 import path from 'node:path'
-import mime from 'mime'
 import { execSync } from 'child_process'
-
 import tailwind from '@astrojs/tailwind';
+import mime from 'mime'
+import {
+  AstrocraftUserConfig,
+  AstrocraftConfig,
+  AstrocraftConfigSchema,
+} from './utils/user-config'
+import { errorMap } from './utils/error-map';
+
 
 const isWindows = process.platform === 'win32'
 const joinPath = (isWindows ? path.win32 : path).join
 
-export function MinecraftTheme(opts) : AstroIntegration[] {
+export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] {
   let config: AstroConfig
 
-  const Astrocraft = {
+  const parsedConfig = AstrocraftConfigSchema.safeParse(opts, { errorMap });
+
+  if (!parsedConfig.success) {
+    throw new Error(
+      'Invalid config passed to astrocraft integration\n' +
+        parsedConfig.error.issues.map((i) => i.message).join('\n')
+    );
+  }
+
+  const userConfig = parsedConfig.data;
+
+  const Astrocraft: AstroIntegration = {
     name: 'astrocraft',
     hooks: {
       'astro:config:setup': ({ config: _config, updateConfig, injectScript, injectRoute, addWatchFile }) => {
@@ -28,30 +45,30 @@ export function MinecraftTheme(opts) : AstroIntegration[] {
           pattern: '404',
           entryPoint: 'astrocraft/404.astro',
         });
-        injectRoute({
-          pattern: '[...slug]',
-          entryPoint: 'astrocraft/index.astro',
-        });
+        
+        // injectRoute({
+        //   pattern: '[...slug]',
+        //   entryPoint: 'astrocraft/index.astro',
+        // });
 
         injectScript('page-ssr', `
           import "astrocraft/styles/base.css";
           import "astrocraft/styles/minecraft.css";
         `);
-        config = _config
+
         updateConfig({
-          build: {
-            inlineStylesheets: 'auto'
-          },
           vite: {
-            plugins: [vitePluginUserConfig(opts, config)],
+            plugins: [vitePluginUserConfig(userConfig, config)],
           },
           experimental: { assets: true },
         });
+        config = _config
       },
       'astro:server:setup': ({ server }) => {
-        server.middlewares.use('/assets', (req, res, next) => {
-          const assetPath = './node_modules/astrocraft/assets' + req.url;
-          fs.readFile(assetPath, (err, data) => {
+        // Use middleware to serve assets from package in dev mode
+        server.middlewares.use('/_mc', (req, res) => {
+          const assetPath = './node_modules/astrocraft/dist/_mc' + req.url;
+          readFile(assetPath, (err, data) => {
             if (err) {
               console.error(err);
               res.statusCode = 404;
@@ -63,16 +80,16 @@ export function MinecraftTheme(opts) : AstroIntegration[] {
           });
         });
       },
-      'astro:build:done': (options) => {
-        const assetsDir = joinPath(config.outDir.pathname, 'assets').slice(isWindows ? 1 : 0)
-        console.log("ASSETS", assetsDir)
+      'astro:build:done': () => {
+        // Copy assets from package to build folder
+        const assetsDir = joinPath(config.outDir.pathname, '_mc').slice(isWindows ? 1 : 0)
+
         if (!existsSync(assetsDir)) {
           mkdirSync(assetsDir)
         }
-
         execSync( isWindows
-          ? `xcopy /E /I node_modules\\astrocraft\\assets\\* ${assetsDir}`
-          : `cp -n -r node_modules/astrocraft/assets/* ${assetsDir} || true`
+          ? `xcopy /E /I node_modules\\astrocraft\\dist\\_mc\\* ${assetsDir}`
+          : `cp -n -r node_modules/astrocraft/dist/_mc/* ${assetsDir} || true`
         )
       }
     }
@@ -85,14 +102,12 @@ function resolveVirtualModuleId(id: string) {
 }
 
 function vitePluginUserConfig(
-  opts: { customCss: [] },
+  opts: AstrocraftConfig,
   { root }: AstroConfig
 ): NonNullable<ViteUserConfig['plugins']>[number] {
   const modules = {
     'virtual:astrocraft/user-config': `export default ${JSON.stringify(opts)}`,
-    'virtual:astrocraft/project-context': `export default ${JSON.stringify({
-      root,
-    })}`,
+    'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
   };
   const resolutionMap = Object.fromEntries(
     (Object.keys(modules) as (keyof typeof modules)[]).map((key) => [

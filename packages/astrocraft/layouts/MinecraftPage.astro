@@ -24,10 +24,10 @@ import config from "virtual:astrocraft/user-config";
 		<link
 			rel="icon"
 			type="image/png"
-			href=`/assets/${config.favicon.type || 'block'}/${config.favicon.name || 'grass-side'}.png`
+			href=`/_mc/${config.favicon.type}/${config.favicon.name}.png`
 		/>
 	</head>
-	<body class="flex flex-col h-full scrollbar bg-red-500 text-white">
+	<body class="flex flex-col h-full scrollbar bg-block-stone text-white">
 		<slot name="first" />
 		{
 			!noNav && (

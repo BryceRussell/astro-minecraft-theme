@@ -203,13 +203,6 @@ declare module 'astro:content' {
   collection: "pages";
   data: any
 } & { render(): Render[".md"] };
-"sub/test.md": {
-	id: "sub/test.md";
-  slug: "sub/test";
-  body: string;
-  collection: "pages";
-  data: any
-} & { render(): Render[".md"] };
 };
 
 	};
