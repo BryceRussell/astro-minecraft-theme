@@ -108,9 +108,15 @@ function vitePluginUserConfig(
   const modules = {
     'virtual:astrocraft/user-config': `export default ${JSON.stringify(opts)}`,
     'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
-    'virtual:astrocraft/user-css': opts.customCss
-      .map((id) => `import "${id}";`)
-      .join(''),
+    'virtual:astrocraft/user-css': opts.customCss.map((id) => `import "${id}";`).join(''),
+    'virtual:astrocraft/user-images': `
+      const blocks = await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      const items = await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      const paintings = await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      const icons = await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      const ui = await import.meta.glob('/src/assets/ui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      export { blocks, items, paintings, icons, ui };
+    `
   };
 
   const resolutionMap = Object.fromEntries(
