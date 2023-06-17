@@ -1,5 +1,9 @@
-const fs = require('fs');
+const fg = require('fast-glob');
 const defaultTheme = require('tailwindcss/defaultTheme');
+
+// console.log('TAILWIND', fg.sync(`./src/assets/blocks/*`, { onlyFiles: true }))
+
+const fileName = (path) => path.split("/").pop().split(".")[0];
 
 const blockSpacingClasses = Array.from({ length: 99 }).reduce(
   (obj, _, i) => {
@@ -12,10 +16,10 @@ const blockSpacingClasses = Array.from({ length: 99 }).reduce(
 
 function createBackgroundImageClasses(folder) {
 	const values = {}
-	const files = fs.readdirSync(`./node_modules/astrocraft/dist/_mc/${folder}`)
+	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG}`, { onlyFiles: true })
 	for (const file of files) {
-		const key = folder + '-' + file.split('.')[0]
-		values[key] = `url('/_mc/${folder}/${file}')`
+		const key = folder.replace(/s$/, '') + '-' + fileName(file)
+		values[key] = `var(--mc-${folder.replace(/s$/, '')}-${fileName(file)})`
 	}
 	return values
 }
@@ -170,9 +174,10 @@ module.exports = {
 				}
 			},
 			backgroundImage: {
-				...createBackgroundImageClasses('block'),
-				...createBackgroundImageClasses('item'),
-				...createBackgroundImageClasses('painting'),
+				...createBackgroundImageClasses('blocks'),
+				...createBackgroundImageClasses('items'),
+				...createBackgroundImageClasses('paintings'),
+				...createBackgroundImageClasses('icons'),
 				'sign': 'url("/_mc/ui/sign.png")',
 			},
 			spacing: {

@@ -1,64 +1,43 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import HeadSEO from "../components/HeadSEO.astro";
+import CSSPropGenerator from "../components/CSSPropGenerator.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-
-const { noNav, noFooter = false } = Astro.props;
-
-// Used to calculate the min height for main element
-const min_navbar_height = 2;
-const min_footer_height = 3;
-
 import config from "virtual:astrocraft/user-config";
+
+type Props = {
+	data?: CollectionEntry<"pages">["data"];
+	navbar?: boolean;
+	footer?: boolean;
+};
+
+const { lang, blockSize } = config;
+
+const { data, navbar = true, footer = true } = Astro.props;
 ---
 
 <html
-	lang="en"
-	style={config.blockSize && `--mc-block-size:${config.blockSize}px;`}
+	{lang}
+	style={(blockSize && `--mc-block-size:${blockSize}px;`) || null}
 	class="h-full"
 >
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Minecraft Theme</title>
-		<link
-			rel="icon"
-			type="image/png"
-			href=`/_mc/${config.favicon.type}/${config.favicon.name}.png`
-		/>
-	</head>
-	<body class="flex flex-col h-full scrollbar bg-block-stone text-white">
-		<slot name="first" />
-		{
-			!noNav && (
-				<Navbar>
-					<slot name="navbar" />
-				</Navbar>
-			)
-		}
-		<main class="grow bg-black/75">
-			<div class="max-w-[var(--mc-content-width)] mx-auto py-8 px-4 prose">
+		{data && <HeadSEO {data} />}
+		<CSSPropGenerator />
+		<slot name="head" /></head
+	>
+	<body class="flex flex-col h-full scrollbar bg-block-stone">
+		{navbar && <Navbar />}
+		<div class="grow bg-black/75">
+			<div class="max-w-[75ch] mx-auto p-4 prose">
 				<slot />
 			</div>
-		</main>
-		{
-			!noFooter && (
-				<Footer>
-					<slot name="footer" />
-				</Footer>
-			)
+		</div>
+		{footer && <Footer />}
+	</body><style>
+		:root {
+			height: 100%;
 		}
-		<slot name="last" />
-	</body>
+	</style>
 </html>
-
-<style>
-	:root {
-		height: 100%;
-	}
-
-	body {
-		height: 100%;
-		flex-grow: 1;
-	}
-</style>

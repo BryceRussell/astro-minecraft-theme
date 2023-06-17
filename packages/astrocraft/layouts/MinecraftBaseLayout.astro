@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import HeadSEO from "../components/HeadSEO.astro";
+import CSSPropGenerator from '../components/CSSPropGenerator.astro';
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import config from "virtual:astrocraft/user-config";
@@ -30,6 +31,7 @@ const {
 >
 	<head>
 		{data && <HeadSEO {data} />}
+		<CSSPropGenerator />
 		<slot name="head">
 	</head>
 	<body class="flex flex-col h-full scrollbar bg-block-stone">

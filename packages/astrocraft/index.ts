@@ -63,34 +63,6 @@ export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] 
           experimental: { assets: true },
         });
         config = _config
-      },
-      'astro:server:setup': ({ server }) => {
-        // Use middleware to serve assets from package in dev mode
-        server.middlewares.use('/_mc', (req, res) => {
-          const assetPath = './node_modules/astrocraft/dist/_mc' + req.url;
-          readFile(assetPath, (err, data) => {
-            if (err) {
-              console.error(err);
-              res.statusCode = 404;
-              res.end();
-            } else {
-              res.setHeader('Content-Type', mime.getType(req.url));
-              res.end(data);
-            }
-          });
-        });
-      },
-      'astro:build:done': () => {
-        // Copy assets from package to build folder
-        const assetsDir = joinPath(config.outDir.pathname, '_mc').slice(isWindows ? 1 : 0)
-
-        if (!existsSync(assetsDir)) {
-          mkdirSync(assetsDir)
-        }
-        execSync( isWindows
-          ? `xcopy /E /I node_modules\\astrocraft\\dist\\_mc\\* ${assetsDir}`
-          : `cp -n -r node_modules/astrocraft/dist/_mc/* ${assetsDir} || true`
-        )
       }
     }
   }

@@ -9,8 +9,8 @@ export default defineConfig({
       logo: {
         src: './src/assets/logo.png',
         alt: 'Astrocraft Logo'
-      },
-      blockSize: 48,
+      }
     })
-  ]
+  ],
+  image: { service: { entrypoint: 'astro/assets/services/sharp' } },
 });
