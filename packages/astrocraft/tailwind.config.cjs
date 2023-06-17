@@ -177,14 +177,14 @@ module.exports = {
 				...createBackgroundImageClasses('blocks'),
 				...createBackgroundImageClasses('items'),
 				...createBackgroundImageClasses('paintings'),
-				...createBackgroundImageClasses('icons'),
-				'sign': 'url("/_mc/ui/sign.png")',
+				...createBackgroundImageClasses('icons')
 			},
 			spacing: {
 				'1/16-block': 'calc(var(--mc-block-size) / 16)',
 				'1/8-block': 'calc(var(--mc-block-size) / 8)',
 				'1/4-block': 'calc(var(--mc-block-size) / 4)',
 				'1/2-block': 'calc(var(--mc-block-size) / 2)',
+				'3/4-block': 'calc((var(--mc-block-size) / 4) * 3)',
 				...blockSpacingClasses
 			},
 			typography: {

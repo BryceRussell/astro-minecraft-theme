@@ -37,37 +37,90 @@ Show off your server, document your projects, build with blocks, display items a
 ## Paintings
 
 <div class="flex flex-wrap items-center justify-center gap-4 p-4">
-  <img class="w-1-block h-1-block bg-painting-plant">
-  <img class="w-1-block h-1-block bg-painting-kebab">
-  <img class="w-1-block h-1-block bg-painting-alban">
-  <img class="w-1-block h-1-block bg-painting-aztec">
-  <img class="w-1-block h-1-block bg-painting-aztec2">
-  <img class="w-1-block h-1-block bg-painting-bomb">
-  <img class="w-2-block h-1-block bg-painting-sunset">
-  <img class="w-2-block h-1-block bg-painting-pool">
-  <img class="w-2-block h-1-block bg-painting-courbet">
-  <img class="w-2-block h-1-block bg-painting-creebet">
-  <img class="w-2-block h-1-block bg-painting-sea">
-  <img class="w-1-block h-2-block bg-painting-wanderer">
-  <img class="w-1-block h-2-block bg-painting-graham">
-  <img class="w-2-block h-2-block bg-painting-void">
-  <img class="w-2-block h-2-block bg-painting-stage">
-  <img class="w-2-block h-2-block bg-painting-wither">
-  <img class="w-2-block h-2-block bg-painting-skull">
-  <img class="w-2-block h-2-block bg-painting-bust">
-  <img class="w-2-block h-2-block bg-painting-match">
-  <img class="w-4-block h-2-block bg-painting-fighters">
-  <img class="w-4-block h-3-block bg-painting-kong">
-  <img class="w-4-block h-3-block bg-painting-skeleton">
-  <img class="w-4-block h-4-block bg-painting-burning-skull">
-  <img class="w-4-block h-4-block bg-painting-pigscene">
-  <img class="w-4-block h-4-block bg-painting-pointer">
+  <div class="w-1-block h-1-block bg-painting-plant"></div>
+  <div class="w-1-block h-1-block bg-painting-kebab"></div>
+  <div class="w-1-block h-1-block bg-painting-alban"></div>
+  <div class="w-1-block h-1-block bg-painting-aztec"></div>
+  <div class="w-1-block h-1-block bg-painting-aztec2"></div>
+  <div class="w-1-block h-1-block bg-painting-bomb"></div>
+  <div class="w-2-block h-1-block bg-painting-sunset"></div>
+  <div class="w-2-block h-1-block bg-painting-pool"></div>
+  <div class="w-2-block h-1-block bg-painting-courbet"></div>
+  <div class="w-2-block h-1-block bg-painting-creebet"></div>
+  <div class="w-2-block h-1-block bg-painting-sea"></div>
+  <div class="w-1-block h-2-block bg-painting-wanderer"></div>
+  <div class="w-1-block h-2-block bg-painting-graham"></div>
+  <div class="w-2-block h-2-block bg-painting-void"></div>
+  <div class="w-2-block h-2-block bg-painting-stage"></div>
+  <div class="w-2-block h-2-block bg-painting-wither"></div>
+  <div class="w-2-block h-2-block bg-painting-skull"></div>
+  <div class="w-2-block h-2-block bg-painting-bust"></div>
+  <div class="w-2-block h-2-block bg-painting-match"></div>
+  <div class="w-4-block h-2-block bg-painting-fighters"></div>
+  <div class="w-4-block h-3-block bg-painting-kong"></div>
+  <div class="w-4-block h-3-block bg-painting-skeleton"></div>
+  <div class="w-4-block h-4-block bg-painting-burning-skull"></div>
+  <div class="w-4-block h-4-block bg-painting-pigscene"></div>
+  <div class="w-4-block h-4-block bg-painting-pointer"></div>
 </div>
 
 ## Icons
 
-<div class="flex flex-wrap items-center justify-center my-5">
-    <img src="/_mc/icon/abacus.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/armor-empty.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/armor-full.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/armor-half.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-down-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-down.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-left-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-left.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-right-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-right.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-up-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/arrow-up.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/beacon-1.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/beacon-2.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/beacon-3.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/beacon-full.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/bubble-pop.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/bubble.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/checkmark.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-arrow-active.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-arrow-crossed.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-arrow-down-active.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-arrow-down.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-arrow.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-bubbles-active.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-bubbles.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-flames-active.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crafting-flames.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/crosshair.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/gui-plus.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hammer-anvil.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hammer-large.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hardcore-heart-full.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hardcore-heart-half.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/heart-empty.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/heart-full.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/heart-half.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hunger-empty.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hunger-full.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/hunger-half.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-down-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-down.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-left-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-left.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-right-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-right.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-up-hover.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/large-arrow-up.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/next-page-inactive.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/next-page.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/previous-page-inactive.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/previous-page.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/red-x.png" class="object-contain m-[1rem] [transform:scale(2)]"><img src="/_mc/icon/shovel-broken.png" class="object-contain m-[1rem] [transform:scale(2)]">
+<div class="flex flex-wrap items-center justify-center gap-2 p-4">
+    <div class="h-1/2-block w-1/2-block bg-icon-abacus"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-armor-empty"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-armor-full"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-armor-half"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-down-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-down"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-left-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-left"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-right-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-right"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-up-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-arrow-up"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-beacon-1"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-beacon-2"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-beacon-3"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-beacon-full"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-bubble-pop"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-bubble"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-checkmark"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-arrow-active"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-arrow-crossed"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-arrow-down-active"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-arrow-down"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-arrow"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-bubbles-active"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-bubbles"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-flames-active"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crafting-flames"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-crosshair"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-gui-plus"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hammer-anvil"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hammer-large"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hardcore-heart-full"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hardcore-heart-half"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-heart-empty"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-heart-full"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-heart-half"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hunger-empty"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hunger-full"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-hunger-half"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-down-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-down"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-left-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-left"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-right-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-right"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-up-hover"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-large-arrow-up"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-next-page-inactive"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-next-page"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-previous-page-inactive"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-previous-page"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-red-x"></div>
+    <div class="h-1/2-block w-1/2-block bg-icon-shovel-broken"></div>
 </div>
 
 ## UI
@@ -124,34 +177,21 @@ Show off your server, document your projects, build with blocks, display items a
     </tbody>
 </table>
 
-<div class="flex items-center justify-around md:justify-between w-full">
-  <div class="hidden md:inline text-3xl"><---</div>
-  
-  ### Scrollbar
-
-  <div class="text-3xl">---></div>
-</div>
-
 ### Buttons
-<div class="flex flex-col gap-5">
-  <div class="flex flex-wrap gap-3">
-    <button class="button py-2 px-4 text-lg whitespace-nowrap">XS</button>
-    <button class="button py-2 px-4 text-lg whitespace-nowrap">Small</button>
-    <button class="button py-2 px-4 text-lg whitespace-nowrap">Larger Button</button>
-    <button class="button py-2 px-4 text-lg whitepsace-nowrap">A Looooooonger Button</button>
-  </div>
-
-  <div class="flex flex-wrap gap-3">
-    <button class="raised-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></button>
-    <button class="raised-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></button>
-    <button class="raised-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></button>
-  </div>
-
-  <div class="flex flex-wrap gap-3">
-    <button class="enchanting-slot-button h-1-block w-1-block py-2 px-4 text-lg whitespace-nowrap"></button>
-    <button class="enchanting-slot-button h-1-block w-3-block py-2 px-4 text-lg whitespace-nowrap"></button>
-    <button class="enchanting-slot-button h-1-block w-5-block py-2 px-4 text-lg whitespace-nowrap"></button>
-  </div>
+<div class="flex flex-wrap items-center justify-center gap-4 p-4">
+<button class="button py-2 px-4 text-xl">X</button>
+  <button class="button w-1/6 h-1-block"></button>
+  <button class="button w-1/5 h-1-block"></button>
+  <button class="button w-1/4 h-1-block"></button>
+  <button class="button w-1/3 h-1-block"></button>
+  <button class="button w-1/2 h-1-block"></button>
+  <button class="button w-full h-1-block text-xl">Back to title screen</button>
+  <button class="raised-slot-button h-1-block w-full"></button>
+  <button class="enchanting-slot-button h-1-block w-full"></button>
+  <button class="raised-slot-button h-1-block w-1/2"></button>
+  <button class="raised-slot-button h-1-block w-1/6"></button>
+  <button class="enchanting-slot-button h-1-block w-1/2"></button>
+  <button class="enchanting-slot-button h-1-block w-1/6"></button>
 </div>
 
 ### Books
@@ -174,8 +214,8 @@ Show off your server, document your projects, build with blocks, display items a
 ### Signs
 
 <div class="flex flex-wrap items-center gap-5">
-  <div class="h-3-block w-6-block px-1 sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
-  <div class="h-2-block w-4-block px-1 sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+  <div class="h-3-block w-6-block px-1 mc-ui-sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+  <div class="h-2-block w-4-block px-1 mc-ui-sign leading-[1.25rem] text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
 </div>
 
 ## Colors

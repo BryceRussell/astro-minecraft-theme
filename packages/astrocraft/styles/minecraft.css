@@ -91,8 +91,17 @@ table td {
     -webkit-background-size: cover;
 }
 
+[class*="bg-icon"] {
+    image-rendering: pixelated;
+    background-repeat: repeat;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
 /* UI */
-.sign {
+.mc-ui-sign {
     display: flex;
     align-items: center;
     justify-content: center;
