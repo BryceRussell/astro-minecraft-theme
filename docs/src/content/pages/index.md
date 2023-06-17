@@ -36,8 +36,32 @@ Show off your server, document your projects, build with blocks, display items a
 
 ## Paintings
 
-<div class="flex flex-wrap justify-center gap-15">
-  <img src="/_mc/painting/alban.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/aztec.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/aztec2.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/bomb.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/burning-skull.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/bust.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/courbet.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/creebet.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/fighters.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/graham.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/kebab.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/kong.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/match.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/pigscene.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/plant.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/pointer.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/pool.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/sea.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/skeleton.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/skull.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/stage.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/sunset.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/void.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/wanderer.png" class="object-contain m-[3rem] [transform:scale(2.5)]"><img src="/_mc/painting/wither.png" class="object-contain m-[3rem] [transform:scale(2.5)]">
+<div class="flex flex-wrap items-center justify-center gap-4 p-4">
+  <img class="w-1-block h-1-block bg-painting-plant">
+  <img class="w-1-block h-1-block bg-painting-kebab">
+  <img class="w-1-block h-1-block bg-painting-alban">
+  <img class="w-1-block h-1-block bg-painting-aztec">
+  <img class="w-1-block h-1-block bg-painting-aztec2">
+  <img class="w-1-block h-1-block bg-painting-bomb">
+  <img class="w-2-block h-1-block bg-painting-sunset">
+  <img class="w-2-block h-1-block bg-painting-pool">
+  <img class="w-2-block h-1-block bg-painting-courbet">
+  <img class="w-2-block h-1-block bg-painting-creebet">
+  <img class="w-2-block h-1-block bg-painting-sea">
+  <img class="w-1-block h-2-block bg-painting-wanderer">
+  <img class="w-1-block h-2-block bg-painting-graham">
+  <img class="w-2-block h-2-block bg-painting-void">
+  <img class="w-2-block h-2-block bg-painting-stage">
+  <img class="w-2-block h-2-block bg-painting-wither">
+  <img class="w-2-block h-2-block bg-painting-skull">
+  <img class="w-2-block h-2-block bg-painting-bust">
+  <img class="w-2-block h-2-block bg-painting-match">
+  <img class="w-4-block h-2-block bg-painting-fighters">
+  <img class="w-4-block h-3-block bg-painting-kong">
+  <img class="w-4-block h-3-block bg-painting-skeleton">
+  <img class="w-4-block h-4-block bg-painting-burning-skull">
+  <img class="w-4-block h-4-block bg-painting-pigscene">
+  <img class="w-4-block h-4-block bg-painting-pointer">
 </div>
 
 ## Icons
