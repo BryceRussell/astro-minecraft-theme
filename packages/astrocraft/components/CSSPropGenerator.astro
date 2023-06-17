@@ -7,45 +7,26 @@ import {
   ui,
 } from "virtual:astrocraft/user-images";
 
-const fileName = (path: string) => path.split("/").pop()!.split(".")[0]!;
-
-const kebab = (k: string) =>
-	k.toLowerCase() === k ? k : k.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-
-const toStyleString = (obj: Record<string, any>) =>
+const toStyleString = (prefix: string, obj: Record<string, any>) =>
 	Object.entries(obj)
-		.map(([k, v]) => `--${kebab(k)}:${v}`)
+		.map(([k, v]) => `--mc-${prefix}-${k}:url("${v.src}")`)
 		.join(';');
-
-function createCSSPropObject(
-  prefix: string,
-  images: Record<string, ImageMetadata>
-) {
-  return Object.keys(images).reduce((acc, key) => {
-    return {
-      ...acc,
-      [`mc-${prefix}-${fileName(key)}`]: `url("${images[key].default.src}")`,
-    };
-  }, {});
-}
 ---
 
 <!-- BLOCK PROPS -->
-<style set:html={`:root {${toStyleString(createCSSPropObject("block", blocks))}}`}></style>
+<style set:html={`:root {${toStyleString("block", blocks)}}`}></style>
 <!-- ITEM PROPS -->
 <style
-  set:html={`:root {${toStyleString(createCSSPropObject("item", items))}}`}
+  set:html={`:root {${toStyleString("item", items)}}`}
 ></style>
 <!-- PAINTING PROPS -->
 <style
-  set:html={`:root {${toStyleString(
-    createCSSPropObject("painting", paintings)
-  )}}`}
+  set:html={`:root {${toStyleString("painting", paintings)}}`}
 ></style>
 <!-- ICON PROPS -->
 <style
-  set:html={`:root {${toStyleString(createCSSPropObject("icon", icons))}}`}
+  set:html={`:root {${toStyleString("icon", icons)}}`}
 ></style>
 <!-- UI PROPS -->
-<style set:html={`:root {${toStyleString(createCSSPropObject("ui", ui))}}`}
+<style set:html={`:root {${toStyleString("ui", ui)}}`}
 ></style>

@@ -21,6 +21,7 @@
     ".": "./index.ts",
     "./types": "./types.ts",
     "./schema": "./schema.ts",
+    "./utils/virtual": "./utils/virtual.ts",
     "./layouts": "./layouts.ts",
     "./components": "./components.ts",
     "./index.astro": "./index.astro",

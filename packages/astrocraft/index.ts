@@ -82,12 +82,13 @@ function vitePluginUserConfig(
     'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
     'virtual:astrocraft/user-css': opts.customCss.map((id) => `import "${id}";`).join(''),
     'virtual:astrocraft/user-images': `
+      import { transformImageGlob } from 'astrocraft/utils/virtual';
       import logo from '${opts?.logo?.src || '/src/assets/logo.png'}';
-      const blocks = await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
-      const items = await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
-      const paintings = await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
-      const icons = await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
-      const ui = await import.meta.glob('/src/assets/ui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true })
+      const blocks = transformImageGlob(await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
+      const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
+      const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
+      const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
+      const ui = transformImageGlob(await import.meta.glob('/src/assets/ui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
       export { logo, blocks, items, paintings, icons, ui };
     `
   };
