@@ -9,6 +9,7 @@ declare module 'virtual:astrocraft/user-config' {
 
 declare module 'virtual:astrocraft/user-images' {
   type ImageMetadata = import('astro').ImageMetadata;
+  export const logo: ImageMetadata;
   export const blocks: Record<string, ImageMetadata>;
   export const items: Record<string, ImageMetadata>;
   export const paintings: Record<string, ImageMetadata>;

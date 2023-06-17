@@ -1,4 +1,5 @@
 ---
+import { logo } from 'virtual:astrocraft/user-images'
 ---
 
 <header class="h-3-block md:h-2-block w-full bg-block-dirt">
@@ -7,7 +8,7 @@
             class="flex flex-col md:flex-row items-center justify-end h-full w-full p-5 pt-0 md:pb-0 bg-gradient-to-t from-black/75 to-black/25"
         >
             <a href="/" class="h-auto w-6-block md:w-9-block mx-auto md:ml-0"
-                ><img src="/_mc/project-logo.png" alt="logo" class="" /></a
+                ><img src={logo.src} alt=""/></a
             >
             <nav
                 class="flex items-center justify-end w-full md:w-min gap-3 text-2xl"
