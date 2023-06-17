@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 *,
 ::before,
 ::after {
@@ -228,3 +225,71 @@ video {
 [hidden] {
   display: none;
 }
+
+/* Fonts */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monocraft';
+  src: url('../assets/fonts/Monocraft.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecrafter';
+  src: url('../assets/fonts/Minecrafter.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecrafter Alt';
+  src: url('../assets/fonts/MinecrafterAlt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraft Evenings';
+  src: url('../assets/fonts/MinecraftEvenings.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind components;
+@tailwind utilities;
