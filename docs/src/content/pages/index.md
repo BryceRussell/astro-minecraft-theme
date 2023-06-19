@@ -4,25 +4,65 @@ title: Theme Reference
 
 # Theme Reference
 
+## Properties
+
+### `--mc-block-size`
+
+<div class="flex flex-wrap items-end p-4 gap-1/2-block">
+  <div class="[--mc-block-size:96px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
+  <div class="[--mc-block-size:72px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
+  <div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
+</div>
+
+```html
+<div class="[--mc-block-size:96px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
+<div class="[--mc-block-size:72px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
+<div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
+```
+
+### `--mc-gui-zoom`
+
+<div class="flex flex-wrap items-end p-4 gap-1/2-block">
+  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:2] bg-mc-map"></div>
+  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:3] bg-mc-map"></div>
+  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:5] bg-mc-map"></div>
+</div>
+
+```html
+<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:2] bg-mc-map"></div>
+<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:3] bg-mc-map"></div>
+<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:5] bg-mc-map"></div>
+```
+
 ## Components
 
 ### `mc-book`
 
-<div class="flex flex-wrap items-center justify-center gap-1/2-block">
+<div class="flex flex-wrap items-center gap-1/2-block p-4">
   <div class="shrink h-5-block w-4-block p-1 mc-book text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores? Lorem ipsum dolor sit amet, consectetur adipisicing elit?</div>
-
   <div class="shrink h-3-block w-5-block p-1 [--mc-gui-zoom:6] mc-book text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores?</div>
 </div>
 
+```html
+<div class="h-5-block w-4-block p-1 mc-book text-sm">...</div>
+<div class="h-3-block w-5-block p-1 [--mc-gui-zoom:6] mc-book text-sm">...</div>
+```
+
 ### `mc-sign`
 
-<div class="flex flex-wrap items-center justify-center gap-1/2-block">
+<div class="flex flex-wrap items-center gap-1/2-block p-4">
   <span class="shrink h-3-block w-5-block p-1 mc-sign text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span>
-
-  <div class="shrink h-24 w-40 p-0.5 [--zoom:7] mc-sign">
+  <div class="shrink h-24 w-40 p-0.5 mc-sign">
     <span>Lorem ipsum dolor amet, <span class="text-mc-blue">ipsum dolor sit amet</span>?</span>
   </div>
 </div>
+
+```html
+<span class="h-3-block w-5-block p-1 mc-sign text-2xl">...</span>
+<div class="h-24 w-40 p-0.5 mc-sign">
+  <span>...<span class="text-mc-blue">...</span>...</span>
+</div>
+```
 
 ### `mc-button`
 
@@ -35,6 +75,14 @@ title: Theme Reference
   <button class="mc-button w-1/2 h-1-block"></button>
   <button class="mc-button w-full h-1-block text-xl">Back to title screen</button>
 </div>
+
+```html
+<button class="mc-button py-2 px-4 text-xl">X</button>
+  ...
+<button class="mc-button w-1/4 h-1-block"></button>
+  ...
+<button class="mc-button w-full h-1-block text-xl">Back to title screen</button>
+```
 
 ## Utilities
 
