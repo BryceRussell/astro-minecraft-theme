@@ -18,10 +18,6 @@
     --tw-content: '';
   }
 
-  ::selection {
-    background-color: #727272;
-  }
-
   [class*="bg-mc-block"],
   [class*="bg-mc-item"] {
     image-rendering: pixelated;
@@ -536,6 +532,16 @@
     border-image-repeat: stretch;
   }
 
+  .bg-mc-gui-alt-panel {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+
   .bg-mc-gui-slot {
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
@@ -570,6 +576,35 @@
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image: var(--mc-gui-raised-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-textbox-active,
+  .bg-mc-gui-textbox {
+    --mc-gui-zoom: 16;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-textbox);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 40% 40% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-textbox-active:focus,
+  .bg-mc-gui-textbox-active:active {
+    --mc-gui-zoom: 16;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-textbox-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 40% 40% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-slot {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-slot);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;

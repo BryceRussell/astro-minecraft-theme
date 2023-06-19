@@ -52,10 +52,6 @@ title: Theme Reference
 
 <div class="h-2-block w-3-block m-4 bg-mc-gui-panel"></div>
 
-#### `bg-mc-gui-dark-panel`
-
-<div class="h-2-block w-3-block m-4 bg-mc-gui-dark-panel"></div>
-
 #### `bg-mc-gui-slot`
 
 <div class="h-1-block w-1-block m-4 bg-mc-gui-slot"></div>
@@ -67,6 +63,25 @@ title: Theme Reference
 #### `bg-mc-gui-button`
 
 <button class="w-min m-4 py-1/4-block px-1-block bg-mc-gui-button">Click</button>
+
+#### `bg-mc-gui-textbox`
+
+<div class="flex flex-col gap-4 p-4">
+  <div type="text" class="h-1/2-block w-3-block bg-mc-gui-textbox"></div>
+  <input type="text" class="h-8 w-5-block px-2 bg-mc-gui-textbox-active" />
+</div>
+
+#### `bg-mc-gui-dark-panel`
+
+<div class="h-2-block w-3-block m-4 bg-mc-gui-dark-panel"></div>
+
+#### `bg-mc-gui-alt-panel`
+
+<div class="h-2-block w-3-block m-4 bg-mc-gui-alt-panel"></div>
+
+#### `bg-mc-gui-alt-slot`
+
+<div class="h-1-block w-1-block m-4 bg-mc-gui-alt-slot"></div>
 
 #### `bg-mc-gui-alt-raised`
 
