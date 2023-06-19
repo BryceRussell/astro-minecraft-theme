@@ -25,24 +25,24 @@ In order to access classes and textures your page must include the following lin
 
 **Default:** `48px`
 
-<div class="h-1-block w-1-block bg-block-cobblestone"></div>
+<div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
 
 The size of a block on your website, controls the sizing of all minecraft styling (UI, Blocks, Items, etc), every class is sized relative to this property to keep everything the same size. Its value should be a multiple of the 16px, the size of a block texture, to avoid image scaling issues 
 
 You can set the block size of an element using a class like: `[--mc-block-size:{number}]`
 
 
-##### `--mc-ui-zoom`:
+##### `--mc-gui-zoom`:
 
 <div class="flex flex-wrap items-center gap-5 m-2">
-  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:1.5] map"></div>
-  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:2.5] map"></div>
-  <div class="h-1-block w-1-block p-1 [--mc-ui-zoom:5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-gui-zoom:1.5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-gui-zoom:2.5] map"></div>
+  <div class="h-1-block w-1-block p-1 [--mc-gui-zoom:5] map"></div>
 </div>
 
 This property allows you to zoom the UI classes in and out by increasing or decreasing the widths of border-images.
 
-Use the class `[--mc-ui-zoom:{number}]` to easily 'zoom' UI textures in and out
+Use the class `[--mc-gui-zoom:{number}]` to easily 'zoom' UI textures in and out
 
 
 ##### `--{number}-block`:
@@ -50,9 +50,9 @@ Use the class `[--mc-ui-zoom:{number}]` to easily 'zoom' UI textures in and out
 **Varients:** `1/16 / 1/8 / 1/4 / 1/2 / 1-32`
 
 <div class="flex flex-wrap items-center gap-3">
-  <div class="h-[var(--2-block)] w-[var(--2-block)] bg-block-cobblestone"></div>
-  <div class="h-[var(--2-block)] w-[var(--1-block)] bg-block-cobblestone"></div>
-  <div class="h-[var(--1-block)] w-[var(--2-block)] bg-block-cobblestone"></div>
+  <div class="h-[var(--2-block)] w-[var(--2-block)] bg-mc-block-cobblestone"></div>
+  <div class="h-[var(--2-block)] w-[var(--1-block)] bg-mc-block-cobblestone"></div>
+  <div class="h-[var(--1-block)] w-[var(--2-block)] bg-mc-block-cobblestone"></div>
 </div>
 
 CSS variables for sizing properties relative to `--mc-block-size`
@@ -65,31 +65,31 @@ Responsive font sizes used for markdown
 
 ### Tailwindcss Classes
 
-One of the main jobs of the tailwind config is to read all file names inside the `./public/imgs` folder and assign each file a `bg-` class. This makes it easy to use the textures inside `./public/imgs` by calling a class like `bg-block-stone` or `bg-item-diamond`
+One of the main jobs of the tailwind config is to read all file names inside the `./public/imgs` folder and assign each file a `bg-` class. This makes it easy to use the textures inside `./public/imgs` by calling a class like `bg-mc-block-stone` or `bg-mc-item-diamond`
 
 
 **Note**: Use the `./public` folder to lookup filenames in order to use these classes
 
 ##### `bg-{filename}`:
 
-All blocks in the `./public/imgs/block` folder will create a block background class that look like: `bg-block-{filename}` Ex: `bg-block-dirt` `bg-block-gold-block`
+All blocks in the `./public/imgs/block` folder will create a block background class that look like: `bg-mc-block-{filename}` Ex: `bg-mc-block-dirt` `bg-mc-block-gold-block`
 
-##### `bg-item-{filename}`:
+##### `bg-mc-item-{filename}`:
 
-All items in the `./public/imgs/items` folder will create a item background class that look like: `bg-item-{filename}` Ex: `bg-item-cake` `bg-item-diamond`
+All items in the `./public/imgs/items` folder will create a item background class that look like: `bg-mc-item-{filename}` Ex: `bg-mc-item-cake` `bg-mc-item-diamond`
 
-##### `bg-painting-{filename}`:
+##### `bg-mc-painting-{filename}`:
 
-All paintings in the `./public/imgs/paintings` folder will create a painting background class that look like: `bg-painting-{filename}`Ex: `bg-painting-skull` `bg-painting-kebab`
+All paintings in the `./public/imgs/paintings` folder will create a painting background class that look like: `bg-mc-painting-{filename}`Ex: `bg-mc-painting-skull` `bg-mc-painting-kebab`
 
 ##### `{number}-block`:
 
 `1/16 / 1/8 / 1/4 / 1/2 / (1-99)-block`
 
 <div class="flex flex-wrap items-center gap-3">
-  <div class="h-2-block w-2-block bg-block-cobblestone"></div>
-  <div class="h-2-block w-1-block bg-block-cobblestone"></div>
-  <div class="h-1-block w-2-block bg-block-cobblestone"></div>
+  <div class="h-2-block w-2-block bg-mc-block-cobblestone"></div>
+  <div class="h-2-block w-1-block bg-mc-block-cobblestone"></div>
+  <div class="h-1-block w-2-block bg-mc-block-cobblestone"></div>
 </div>
 
 This theme extends tailwinds `spacing` property to add block based spacing/sizes Ex: `w-1-block` `p-1/2-block` `h-9-block`
@@ -146,11 +146,11 @@ The raised slot UI element can be used an an interactable button
 **Zoom:** `24`
 
 <div class="flex flex-wrap items-center gap-3">
-  <div class="enchanting-slot-button h-1-block w-1-block"></div>
-  <div class="enchanting-slot-button h-1-block w-4-block"></div>
+  <div class="slot-alt-button h-1-block w-1-block"></div>
+  <div class="slot-alt-button h-1-block w-4-block"></div>
 </div>
 
-The enchanting slot UI element can be used an an interactable button
+The enchant slot UI element can be used an an interactable button
 
 ##### `transparent-panel`:
 
@@ -240,43 +240,43 @@ The raised slot button when on hover
 
 The raised slot button when active or focused
 
-##### `enchanting-slot`:
+##### `slot-alt`:
 
 **Zoom:** `24`
 
-<div class="h-1-block w-1-block enchanting-slot"></div>
+<div class="h-1-block w-1-block slot-alt"></div>
 
 The slot UI element used in game when choosing an enchant
 
-##### `enchanting-slot-hover`:
+##### `slot-alt-hover`:
 
 **Zoom:** `24`
 
-<div class="h-1-block w-1-block enchanting-slot-hover"></div>
+<div class="h-1-block w-1-block slot-alt-hover"></div>
 
-The enchanting slot button when on hover
+The enchant slot button when on hover
 
-##### `enchanting-slot-active`:
+##### `slot-alt-active`:
 
 **Zoom:** `24`
 
-<div class="h-1-block w-1-block enchanting-slot-active"></div>
+<div class="h-1-block w-1-block slot-alt-active"></div>
 
-The enchanting slot button when active or focused
+The enchant slot button when active or focused
 
-##### `anvil-textbox`:
+##### `textbox-alt`:
 
 **Zoom:** `16`
 
-<div class="h-1/2-block w-5-block anvil-textbox"></div>
+<div class="h-1/2-block w-5-block textbox-alt"></div>
 
 The textbox used in anvils
 
-##### `anvil-textbox-active`:
+##### `textbox-alt-active`:
 
 **Zoom:** `16`
 
-<div class="h-1/2-block w-5-block anvil-textbox-active"></div>
+<div class="h-1/2-block w-5-block textbox-alt-active"></div>
 
 Active version of anvil textbox
 
@@ -291,7 +291,7 @@ Styles table elements to look like in game inventories like chests
 **Zoom:** `4`
 
 <div class="flex flex-wrap items-center gap-5 m-2">
-  <div class="h-3-block w-3-block p-1 [--mc-ui-zoom:2] map"></div>
+  <div class="h-3-block w-3-block p-1 [--mc-gui-zoom:2] map"></div>
   <div class="h-2-block w-2-block p-1 map"></div>
   <div class="h-1-block w-1-block p-1 map"></div>
 </div>
@@ -302,7 +302,7 @@ Styles the borders and background of an element to look like a minecraft map
 
 **Zoom:** `4`
 
-<div class="h-9-block w-7-block pl-2 book [--mc-ui-zoom:4]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+<div class="h-9-block w-7-block pl-2 book [--mc-gui-zoom:4]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores, commodi explicabo aspernatur laboriosam dolorem corporis doloremque numquam nesciunt cum aliquid ipsum maxime iste autem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
 
 Styles the borders and background of an element to look like a minecraft book
 
@@ -331,15 +331,15 @@ The tailwind configuration located at projects root `./tailwind.config.cjs` read
 
 #### Blocks
 
-Blocks textures are stored in the `./public/imgs/blocks` folder. All textures from this folder are parsed into classes like `bg-block-{filename}`, to add blocks to the theme just add a texture to the block folder
+Blocks textures are stored in the `./public/imgs/blocks` folder. All textures from this folder are parsed into classes like `bg-mc-block-{filename}`, to add blocks to the theme just add a texture to the block folder
 
 #### Items
 
-Items textures are stored in the `./public/imgs/items` folder. All textures from this folder are parsed into classes like `bg-item-{filename}`, to add items to the theme just add a texture to the item folder
+Items textures are stored in the `./public/imgs/items` folder. All textures from this folder are parsed into classes like `bg-mc-item-{filename}`, to add items to the theme just add a texture to the item folder
 
 #### Paintings
 
-Painting textures are stored in the `./public/imgs/paintings` folder. All textures from this folder are parsed into classes like `bg-painting-{filename}`, to add paintings to the theme just add a texture to the painting folder
+Painting textures are stored in the `./public/imgs/paintings` folder. All textures from this folder are parsed into classes like `bg-mc-painting-{filename}`, to add paintings to the theme just add a texture to the painting folder
 
 #### UI
 
@@ -347,7 +347,7 @@ UI textures are stored in the `./public/imgs/ui` folder, these textures include 
 
 #### Icons
 
-Icon textures are stored in the `./public/imgs/icons` folder. All textures from this folder are parsed into classes like `bg-icon-{filename}`, this makes adding icons to the theme as easy as adding a texture to the icons folder
+Icon textures are stored in the `./public/imgs/icons` folder. All textures from this folder are parsed into classes like `bg-mc-icon-{filename}`, this makes adding icons to the theme as easy as adding a texture to the icons folder
 
 ### Fonts
 

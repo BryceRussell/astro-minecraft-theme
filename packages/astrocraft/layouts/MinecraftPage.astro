@@ -7,14 +7,12 @@ import Footer from "../components/Footer.astro";
 import config from "virtual:astrocraft/user-config";
 
 type Props = {
-	data?: CollectionEntry<"pages">["data"];
-	navbar?: boolean;
-	footer?: boolean;
+	data: CollectionEntry<"pages">["data"];
 };
 
 const { lang, blockSize } = config;
 
-const { data, navbar = true, footer = true } = Astro.props;
+const { data } = Astro.props;
 ---
 
 <html
@@ -23,21 +21,17 @@ const { data, navbar = true, footer = true } = Astro.props;
 	class="h-full"
 >
 	<head>
-		{data && <HeadSEO {data} />}
+		<HeadSEO {data} />
 		<CSSPropGenerator />
 		<slot name="head" /></head
 	>
-	<body class="flex flex-col h-full scrollbar bg-block-stone">
-		{navbar && <Navbar />}
+	<body class="flex flex-col h-full scrollbar bg-mc-block-stone">
+		<Navbar />
 		<div class="grow bg-black/75">
-			<div class="max-w-[75ch] mx-auto p-4 prose">
+			<div class="max-w-[var(--mc-content-width)] mx-auto p-4 prose">
 				<slot />
 			</div>
 		</div>
-		{footer && <Footer />}
-	</body><style>
-		:root {
-			height: 100%;
-		}
-	</style>
+		<Footer />
+	</body>
 </html>

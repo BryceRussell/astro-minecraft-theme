@@ -1,29 +1,31 @@
 ---
-import CSSPropGenerator from './components/CSSPropGenerator.astro';
+import CSSPropGenerator from "./components/CSSPropGenerator.astro";
 import config from "virtual:astrocraft/user-config";
-import { pathWithBase } from './utils/base'
+import { pathWithBase } from "./utils/base";
 
-const {
-	lang,
-	blockSize
-} = config
+const { lang, blockSize } = config;
 ---
 
 <html
-	{lang}
-	style={blockSize && `--mc-block-size:${blockSize}px;` || null}
-	class="h-full"
+  {lang}
+  style={(blockSize && `--mc-block-size:${blockSize}px;`) || null}
+  class="h-full"
 >
-	<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Not found</title>
-		<CSSPropGenerator />
-	</head>
-	<body class="flex flex-col h-full scrollbar bg-block-dirt">
-		<div class="grow bg-black/75">
+    <CSSPropGenerator />
+  </head>
+  <body class="flex flex-col h-full scrollbar bg-mc-block-dirt">
+    <div class="grow bg-black/75">
       <div class="flex flex-col items-center justify-center h-full gap-8">
-        <h1 id="_error-code" class="text-shadow-sm text-7xl md:text-9xl text-text-dark-red">404</h1>
+        <h1
+          id="_error-code"
+          class="text-shadow-sm text-7xl md:text-9xl text-text-dark-red"
+        >
+          404
+        </h1>
         <div
           class="flex flex-col items-center max-w-3xl w-full gap-1 px-12 md:px-24"
         >
@@ -33,19 +35,21 @@ const {
           <p id="_error-bottom" class="text-center text-white">
             Error: internal server error
           </p>
-          <a href={pathWithBase('/')} class="button text-center w-full py-2 px-8 mt-1 text-lg"
+          <a
+            href={pathWithBase("/")}
+            class="button text-center w-full py-2 px-8 mt-1 text-lg"
             >Back to title screen</a
           >
         </div>
       </div>
-		</div>
+    </div>
 
     <script is:inline>
       const errorCodeElement = document.getElementById("_error-code");
 
       setInterval(() => {
-        errorCodeElement.classList.toggle('text-text-dark-red');
-        errorCodeElement.classList.toggle('text-text-red');
+        errorCodeElement.classList.toggle("text-text-dark-red");
+        errorCodeElement.classList.toggle("text-text-red");
       }, 1250);
 
       const topMessageElement = document.getElementById("_error-top");
@@ -84,6 +88,5 @@ const {
       topMessageElement.textContent = randomMessageTop;
       bottomMessageElement.textContent = randomMessageBottom;
     </script>
-	</body>
+  </body>
 </html>
-

@@ -88,8 +88,8 @@ function vitePluginUserConfig(
       const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
       const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
       const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      const ui = transformImageGlob(await import.meta.glob('/src/assets/ui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      export { logo, blocks, items, paintings, icons, ui };
+      const gui = transformImageGlob(await import.meta.glob('/src/assets/gui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
+      export { logo, blocks, items, paintings, icons, gui };
     `
   };
 

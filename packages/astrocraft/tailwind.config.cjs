@@ -1,8 +1,6 @@
 const fg = require('fast-glob');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-// console.log('TAILWIND', fg.sync(`./src/assets/blocks/*`, { onlyFiles: true }))
-
 const fileName = (path) => path.split("/").pop().split(".")[0];
 
 const blockSpacingClasses = Array.from({ length: 99 }).reduce(
@@ -18,7 +16,7 @@ function createBackgroundImageClasses(folder) {
 	const values = {}
 	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG}`, { onlyFiles: true })
 	for (const file of files) {
-		const key = folder.replace(/s$/, '') + '-' + fileName(file)
+		const key = 'mc-' + folder.replace(/s$/, '') + '-' + fileName(file)
 		values[key] = `var(--mc-${folder.replace(/s$/, '')}-${fileName(file)})`
 	}
 	return values
@@ -50,85 +48,91 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				'gray-1': 'var(--mc-color-gray-1)',
-				'gray-2': 'var(--mc-color-gray-2)',
-				'gray-3': 'var(--mc-color-gray-3)',
-				'gray-4': 'var(--mc-color-gray-4)',
-				'gray-5': 'var(--mc-color-gray-5)',
-				link: 'var(--mc-color-text-accent)',
-				active: 'var(--mc-color-text-active)',
-				light: 'var(--mc-color-light)',
-				dark: 'var(--mc-color-dark)',
-				//Text colors
-				text: {
-					DEFAULT: '#e0d0d0',
-					'gold': '#FFAA00',
-					'gray': '#AAAAAA',
-					'blue': '#5555FF',
-					'green': '#55FF55',
-					'aqua': '#55FFFF',
-					'red': '#FF5555',
-					'light-purple': '#FF55FF',
-					'yellow': '#FFFF55',
-					dark: {
-						'blue': '#0000AA',
-						'green': '#00AA00',
-						'aqua': '#00AAAA',
-						'red': '#AA0000',
-						'purple': '#AA00AA',
-						'gray': '#555555',
+				mc: {
+					light: {
+						'purple': '#FF55FF',
 					},
+					gray: {
+						DEFAULT: '#AAAAAA',
+						1: 'var(--mc-color-gray-1)',
+						2: 'var(--mc-color-gray-2)',
+						3: 'var(--mc-color-gray-3)',
+						4: 'var(--mc-color-gray-4)',
+						5: 'var(--mc-color-gray-5)',
+						6: 'var(--mc-color-gray-6)',
+					},
+					dark: {
+						blue: '#0000AA',
+						green: '#00AA00',
+						aqua: '#00AAAA',
+						red: '#AA0000',
+						purple: '#AA00AA',
+						gray: '#555555',
+					},
+					accent: 'var(--mc-color-text-accent)',
+					active: 'var(--mc-color-text-active)',
+					text: '#e0d0d0',
+					gold: '#FFAA00',
+					blue: '#5555FF',
+					green: '#55FF55',
+					aqua: '#55FFFF',
+					red: '#FF5555',
+					yellow: '#FFFF55',
 				},
-				//Wool colors
 				wool: {
-					'orange': '#D87F33',
-					'magenta': '#B24CD8',
-					'light-blue': '#6699D8',
-					'yellow': '#E5E533',
-					'lime': '#7FCC19',
-					'pink': '#F27FA5',
-					'gray': '#4C4C4C',
-					'light-gray': '#999999',
-					'cyan': '#4C7F99',
-					'purple': '#7F3FB2',
-					'blue': '#334CB2',
-					'brown': '#664C33',
-					'green': '#667F33',
-					'red': '#993333',
-					'black': '#191919'
+					light: {
+						blue: '#6699D8',
+						gray: '#999999',
+					},
+					orange: '#D87F33',
+					magenta: '#B24CD8',
+					yellow: '#E5E533',
+					lime: '#7FCC19',
+					pink: '#F27FA5',
+					gray: '#4C4C4C',
+					cyan: '#4C7F99',
+					purple: '#7F3FB2',
+					blue: '#334CB2',
+					brown: '#664C33',
+					green: '#667F33',
+					red: '#993333',
+					black: '#191919'
 				},
-				//Terrain/Biome colors
+				steve: {
+					shirt: '#00a8a8',
+					pants: '#463aa5',
+				},
 				grass: {
 					DEFAULT: '#79C05A',
-					'jungle': '#59C93C',
 					'dark-forest': '#507A32',
 					'swamp-green': '#4C763C',
-					'plains': '#91BD59',
-					'forest': '#79C05A',
 					'birch-forest': '#88BB67',
-					'ocean': '#8EB971',
-					'meadow': '#83BB6D',
-					'tiaga': '#86B783',
-					'snowy': '#80B497',
-					'swamp': '#6A7039',
-					'badlands': '#90814D',
-					'desert': '#BFB755'
+					jungle: '#59C93C',
+					plains: '#91BD59',
+					forest: '#79C05A',
+					ocean: '#8EB971',
+					meadow: '#83BB6D',
+					tiaga: '#86B783',
+					snowy: '#80B497',
+					swamp: '#6A7039',
+					badlands: '#90814D',
+					desert: '#BFB755',
 				},
 				foilage: {
 					DEFAULT: '#59AE30',
-					'jungle': '#30BB0B',
 					'dark-forest': '#507A32',
 					'swamp-green': '#4C763C',
-					'plains': '#77AB2F',
-					'forest': '#59AE30',
 					'birch-forest': '#6BA941',
-					'ocean': '#71A74D',
-					'meadow': '#63A948',
-					'tiaga': '#68A464',
-					'snowy': '#60A17B',
-					'swamp': '#6A7039',
-					'badlands': '#9E814D',
-					'desert': '#AEA42A'
+					jungle: '#30BB0B',
+					plains: '#77AB2F',
+					forest: '#59AE30',
+					ocean: '#71A74D',
+					meadow: '#63A948',
+					tiaga: '#68A464',
+					snowy: '#60A17B',
+					swamp: '#6A7039',
+					badlands: '#9E814D',
+					desert: '#AEA42A',
 				},
 				water: {
 					DEFAULT: '#44AFF5',
@@ -138,7 +142,6 @@ module.exports = {
 						'lukewarm': '#0D96DB',
 						'cold': '#2080C9',
 						'frozen': '#2570B5'
-						
 					},
 					forest : {
 						DEFAULT: '#1E97F2',
@@ -190,7 +193,7 @@ module.exports = {
 			typography: {
 				DEFAULT: {
 					css: {
-						textShadow: '0.095rem 0.095rem var(--mc-color-black)',
+						textShadow: 'var(--mc-text-shadow)',
 						'--tw-prose-body': "var(--mc-color-text)",
 						'--tw-prose-headings': "var(--mc-color-text)",
 						'--tw-prose-bold': "var(--mc-color-text)",
@@ -207,10 +210,10 @@ module.exports = {
 							}
 						},
 						pre: {
-							'--mc-ui-zoom': '10',
-							borderWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
+							'--mc-gui-zoom': '10',
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
 							borderImage: 'url("/_mc/ui/achievement-panel.png")',
-							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
 						},
@@ -218,12 +221,12 @@ module.exports = {
 							fontSize: '0.825rem',
 						},
 						'code:not(pre code)': {
-							'--mc-ui-zoom': '12',
+							'--mc-gui-zoom': '12',
 							textAlign: 'center',
 							padding: '0.075rem 0.15rem 0.025rem 0.2rem',
-							borderWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
-							borderImage: 'url("/_mc/ui/achievement-panel.png")',
-							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-ui-zoom))',
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
+							borderImage: 'var(--mc-gui-achievement)',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
 							fontWeight: 'normal',

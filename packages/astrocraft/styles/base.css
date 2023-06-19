@@ -1,295 +1,656 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: theme('borderColor.DEFAULT', currentColor);
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-html {
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-  /* 4 */
-}
-
-body {
-  margin: 0;
-  line-height: inherit;
-}
-
-hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-}
-
-abbr:where([title]) {
-  text-decoration: underline dotted;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-code,
-kbd,
-samp,
-pre {
-  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
-  font-size: 1em;
-}
-*/
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-table {
-  text-indent: 0;
-  border-color: inherit;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: inherit;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
-}
-
-:-moz-focusring {
-  outline: auto;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-summary {
-  display: list-item;
-}
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  margin: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  color: theme('colors.gray.400', #9ca3af);
-}
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-:disabled {
-  cursor: default;
-}
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  vertical-align: middle;
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-[hidden] {
-  display: none;
-}
-
-/* Fonts */
-@font-face {
-  font-family: 'Minecraft';
-  src: url('../assets/fonts/Minecraft-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecraft';
-  src: url('../assets/fonts/Minecraft-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecraft';
-  src: url('../assets/fonts/Minecraft-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecraft';
-  src: url('../assets/fonts/Minecraft-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Monocraft';
-  src: url('../assets/fonts/Monocraft.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecrafter';
-  src: url('../assets/fonts/Minecrafter.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecrafter Alt';
-  src: url('../assets/fonts/MinecrafterAlt.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Minecraft Evenings';
-  src: url('../assets/fonts/MinecraftEvenings.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: theme('borderColor.DEFAULT', currentColor);
+  }
+
+  ::before,
+  ::after {
+    --tw-content: '';
+  }
+
+  ::selection {
+    background-color: #727272;
+  }
+
+  [class*="bg-mc-block"],
+  [class*="bg-mc-item"] {
+    image-rendering: pixelated;
+    background-repeat: repeat;
+    background-size: var(--mc-block-size);
+    -o-background-size: var(--mc-block-size);
+    -moz-background-size: var(--mc-block-size);
+    -webkit-background-size: var(--mc-block-size);
+  }
+
+  [class*="bg-mc-painting"] {
+    image-rendering: pixelated;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+  }
+
+  [class*="bg-mc-icon"] {
+    image-rendering: pixelated;
+    background-repeat: repeat;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+  }
+
+  html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  }
+
+  body {
+    margin: 0;
+    line-height: inherit;
+  }
+
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+
+  abbr:where([title]) {
+    text-decoration: underline dotted;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  a {
+    color: var(--mc-color-text-accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-size: 1em;
+    text-shadow: none;
+  }
+
+
+  small {
+    font-size: 80%;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  table {
+    text-indent: 0;
+    border-color: inherit;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+  }
+
+  :-moz-focusring {
+    outline: auto;
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  progress {
+    vertical-align: baseline;
+  }
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  [type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
+    margin: 0;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    padding: 0;
+  }
+
+  ol,
+  ul,
+  menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  table {
+    border-collapse: separate;
+    padding: 0.5rem;
+  }
+
+  table th {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: var(--mc-color-gray-4);
+  }
+
+  table td {
+    position: relative;
+    padding: 0 0.25rem;
+    color: var(--mc-color-white);
+  }
+
+  table {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+  table td {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1;
+    color: theme('colors.gray.400', #9ca3af);
+  }
+
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  :disabled {
+    cursor: default;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Monocraft';
+    src: url('../assets/fonts/Monocraft.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecrafter';
+    src: url('../assets/fonts/Minecrafter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecrafter Alt';
+    src: url('../assets/fonts/MinecrafterAlt.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Minecraft Evenings';
+    src: url('../assets/fonts/MinecraftEvenings.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+
+
+
+
+
+@layer components {
+  .mc-sign {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    text-shadow: none;
+    background-size: cover;
+    background-image: var(--mc-gui-sign);
+    white-space: pre-line;
+    color: var(--mc-color-black);
+  }
+
+  .mc-book {
+    --mc-gui-zoom: 4;
+    --size: calc((var(--mc-block-size) / var(--mc-gui-zoom) * 3));
+    overflow: hidden;
+    border-width: var(--size);
+    border-style: solid;
+    border-left-width: calc(var(--size) / 1.5);
+    border-image: var(--mc-gui-book);
+    border-image-width: var(--size) var(--size) var(--size) calc(var(--size) / 1.5);
+    border-image-slice: 8.5% 15% 12.75% 10% fill;
+    border-image-repeat: stretch;
+    color: var(--mc-color-black);
+    text-shadow: none;
+  }
+
+  .mc-button {
+    --mc-gui-zoom: 10;
+    user-select: none;
+    cursor: pointer;
+    image-rendering: pixelated;
+    background-size: cover;
+    background-image: var(--mc-gui-button-inside);
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-button-border);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 10% 3%;
+    border-image-repeat: stretch;
+    color: var(--mc-color-gray-1);
+    text-shadow: 1.5px 1.5px var(--mc-color-black);
+  }
+
+  .mc-button:hover {
+    background-size: cover;
+    background-image: var(--mc-gui-button-inside-hover);
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-button-border-hover);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 10% 3%;
+    border-image-repeat: stretch;
+    color: var(--mc-color-text-active);
+  }
+
+  a.mc-button:hover {
+    text-decoration: none;
+  }
+
+  .mc-button:active {
+    background-size: cover;
+    background-image: var(--mc-gui-button-inside-active);
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-button-border-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 10% 3%;
+    border-image-repeat: contain;
+    color: var(--mc-color-gray-3);
+  }
+}
+
+
+
+
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: var(--mc-text-shadow)
+  }
+
+  /* Scrollbar */
+
+  .scrollbar-mc {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mc-color-gray-3) var(--mc-color-gray-2);
+  }
+
+  .scrollbar-mc::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  .scrollbar-mc::-webkit-scrollbar-thumb {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-scroll-thumb);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .scrollbar-mc::-webkit-scrollbar-thumb:active {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-scroll-thumb-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .scrollbar-mc::-webkit-scrollbar-track {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .scrollbar-mc::-webkit-scrollbar-corner {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-raised-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  /* Backgrounds */
+
+  .bg-mc-map {
+    --mc-gui-zoom: 4;
+    box-sizing: content-box;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-map);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 12.75% 15.75% fill;
+    border-image-repeat: repeat;
+  }
+
+  .bg-mc-achievement {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-achievement);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 45.5% 45.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-panel {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-dark-panel {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-dark-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-slot {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-button,
+  .bg-mc-gui-raised {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-raised);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-button:hover,
+  .bg-mc-gui-raised-hover {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-raised-hover);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-button:active,
+  .bg-mc-gui-raised-active {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-raised-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-button,
+  .bg-mc-gui-alt-raised {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-raised);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-button:hover,
+  .bg-mc-gui-alt-raised-hover {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-raised-hover);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-button:active,
+  .bg-mc-gui-alt-raised-active {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-raised-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-textbox-active,
+  .bg-mc-gui-alt-textbox {
+    --mc-gui-zoom: 16;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-textbox);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 40% 40% fill;
+    border-image-repeat: stretch;
+  }
+
+  .bg-mc-gui-alt-textbox-active:focus,
+  .bg-mc-gui-alt-textbox-active:active {
+    --mc-gui-zoom: 16;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-alt-textbox-active);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 40% 40% fill;
+    border-image-repeat: stretch;
+  }
+
+  /* Borders */
+
+  .border-mc-gui-panel {
+    --mc-gui-zoom: 10;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-border-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+  .border-mc-gui-slot {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-border-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  .border-mc-gui-raised {
+    --mc-gui-zoom: 24;
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image: var(--mc-gui-border-raised);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+}

@@ -14,7 +14,7 @@ declare module 'virtual:astrocraft/user-images' {
   export const items: Record<string, ImageMetadata>;
   export const paintings: Record<string, ImageMetadata>;
   export const icons: Record<string, ImageMetadata>;
-  export const ui: Record<string, ImageMetadata>;
+  export const gui: Record<string, ImageMetadata>;
 }
 
 declare module 'virtual:astrocraft/user-css' {}

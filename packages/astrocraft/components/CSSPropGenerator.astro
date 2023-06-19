@@ -4,29 +4,22 @@ import {
   items,
   paintings,
   icons,
-  ui,
+  gui,
 } from "virtual:astrocraft/user-images";
 
 const toStyleString = (prefix: string, obj: Record<string, any>) =>
-	Object.entries(obj)
-		.map(([k, v]) => `--mc-${prefix}-${k}:url("${v.src}")`)
-		.join(';');
+  Object.entries(obj)
+    .map(([k, v]) => `--mc-${prefix}-${k}:url("${v.src}")`)
+    .join(";");
 ---
 
 <!-- BLOCK PROPS -->
 <style set:html={`:root {${toStyleString("block", blocks)}}`}></style>
 <!-- ITEM PROPS -->
-<style
-  set:html={`:root {${toStyleString("item", items)}}`}
-></style>
+<style set:html={`:root {${toStyleString("item", items)}}`}></style>
 <!-- PAINTING PROPS -->
-<style
-  set:html={`:root {${toStyleString("painting", paintings)}}`}
-></style>
+<style set:html={`:root {${toStyleString("painting", paintings)}}`}></style>
 <!-- ICON PROPS -->
-<style
-  set:html={`:root {${toStyleString("icon", icons)}}`}
-></style>
-<!-- UI PROPS -->
-<style set:html={`:root {${toStyleString("ui", ui)}}`}
-></style>
+<style set:html={`:root {${toStyleString("icon", icons)}}`}></style>
+<!-- GUI PROPS -->
+<style set:html={`:root {${toStyleString("gui", gui)}}`}></style>
