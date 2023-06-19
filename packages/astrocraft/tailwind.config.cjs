@@ -212,7 +212,7 @@ module.exports = {
 						pre: {
 							'--mc-gui-zoom': '10',
 							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
-							borderImage: 'url("/_mc/ui/achievement-panel.png")',
+							borderImage: 'var(--mc-gui-achievement)',
 							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
