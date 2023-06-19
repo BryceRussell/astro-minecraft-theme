@@ -216,6 +216,7 @@ module.exports = {
 							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
+							fontSize: '0.825rem',
 						},
 						code: {
 							fontSize: '0.825rem',
