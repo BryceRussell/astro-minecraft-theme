@@ -7,7 +7,7 @@ export default defineConfig({
     MinecraftTheme({
       title: 'Astrocraft Docs',
       logo: {
-        src: './src/assets/logo.png',
+        src: '/src/assets/logo.png',
         alt: 'Astrocraft Logo'
       }
     })
