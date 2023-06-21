@@ -62,7 +62,7 @@ export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] 
     }
   }
 
-  return [Astrocraft, tailwind({ configFile: tailwindConfigPath })]
+  return [Astrocraft, tailwind({ configFile: tailwindConfigPath, applyBaseStyles: false })]
 }
 
 function resolveVirtualModuleId(id: string) {
@@ -79,13 +79,13 @@ function vitePluginUserConfig(
     'virtual:astrocraft/user-css': opts.customCss.map((id) => `import "${id}";`).join(''),
     'virtual:astrocraft/user-images': `
       import { transformImageGlob } from 'astrocraft/utils/virtual';
-      import logo from '${opts?.logo?.src || '/src/assets/logo.png'}';
-      const blocks = transformImageGlob(await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      const gui = transformImageGlob(await import.meta.glob('/src/assets/gui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }))
-      export { logo, blocks, items, paintings, icons, gui };
+      ${opts?.logo?.src && `import logo from '${opts?.logo?.src}';` || 'const logo = {}'};
+      export { logo };
+      export const blocks = transformImageGlob(await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }));
+      export const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }));
+      export const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }));
+      export const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }));
+      export const gui = transformImageGlob(await import.meta.glob('/src/assets/gui/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true }));
     `
   };
 
