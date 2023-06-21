@@ -23,7 +23,7 @@ function createBackgroundImageClasses(folder: string) {
 }
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.{astro,js,md,mdx,ts}'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.{astro}'],
 	corePlugins: {
     preflight: false,
   },
