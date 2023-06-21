@@ -17,19 +17,19 @@ const { lang, blockSize } = config;
     <title>Not found</title>
     <CSSPropGenerator />
   </head>
-  <body class="flex flex-col h-full scrollbar bg-mc-block-dirt">
+  <body class="flex flex-col h-full scrollbar bg-mc-block-dirt select-none">
     <div class="grow bg-black/75">
       <div class="flex flex-col items-center justify-center h-full gap-8">
         <h1
           id="_error-code"
-          class="text-shadow-sm text-7xl md:text-9xl text-text-dark-red"
+          class="text-shadow-sm text-7xl md:text-9xl text-mc-dark-red"
         >
           404
         </h1>
         <div
           class="flex flex-col items-center max-w-3xl w-full gap-1 px-12 md:px-24"
         >
-          <p id="_error-top" class="text-center text-gray-2">
+          <p id="_error-top" class="text-center text-mc-gray-2">
             Failed to connect to the server
           </p>
           <p id="_error-bottom" class="text-center text-white">
@@ -37,7 +37,7 @@ const { lang, blockSize } = config;
           </p>
           <a
             href={pathWithBase("/")}
-            class="button text-center w-full py-2 px-8 mt-1 text-lg"
+            class="mc-button text-center w-full py-2 px-8 mt-1 text-lg"
             >Back to title screen</a
           >
         </div>
@@ -48,8 +48,8 @@ const { lang, blockSize } = config;
       const errorCodeElement = document.getElementById("_error-code");
 
       setInterval(() => {
-        errorCodeElement.classList.toggle("text-text-dark-red");
-        errorCodeElement.classList.toggle("text-text-red");
+        errorCodeElement.classList.toggle("text-mc-dark-red");
+        errorCodeElement.classList.toggle("text-mc-red");
       }, 1250);
 
       const topMessageElement = document.getElementById("_error-top");
