@@ -1,10 +1,10 @@
-const fg = require('fast-glob');
-const defaultTheme = require('tailwindcss/defaultTheme');
+import fg from 'fast-glob';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
-const fileName = (path) => path.split("/").pop().split(".")[0];
+const fileName = (path: string) => path.split("/").pop()?.split(".")[0];
 
 const blockSpacingClasses = Array.from({ length: 99 }).reduce(
-  (obj, _, i) => {
+  (obj: Record<string, string>, _, i) => {
     const key = `${i + 1}-block`;
     const value = `calc(var(--mc-block-size) * ${i + 1})`;
     return { ...obj, [key]: value };
@@ -12,8 +12,8 @@ const blockSpacingClasses = Array.from({ length: 99 }).reduce(
   {}
 )
 
-function createBackgroundImageClasses(folder) {
-	const values = {}
+function createBackgroundImageClasses(folder: string) {
+	const values: Record<string, string> = {}
 	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG}`, { onlyFiles: true })
 	for (const file of files) {
 		const key = 'mc-' + folder.replace(/s$/, '') + '-' + fileName(file)
@@ -22,8 +22,7 @@ function createBackgroundImageClasses(folder) {
 	return values
 }
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.{astro,js,md,mdx,ts}'],
 	corePlugins: {
     preflight: false,

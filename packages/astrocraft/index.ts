@@ -3,21 +3,14 @@ import type {
   AstroIntegration,
   ViteUserConfig,
 } from 'astro';
-import { existsSync, mkdirSync, readFile } from 'node:fs'
-import path from 'node:path'
-import { execSync } from 'child_process'
 import tailwind from '@astrojs/tailwind';
-import mime from 'mime'
+import { fileURLToPath } from 'url';
 import {
   AstrocraftUserConfig,
   AstrocraftConfig,
   AstrocraftConfigSchema,
 } from './utils/user-config'
 import { errorMap } from './utils/error-map';
-
-
-const isWindows = process.platform === 'win32'
-const joinPath = (isWindows ? path.win32 : path).join
 
 export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] {
   let config: AstroConfig
@@ -33,13 +26,15 @@ export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] 
 
   const userConfig = parsedConfig.data;
 
+  const tailwindConfigPath = fileURLToPath(new URL('./tailwind.config.ts', import.meta.url))
+
   const Astrocraft: AstroIntegration = {
     name: 'astrocraft',
     hooks: {
       'astro:config:setup': ({ config: _config, updateConfig, injectScript, injectRoute, addWatchFile }) => {
         config = _config
 
-        addWatchFile(new URL('./tailwind.config.cjs', config.root))
+        addWatchFile(tailwindConfigPath)
 
         injectRoute({
           pattern: '404',
@@ -66,7 +61,8 @@ export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] 
       }
     }
   }
-  return [Astrocraft, tailwind({ config: { path: './node_modules/astrocraft/tailwind.config.cjs'} })]
+
+  return [Astrocraft, tailwind({ configFile: tailwindConfigPath })]
 }
 
 function resolveVirtualModuleId(id: string) {
