@@ -14,7 +14,7 @@ const blockSpacingClasses = Array.from({ length: 99 }).reduce(
 
 function createBackgroundImageClasses(folder: string) {
 	const values: Record<string, string> = {}
-	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG}`, { onlyFiles: true })
+	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG,gif}`, { onlyFiles: true })
 	for (const file of files) {
 		const key = 'mc-' + folder.replace(/s$/, '') + '-' + fileName(file)
 		values[key] = `var(--mc-${folder.replace(/s$/, '')}-${fileName(file)})`
