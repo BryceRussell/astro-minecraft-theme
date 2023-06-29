@@ -421,11 +421,8 @@
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
-    color: var(--mc-color-text-active);
-  }
-
-  a.mc-button:hover {
     text-decoration: none;
+    color: var(--mc-color-text-active);
   }
 
   .mc-button:active {
@@ -436,6 +433,7 @@
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: contain;
+    text-decoration: none;
     color: var(--mc-color-gray-3);
   }
 }
