@@ -409,8 +409,9 @@
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
-    color: var(--mc-color-gray-1);
+    text-decoration: none;
     text-shadow: 1.5px 1.5px var(--mc-color-black);
+    color: var(--mc-color-gray-1);
   }
 
   .mc-button:hover {
