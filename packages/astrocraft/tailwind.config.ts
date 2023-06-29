@@ -1,27 +1,60 @@
 import path from 'path';
 import fg from 'fast-glob';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 const fileName = (path: string) => path.split("/").pop()?.split(".")[0];
 
-const blockSpacingClasses = Array.from({ length: 99 }).reduce(
+const blockSpacings = Array.from({ length: 99 }).reduce(
   (obj: Record<string, string>, _, i) => {
-    const key = `${i + 1}-block`;
-    const value = `calc(var(--mc-block-size) * ${i + 1})`;
-    return { ...obj, [key]: value };
-  },
-  {}
+    i++
+    return {
+			...obj,
+			[i + '-block']: 'calc(var(--mc-block-size) * ' + i + ')'
+		};
+  }, {}
 )
 
-function createBackgroundImageClasses(folder: string) {
-	const values: Record<string, string> = {}
-	const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG,gif}`, { onlyFiles: true })
-	for (const file of files) {
-		const key = 'mc-' + folder.replace(/s$/, '') + '-' + fileName(file)
-		values[key] = `var(--mc-${folder.replace(/s$/, '')}-${fileName(file)})`
-	}
-	return values
+function backgroundImageClasses(folder: string) {
+  const files = fg.sync(`./src/assets/${folder}/*.{png,jpg,jpeg,PNG,JPEG,gif}`, { onlyFiles: true });
+
+  return files.reduce((values: Record<string, string>, file: string) => {
+    const key = 'mc-' + folder.replace(/s$/, '') + '-' + fileName(file);
+    values[key] = 'var(--' + key + ')';
+    return values;
+  }, {});
 }
+
+const blockSizeUtility = Array.from({ length: 64 }).reduce(
+  (obj: Record<string, Record<string, string>>, _, i) => {
+		i = (i + 1) * 4
+    return {
+			...obj,
+			['.mc-block-size-' + i]: {
+				'--mc-block-size': i + 'px'
+			}
+		};
+  }, {}
+)
+
+const guiZoomUtility = Array.from({ length: 32 }).reduce(
+  (obj: Record<string, Record<string, string>>, _, i) => {
+		i++
+    return {
+			...obj,
+			['.mc-gui-zoom-' + i]: {
+				'--mc-gui-zoom': i + ''
+			}
+		};
+  }, {}
+)
+
+const mcUtilityPlugin = plugin(function ({ addUtilities }) {
+	addUtilities({
+		...blockSizeUtility,
+		...guiZoomUtility
+	})
+})
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', path.join(path.dirname(require.resolve('astrocraft')), '**/*.astro')],
@@ -177,10 +210,10 @@ export default {
 				}
 			},
 			backgroundImage: {
-				...createBackgroundImageClasses('blocks'),
-				...createBackgroundImageClasses('items'),
-				...createBackgroundImageClasses('paintings'),
-				...createBackgroundImageClasses('icons')
+				...backgroundImageClasses('blocks'),
+				...backgroundImageClasses('items'),
+				...backgroundImageClasses('paintings'),
+				...backgroundImageClasses('icons')
 			},
 			spacing: {
 				'1/16-block': 'calc(var(--mc-block-size) / 16)',
@@ -188,7 +221,7 @@ export default {
 				'1/4-block': 'calc(var(--mc-block-size) / 4)',
 				'1/2-block': 'calc(var(--mc-block-size) / 2)',
 				'3/4-block': 'calc((var(--mc-block-size) / 4) * 3)',
-				...blockSpacingClasses
+				...blockSpacings
 			},
 			typography: {
 				DEFAULT: {
@@ -254,6 +287,7 @@ export default {
 		},
 	},
   plugins: [
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+		mcUtilityPlugin
   ],
 }
