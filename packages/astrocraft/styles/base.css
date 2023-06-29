@@ -83,8 +83,11 @@
     text-decoration: none;
   }
 
-  a:hover {
+  a:hover,
+  a:focus,
+  a:active {
     text-decoration: underline;
+    color: var(--mc-color-text-active);
   }
 
   b,
@@ -412,9 +415,9 @@
 
   .mc-button:hover {
     background-size: cover;
-    background-image: var(--mc-gui-button-inside-hover);
+    background-image: var(--mc-gui-button-inside-active);
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-button-border-hover);
+    border-image: var(--mc-gui-button-border-active);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: stretch;
@@ -427,9 +430,9 @@
 
   .mc-button:active {
     background-size: cover;
-    background-image: var(--mc-gui-button-inside-active);
+    background-image: var(--mc-gui-button-inside-disabled);
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-button-border-active);
+    border-image: var(--mc-gui-button-border-disabled);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 10% 3%;
     border-image-repeat: contain;
@@ -523,23 +526,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-dark-panel {
-    --mc-gui-zoom: 10;
-    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-dark-panel);
-    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image-slice: 43% 43% fill;
-    border-image-repeat: stretch;
-  }
 
-  .bg-mc-gui-alt-panel {
-    --mc-gui-zoom: 10;
-    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-alt-panel);
-    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image-slice: 43% 43% fill;
-    border-image-repeat: stretch;
-  }
+
 
 
   .bg-mc-gui-slot {
@@ -562,16 +550,6 @@
   }
 
   .bg-mc-gui-button:hover,
-  .bg-mc-gui-raised-hover {
-    --mc-gui-zoom: 24;
-    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-raised-hover);
-    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image-slice: 33.5% 33.5% fill;
-    border-image-repeat: stretch;
-  }
-
-  .bg-mc-gui-button:active,
   .bg-mc-gui-raised-active {
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
@@ -581,34 +559,17 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-textbox-active,
-  .bg-mc-gui-textbox {
-    --mc-gui-zoom: 16;
-    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-textbox);
-    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image-slice: 40% 40% fill;
-    border-image-repeat: stretch;
-  }
-
-  .bg-mc-gui-textbox-active:focus,
-  .bg-mc-gui-textbox-active:active {
-    --mc-gui-zoom: 16;
-    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-textbox-active);
-    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image-slice: 40% 40% fill;
-    border-image-repeat: stretch;
-  }
-
-  .bg-mc-gui-alt-slot {
+  .bg-mc-gui-button:active,
+  .bg-mc-gui-raised-disabled {
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-alt-slot);
+    border-image: var(--mc-gui-raised-disabled);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
   }
+
+
 
   .bg-mc-gui-alt-button,
   .bg-mc-gui-alt-raised {
@@ -621,20 +582,20 @@
   }
 
   .bg-mc-gui-alt-button:hover,
-  .bg-mc-gui-alt-raised-hover {
+  .bg-mc-gui-alt-raised-active {
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-alt-raised-hover);
+    border-image: var(--mc-gui-alt-raised-active);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
   }
 
   .bg-mc-gui-alt-button:active,
-  .bg-mc-gui-alt-raised-active {
+  .bg-mc-gui-alt-raised-disabled {
     --mc-gui-zoom: 24;
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
-    border-image: var(--mc-gui-alt-raised-active);
+    border-image: var(--mc-gui-alt-raised-disabled);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom));
     border-image-slice: 33.5% 33.5% fill;
     border-image-repeat: stretch;
