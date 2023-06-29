@@ -1,3 +1,4 @@
+import path from 'path';
 import fg from 'fast-glob';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
@@ -23,7 +24,7 @@ function createBackgroundImageClasses(folder: string) {
 }
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/astrocraft/**/*.astro'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', path.join(path.dirname(require.resolve('astrocraft')), '**/*.astro')],
 	corePlugins: {
     preflight: false,
   },
