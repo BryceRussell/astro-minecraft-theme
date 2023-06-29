@@ -4,48 +4,18 @@ title: Theme Reference
 
 # Theme Reference
 
-## Properties
-
-### `--mc-block-size`
-
-<div class="flex flex-wrap items-end p-4 gap-1/2-block">
-  <div class="[--mc-block-size:96px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
-  <div class="[--mc-block-size:72px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
-  <div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
-</div>
-
-```html
-<div class="[--mc-block-size:96px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
-<div class="[--mc-block-size:72px] h-1-block w-1-block bg-mc-block-cobblestone"></div>
-<div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
-```
-
-### `--mc-gui-zoom`
-
-<div class="flex flex-wrap items-end p-4 gap-1/2-block">
-  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:2] bg-mc-map"></div>
-  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:3] bg-mc-map"></div>
-  <div class="h-2-block w-2-block p-1 [--mc-gui-zoom:5] bg-mc-map"></div>
-</div>
-
-```html
-<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:2] bg-mc-map"></div>
-<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:3] bg-mc-map"></div>
-<div class="h-2-block w-2-block p-1 [--mc-gui-zoom:5] bg-mc-map"></div>
-```
-
 ## Components
 
 ### `mc-book`
 
 <div class="flex flex-wrap items-center gap-1/2-block p-4">
   <div class="shrink h-5-block w-4-block p-1 mc-book text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores? Lorem ipsum dolor sit amet, consectetur adipisicing elit?</div>
-  <div class="shrink h-3-block w-5-block p-1 [--mc-gui-zoom:6] mc-book text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores?</div>
+  <div class="shrink h-3-block w-5-block p-1 mc-gui-zoom-6 mc-book text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis asperiores?</div>
 </div>
 
 ```html
 <div class="h-5-block w-4-block p-1 mc-book text-sm">...</div>
-<div class="h-3-block w-5-block p-1 [--mc-gui-zoom:6] mc-book text-sm">...</div>
+<div class="h-3-block w-5-block p-1 mc-gui-zoom-6 mc-book text-sm">...</div>
 ```
 
 ### `mc-sign`
@@ -85,6 +55,40 @@ title: Theme Reference
 ```
 
 ## Utilities
+
+### Custom
+
+#### `mc-block-size`
+
+<div class="flex flex-wrap items-end p-4 gap-1/2-block">
+  <div class="mc-block-size-96 h-1-block w-1-block bg-mc-block-cobblestone"></div>
+  <div class="mc-block-size-72 h-1-block w-1-block bg-mc-block-cobblestone"></div>
+  <div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
+</div>
+
+Sizes: `4, 8, 12, ..., 256`
+
+```html
+<div class="mc-block-size-96 h-1-block w-1-block bg-mc-block-cobblestone"></div>
+<div class="mc-block-size-72 h-1-block w-1-block bg-mc-block-cobblestone"></div>
+<div class="h-1-block w-1-block bg-mc-block-cobblestone"></div>
+```
+
+#### `mc-gui-zoom`
+
+<div class="flex flex-wrap items-end p-4 gap-1/2-block">
+  <div class="h-2-block w-2-block p-1 mc-gui-zoom-2 bg-mc-map"></div>
+  <div class="h-2-block w-2-block p-1 mc-gui-zoom-3 bg-mc-map"></div>
+  <div class="h-2-block w-2-block p-1 mc-gui-zoom-5 bg-mc-map"></div>
+</div>
+
+Sizes: `1, 2, 3, ..., 32`
+
+```html
+<div class="h-2-block w-2-block p-1 mc-gui-zoom-2 bg-mc-map"></div>
+<div class="h-2-block w-2-block p-1 mc-gui-zoom-3 bg-mc-map"></div>
+<div class="h-2-block w-2-block p-1 mc-gui-zoom-5 bg-mc-map"></div>
+```
 
 ### Backgrounds
 
