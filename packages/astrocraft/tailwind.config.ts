@@ -58,9 +58,6 @@ const mcUtilityPlugin = plugin(function ({ addUtilities }) {
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', path.join(path.dirname(require.resolve('astrocraft')), '**/*.astro')],
-	corePlugins: {
-    preflight: false,
-  },
 	theme: {
 		screens: {
 			'xs': '480px',
