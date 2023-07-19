@@ -100,51 +100,51 @@ Sizes: `1, 2, 3, ..., 32`
 
 <div class="h-1-block w-5-block m-4 bg-mc-achievement"></div>
 
-#### `bg-mc-gui-panel`
+#### `bg-mc-panel`
 
-<div class="h-2-block w-3-block m-4 bg-mc-gui-panel"></div>
+<div class="h-2-block w-3-block m-4 bg-mc-panel"></div>
 
-#### `bg-mc-gui-slot`
+#### `bg-mc-slot`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-slot"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-slot"></div>
 
-#### `bg-mc-gui-raised`
+#### `bg-mc-raised`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-raised"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-raised"></div>
 
-#### `bg-mc-gui-raised-active`
+#### `bg-mc-raised-active`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-raised-active"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-raised-active"></div>
 
-#### `bg-mc-gui-raised-disabled`
+#### `bg-mc-raised-disabled`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-raised-disabled"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-raised-disabled"></div>
 
-#### `bg-mc-gui-button`
+#### `bg-mc-button`
 
-<button class="w-min m-4 py-1/4-block px-1-block bg-mc-gui-button">Click</button>
+<button class="w-min m-4 py-1/4-block px-1-block bg-mc-button">Click</button>
 
-#### `bg-mc-gui-alt-raised`
+#### `bg-mc-alt-raised`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-alt-raised"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-alt-raised"></div>
 
-#### `bg-mc-gui-alt-raised-active`
+#### `bg-mc-alt-raised-active`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-alt-raised-active"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-alt-raised-active"></div>
 
-#### `bg-mc-gui-alt-raised-disabled`
+#### `bg-mc-alt-raised-disabled`
 
-<div class="h-1-block w-1-block m-4 bg-mc-gui-alt-raised-disabled"></div>
+<div class="h-1-block w-1-block m-4 bg-mc-alt-raised-disabled"></div>
 
-#### `bg-mc-gui-alt-button`
+#### `bg-mc-alt-button`
 
-<button class="w-min m-4 py-1/4-block px-1-block bg-mc-gui-alt-button">Click</button>
+<button class="w-min m-4 py-1/4-block px-1-block bg-mc-alt-button">Click</button>
 
-#### `bg-mc-gui-alt-textbox`
+#### `bg-mc-alt-textbox`
 
 <div class="flex flex-col gap-4 p-4">
-  <div type="text" class="h-1/2-block w-3-block bg-mc-gui-alt-textbox"></div>
-  <input type="text" class="h-8 w-5-block px-2 bg-mc-gui-alt-textbox-active" />
+  <div type="text" class="h-1/2-block w-3-block bg-mc-alt-textbox"></div>
+  <input type="text" class="h-8 w-5-block px-2 bg-mc-alt-textbox-active" />
 </div>
 
 ### Borders

@@ -278,7 +278,7 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-panel {
+  .bg-mc-panel {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
     border-image: var(--mc-gui-panel);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
@@ -290,7 +290,7 @@
 
 
 
-  .bg-mc-gui-slot {
+  .bg-mc-slot {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-slot);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -298,8 +298,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-button,
-  .bg-mc-gui-raised {
+  .bg-mc-button,
+  .bg-mc-raised {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-raised);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -307,8 +307,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-button:hover,
-  .bg-mc-gui-raised-active {
+  .bg-mc-button:hover,
+  .bg-mc-raised-active {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-raised-active);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -316,8 +316,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-button:active,
-  .bg-mc-gui-raised-disabled {
+  .bg-mc-button:active,
+  .bg-mc-raised-disabled {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-raised-disabled);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -327,8 +327,8 @@
 
 
 
-  .bg-mc-gui-alt-button,
-  .bg-mc-gui-alt-raised {
+  .bg-mc-alt-button,
+  .bg-mc-alt-raised {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-alt-raised);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -336,8 +336,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-alt-button:hover,
-  .bg-mc-gui-alt-raised-active {
+  .bg-mc-alt-button:hover,
+  .bg-mc-alt-raised-active {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-alt-raised-active);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -345,8 +345,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-alt-button:active,
-  .bg-mc-gui-alt-raised-disabled {
+  .bg-mc-alt-button:active,
+  .bg-mc-alt-raised-disabled {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
     border-image: var(--mc-gui-alt-raised-disabled);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
@@ -354,8 +354,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-alt-textbox-active,
-  .bg-mc-gui-alt-textbox {
+  .bg-mc-alt-textbox-active,
+  .bg-mc-alt-textbox {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 16));
     border-image: var(--mc-gui-alt-textbox);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 16));
@@ -363,8 +363,8 @@
     border-image-repeat: stretch;
   }
 
-  .bg-mc-gui-alt-textbox-active:focus,
-  .bg-mc-gui-alt-textbox-active:active {
+  .bg-mc-alt-textbox-active:focus,
+  .bg-mc-alt-textbox-active:active {
     border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 16));
     border-image: var(--mc-gui-alt-textbox-active);
     border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 16));
