@@ -3,42 +3,42 @@ title: Minecraft Theme
 content: false
 ---
 
-<div class="flex flex-col items-center justify-center gap-24 py-24 h-full not-prose">
+<div class="flex flex-col items-center justify-center gap-20 py-24 h-full">
   <div class="flex items-center justify-center">
     <div class="flex flex-col items-center justify-center text-center gap-8">
       <div class="relative -mb-8">
-        <img src="/logo.png" alt="" class="h-3-block w-auto"/>
-        <span class="-rotate-12 absolute bottom-1/4 right-0 animate-pulse text-mc-yellow text-lg">This is a small message!</span>
+        <img src="/logo.png" alt="" class="h-32 w-auto"/>
+        <span class="-rotate-12 absolute bottom-1/4 right-0 animate-pulse text-mc-yellow text-lg">Using Tailwindcss</span>
       </div>
       <p class="max-w-[40ch] text-xl">Show off your server, document your projects! Build your website using blocks, items, icons, paintings, and create game-like UIs!</p>
       <ul class="flex items-center gap-4">
         <li><a href="reference" class="mc-button px-4 py-3 text-xl">Get Started!</a></li>
-        <li><a href="" class="flex items-center gap-1">Check out on <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></a></li>
+        <li><a href="" class="flex items-center gap-1">Check it out on <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></a></li>
       </ul>
     </div>
     <div class="flex items-center justify-center mt-12 p-2">
       <img width="200" height="200" src="/blocks.gif" alt=""/>
     </div>
   </div>
-  <ul class="flex flex-col items-center gap-4 w-full max-w-[40ch] mx-auto p-8 text-xl bg-mc-gui-panel">
+  <ul class="flex flex-col items-center gap-4 w-full max-w-[45ch] mx-auto p-4 text-lg">
     <li class="self-start flex items-center justify-center max-w-[80%] gap-6 px-6 py-4 bg-mc-achievement">
-      <div class="bg-mc-block-cobblestone mc-block-size-32 w-1-block h-1-block p-1"></div>
+      <div class="bg-mc-block-cobblestone mc-block-size-32 w-1-block h-1-block"><div class="bg-black/25 w-full h-full"></div></div>
       <span>Build with blocks!</span>
     </li>
     <li class="self-end flex items-center justify-center max-w-[80%] gap-6 px-6 py-4 bg-mc-achievement">
-      <div class="bg-mc-item-diamond mc-block-size-36 w-1-block h-1-block p-1"></div>
+      <div class="bg-mc-item-diamond mc-block-size-32 w-1-block h-1-block"></div>
       <span>Display Items and Icons!</span>
     </li>
     <li class="self-start flex items-center justify-center max-w-[80%] gap-6 px-6 py-4 bg-mc-achievement">
-      <div class="bg-mc-icon-heart-full mc-block-size-32 w-1-block h-1-block p-1"></div>
+      <div class="bg-mc-icon-heart-full mc-block-size-28 w-1-block h-1-block"></div>
       <span>Create game-like UIs!</span>
     </li>
     <li class="self-end flex items-center justify-center max-w-[80%] gap-6 px-6 py-4 bg-mc-achievement">
-      <div class="bg-mc-painting-kebab mc-block-size-36 w-1-block h-1-block p-1"></div>
+      <div class="bg-mc-painting-plant mc-block-size-32 w-1-block h-1-block"></div>
       <span>Decorate with paintings!</span>
     </li>
     <li class="self-start flex items-center justify-center max-w-[80%] gap-6 px-6 py-4 bg-mc-achievement">
-      <div class="bg-mc-icon-hammer-large mc-block-size-32 w-1-block h-1-block p-1"></div>
+      <div class="bg-mc-icon-hammer-large mc-block-size-28 w-1-block h-1-block"></div>
       <span>Fully customizable!</span>
     </li>
   </ul>
