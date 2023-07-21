@@ -3,135 +3,135 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    height: 100%;
+
+    --mc-block-size: 48px;
+
+    --mc-color-white: rgb(255, 255, 255);
+    --mc-color-gray-1: #d1d5db;
+    --mc-color-gray-2: #C6C6C6;
+    --mc-color-gray-3: #a8a29e;
+    --mc-color-gray-4: #3d3c3d;
+    --mc-color-gray-5: #373737;
+    --mc-color-gray-6: #212121;
+    --mc-color-black: rgb(0, 0, 0);
+    --mc-color-text-accent: #aaaaff;
+    --mc-color-text-active: #fef08a;
+
+    --mc-color-text: var(--mc-color-white);
+
+    --mc-font: 'Minecraft';
+    --mc-font-mono: 'Monocraft';
+    --mc-text-shadow: 0.075em 0.075em var(--mc-color-black);
+    --mc-content-width: 85ch;
+  }
+
+  body {
+    color: var(--mc-color-text);
+    text-shadow: var(--mc-text-shadow);
+  }
+
+  /* * {
+    image-rendering: initial;
+  } */
+
   [class*="bg-mc-block"],
   [class*="bg-mc-item"] {
-      image-rendering: pixelated;
-      background-repeat: repeat;
-      background-size: var(--mc-block-size);
-      -o-background-size: var(--mc-block-size);
-      -moz-background-size: var(--mc-block-size);
-      -webkit-background-size: var(--mc-block-size);
+    image-rendering: pixelated;
+    background-repeat: repeat;
+    background-size: var(--mc-block-size);
+    -o-background-size: var(--mc-block-size);
+    -moz-background-size: var(--mc-block-size);
+    -webkit-background-size: var(--mc-block-size);
   }
 
+  [class*="bg-mc-icon"],
   [class*="bg-mc-painting"] {
-      image-rendering: pixelated;
-      background-size: cover;
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
-  }
-
-  [class*="bg-mc-icon"] {
-      image-rendering: pixelated;
-      background-repeat: repeat;
-      background-size: cover;
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
+    image-rendering: pixelated;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
   }
 
   a {
-      color: var(--mc-color-text-accent);
-      text-decoration: none;
+    color: var(--mc-color-text-accent);
+    text-decoration: none;
   }
 
   a:hover,
   a:focus,
   a:active {
-      text-decoration: underline;
-      color: var(--mc-color-text-active);
-  }
-
-  table th {
-      font-weight: normal;
-      font-size: 1.2rem;
-      color: var(--mc-color-gray-4);
-  }
-
-  table td {
-      position: relative;
-      padding: 0 0.25rem;
-      color: var(--mc-color-white);
+    color: var(--mc-color-text-active);
   }
 
   table {
-      border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
-      border-image: var(--mc-gui-panel);
-      border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
-      border-image-slice: 43% 43% fill;
-      border-image-repeat: stretch;
-  }
-
-  table td {
-      border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
-      border-image: var(--mc-gui-slot);
-      border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
-      border-image-slice: 33.5% 33.5% fill;
-      border-image-repeat: stretch;
+    border-collapse: separate;
   }
 
   @font-face {
-      font-family: 'Minecraft';
-      src: url('../assets/fonts/Minecraft-Bold.woff2') format('woff2');
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecraft';
-      src: url('../assets/fonts/Minecraft-BoldItalic.woff2') format('woff2');
-      font-weight: bold;
-      font-style: italic;
-      font-display: swap;
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecraft';
-      src: url('../assets/fonts/Minecraft-Italic.woff2') format('woff2');
-      font-weight: normal;
-      font-style: italic;
-      font-display: swap;
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecraft';
-      src: url('../assets/fonts/Minecraft-Regular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Minecraft';
+    src: url('../assets/fonts/Minecraft-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Monocraft';
-      src: url('../assets/fonts/Monocraft.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Monocraft';
+    src: url('../assets/fonts/Monocraft.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecrafter';
-      src: url('../assets/fonts/Minecrafter.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Minecrafter';
+    src: url('../assets/fonts/Minecrafter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecrafter Alt';
-      src: url('../assets/fonts/MinecrafterAlt.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Minecrafter Alt';
+    src: url('../assets/fonts/MinecrafterAlt.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
-      font-family: 'Minecraft Evenings';
-      src: url('../assets/fonts/MinecraftEvenings.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    font-family: 'Minecraft Evenings';
+    src: url('../assets/fonts/MinecraftEvenings.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 }
 
@@ -204,6 +204,35 @@
     border-image-repeat: contain;
     text-decoration: none;
     color: var(--mc-color-gray-3);
+  }
+
+  .mc-table th {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: var(--mc-color-gray-4);
+  }
+
+  .mc-table {
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
+    border-image: var(--mc-gui-panel);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 10));
+    border-image-slice: 43% 43% fill;
+    border-image-repeat: stretch;
+  }
+
+  .mc-table td {
+    position: relative;
+    padding: 0 0.25rem;
+    color: var(--mc-color-white);
+    border-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
+    border-image: var(--mc-gui-slot);
+    border-image-width: calc(var(--mc-block-size) / var(--mc-gui-zoom, 24));
+    border-image-slice: 33.5% 33.5% fill;
+    border-image-repeat: stretch;
+  }
+
+  blockquote {
+    @apply mc-book;
   }
 }
 

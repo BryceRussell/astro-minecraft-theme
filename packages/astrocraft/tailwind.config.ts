@@ -223,6 +223,21 @@ export default {
 			typography: {
 				DEFAULT: {
 					css: {
+						a: null,
+						'code::before': null,
+						'code::after': null,
+						thead: null,
+						'thead th': null,
+						'thead th:first-child': null,
+						'thead th:last-child': null,
+						'tbody tr': null,
+						'tbody td': null,
+						'tbody td:first-child': null,
+						'tbody td:first-child, tfoot td:first-child': null,
+						tfoot: null,
+						'tfoot td': null,
+						'tfoot td:first-child': null,
+
 						textShadow: 'var(--mc-text-shadow)',
 						'--tw-prose-body': "var(--mc-color-text)",
 						'--tw-prose-headings': "var(--mc-color-text)",
@@ -233,17 +248,13 @@ export default {
 						'h1, h2, h3, h4, h5, h6': {
 							fontWeight: 'normal'
 						},
-						a: {
-							textDecoration: 'none',
-							'&:hover': {
-								textDecoration: 'underline'
-							}
+						blockquote: {
+							padding: '0 1.5rem 0 2.5rem'
 						},
 						pre: {
-							'--mc-gui-zoom': '10',
-							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 10))',
 							borderImage: 'var(--mc-gui-achievement)',
-							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 10))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
 							fontSize: '0.825rem',
@@ -252,32 +263,41 @@ export default {
 							fontSize: '0.825rem',
 						},
 						'code:not(pre code)': {
-							'--mc-gui-zoom': '12',
 							textAlign: 'center',
 							padding: '0.075rem 0.15rem 0.025rem 0.2rem',
-							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 12))',
 							borderImage: 'var(--mc-gui-achievement)',
-							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom))',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 12))',
 							borderImageSlice: '45.5% 45.5% fill',
 							borderImageRepeat: 'stretch',
 							fontWeight: 'normal',
 						},
-						'code::before': {
-							content: '""',
-							display: 'none',
+						table: {
+							width: null,
+							textAlign: null,
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 10))',
+							borderImage: 'var(--mc-gui-panel)',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 10))',
+							borderImageSlice: '43% 43% fill',
+							borderImageRepeat: 'stretch',
 						},
-						'code::after': {
-							content: '""',
-							display: 'none',
-						},
-						'thead th': {
-							color: 'var(--mc-color-gray-4)',
-							fontWeight: 'normal',
+						'table th': {
+							padding: '.125rem',
 							textShadow: 'none',
+							fontWeight: 'normal',
+							fontSize: '1.2rem',
+							color: 'var(--mc-color-gray-4)',
 						},
-						'tbody td': {
-							padding: '.25rem .5rem !important' // !important is needed here due to the way the typoragphy plugin styles padding on td elements
-						},
+						'table td': {
+							position: 'relative',
+							padding: '0 0.25rem',
+							color: 'var(--mc-color-white)',
+							borderWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 24))',
+							borderImage: 'var(--mc-gui-slot)',
+							borderImageWidth: 'calc(var(--mc-block-size) / var(--mc-gui-zoom, 24))',
+							borderImageSlice: '33.5% 33.5% fill',
+							borderImageRepeat: 'stretch',
+						}
 					},
 				},
 			},
