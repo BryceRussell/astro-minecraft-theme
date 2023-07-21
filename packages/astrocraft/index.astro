@@ -16,9 +16,11 @@ export async function getStaticPaths() {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
-const { Content } = await Astro.props.page.render()
+const { page } = Astro.props
+
+const { Content } = await page.render()
 ---
 
-<MinecraftPage>
+<MinecraftPage data={page.data}>
   <Content />
 </MinecraftPage>

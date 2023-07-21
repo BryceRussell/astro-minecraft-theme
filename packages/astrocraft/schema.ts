@@ -31,13 +31,9 @@ export function pageSchema() {
        */
       description: z.string().optional(),
 
+      content: z.boolean().default(true),
+
       /** Set custom `<head>` tags just for this page. */
       head: HeadConfigSchema(),
-
-      /**
-       * Set the layout style for this page.
-       * Can be `'base'` (the default) or `'doc'` for a layout with sidebars.
-       */
-      template: z.enum(['base', 'doc']).default('base'),
     });
 }
