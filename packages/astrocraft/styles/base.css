@@ -32,13 +32,21 @@
     text-shadow: var(--mc-text-shadow);
   }
 
-  /* * {
-    image-rendering: initial;
-  } */
+  * {
+    image-rendering: auto;
+  }
+
+  [class*="mc-"],
+  [class*="bg-mc-block"],
+  [class*="bg-mc-item"],
+  [class*="bg-mc-icon"],
+  [class*="bg-mc-painting"],
+  [class*="bg-mc-gui"] {
+    image-rendering: pixelated;
+  }
 
   [class*="bg-mc-block"],
   [class*="bg-mc-item"] {
-    image-rendering: pixelated;
     background-repeat: repeat;
     background-size: var(--mc-block-size);
     -o-background-size: var(--mc-block-size);
@@ -48,7 +56,6 @@
 
   [class*="bg-mc-icon"],
   [class*="bg-mc-painting"] {
-    image-rendering: pixelated;
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
