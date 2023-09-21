@@ -3,7 +3,7 @@ import { gui } from "../assets/images";
 
 const stateImages = Object.entries(gui).filter(([filename]) => {
   const state = filename.split('-').at(-1)
-  if (state === 'hover' || state === 'active')
+  if (state === 'hover' || state === 'active' || state === 'disabled')
     return true
   return false
 })
