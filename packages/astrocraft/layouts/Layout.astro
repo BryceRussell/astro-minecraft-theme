@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import HeadSEO from "../components/HeadSEO.astro";
 import CSSPropGenerator from '../components/CSSProps.astro';
+import Preload from '../components/Preload.astro';
 
 import config from "virtual:astrocraft/config";
 import { Navbar, Footer } from "virtual:astrocraft/components";
@@ -48,5 +49,6 @@ const {
 			}
 		</div>
 		{footer && <Footer />}
+		<Preload />
 	</body>
 </html>

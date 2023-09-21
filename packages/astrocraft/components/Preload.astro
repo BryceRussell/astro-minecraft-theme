@@ -1,0 +1,15 @@
+---
+import { gui } from "../assets/images";
+
+const stateImages = Object.entries(gui).filter(([filename]) => {
+  const state = filename.split('-').at(-1)
+  if (state === 'hover' || state === 'active')
+    return true
+  return false
+})
+---
+
+<div style="display:none;">
+  <!-- Preload images for UI state like 'hover' and 'active' -->
+  { stateImages.map(([filename, image]) => <img src={image.src} width="1" height="1" alt={'Preload image: ' + filename} />)} 
+</div>
