@@ -1,40 +1,53 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import config from "virtual:astrocraft/config";
-import CSSProps from "../components/CSSProps.astro";
+import type { CollectionEntry } from 'astro:content';
 import HeadSEO from "../components/HeadSEO.astro";
-import { Navbar, Footer} from "virtual:astrocraft/components";
-
-import 'virtual:astrocraft/css'
+import CSSPropGenerator from '../components/CSSProps.astro';
+import Preload from '../components/Preload.astro';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import config from "virtual:astrocraft/config";
 
 type Props = {
-	data: CollectionEntry<"pages">["data"];
-};
+	data?: CollectionEntry<'pages'>['data'];
+	navbar?: boolean;
+	footer?: boolean;
+}
 
-const { lang, blockSize } = config;
+const {
+	lang,
+	blockSize
+} = config
 
-const { data } = Astro.props;
+const {
+	data,
+	navbar = true,
+	footer = true
+} = Astro.props
 ---
 
 <html
 	{lang}
-	style={(blockSize && `--mc-block-size:${blockSize}px;`) || null}
+	style={blockSize && `--mc-block-size:${blockSize}px;` || null}
+	class="h-full"
 >
 	<head>
-		<HeadSEO {data} />
-		<CSSProps />
-		<slot name="head" />
+		{data && <HeadSEO {data} />}
+		<CSSPropGenerator />
+		<slot name="head">
 	</head>
 	<body class="flex flex-col h-full scrollbar bg-mc-block-stone">
-		<Navbar />
+		{navbar && <Navbar />}
 		<div class="grow bg-black/75">
-			{data.content
-				? <div class="h-full max-w-[var(--mc-content-width)] mx-auto p-4 prose">
-						<slot />
-					</div>
-				: <slot />
-			}
+			<slot />
 		</div>
-		<Footer />
+		{footer && <Footer />}
+		<!-- TEST -->
+		<Preload />
 	</body>
 </html>
+
+<style>
+	:root {
+		height: 100%;
+	}
+</style>
