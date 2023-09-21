@@ -1,8 +1,38 @@
 import { z } from 'astro/zod';
-import { HeadConfigSchema } from '../schemas/head';
-import { LogoConfigSchema } from '../schemas/logo';
 
-const UserConfigSchema = z.object({
+export const LogoConfigSchema = z.object({
+  /** Source of the image file to use. */
+  src: z.string(),
+  /** Alternative text description of the logo. */
+  alt: z.string().default(''),
+  /** Set to `true` to hide the site title text and only show the logo. */
+  replacesTitle: z.boolean().default(false),
+}).optional()
+
+export const HeadConfigSchema = z
+  .array(
+    z.object({
+      /** Name of the HTML tag to add to `<head>`, e.g. `'meta'`, `'link'`, or `'script'`. */
+      tag: z.enum([
+        'title',
+        'base',
+        'link',
+        'style',
+        'meta',
+        'script',
+        'noscript',
+        'template',
+      ]),
+      /** Attributes to set on the tag, e.g. `{ rel: 'stylesheet', href: '/custom.css' }`. */
+      attrs: z
+        .record(z.union([z.string(), z.boolean(), z.undefined()]))
+        .default({}),
+      /** Content to place inside the tag (optional). */
+      content: z.string().default(''),
+    })
+  ).default([])
+
+export const AstrocraftConfigSchema = z.object({
 
   lang: z.string().default('en'),
 
@@ -25,12 +55,12 @@ const UserConfigSchema = z.object({
   tagline: z.string().optional().describe('The tagline for your website.'),
 
   /** Set a logo image to show in the navigation bar alongside or instead of the site title. */
-  logo: LogoConfigSchema(),
+  logo: LogoConfigSchema,
 
   favicon: z.object({
-    type: z.enum(['block', 'item']).default('block'),
+    type: z.enum(['block', 'item']),
     name: z.string(),
-  }).default({
+  }).optional().default({
     type: 'block',
     name: 'grass-side'
   }),
@@ -69,7 +99,7 @@ const UserConfigSchema = z.object({
    *  ],
    * })
    */
-  head: HeadConfigSchema(),
+  head: HeadConfigSchema,
 
   /** Size of a block in pixels, all assets are sized relative to this value */
   blockSize: z.number().optional(),
@@ -88,8 +118,3 @@ const UserConfigSchema = z.object({
    */
   customCss: z.string().array().optional().default([]),
 });
-
-export const AstrocraftConfigSchema = UserConfigSchema.strict()
-
-export type AstrocraftConfig = z.infer<typeof AstrocraftConfigSchema>;
-export type AstrocraftUserConfig = z.input<typeof AstrocraftConfigSchema>;

@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import HeadSEO from "../components/HeadSEO.astro";
-import CSSPropGenerator from '../components/CSSPropGenerator.astro';
+import CSSPropGenerator from '../components/CSSProps.astro';
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import config from "virtual:astrocraft/user-config";
+import config from "virtual:astrocraft/config";
 
 type Props = {
 	data?: CollectionEntry<'pages'>['data'];

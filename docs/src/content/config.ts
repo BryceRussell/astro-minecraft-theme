@@ -1,6 +1,6 @@
 import { defineCollection } from 'astro:content';
-import { pageSchema } from 'astrocraft/schema';
+import AstroCraftContentSchema from 'astrocraft/schema';
 
 export const collections = {
-  pages: defineCollection({ schema: pageSchema() }),
+  pages: defineCollection({ schema: AstroCraftContentSchema() }),
 };

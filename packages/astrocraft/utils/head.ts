@@ -1,10 +1,9 @@
-import { HeadConfig, HeadConfigSchema, HeadUserConfig } from '../schemas/head';
-
-const HeadSchema = HeadConfigSchema();
+import type { HeadUserConfig, HeadConfig } from '../types';
+import { HeadConfigSchema } from '../schemas';
 
 /** Create a fully parsed, merged, and sorted head entry array from multiple sources. */
 export function createHead(defaults: HeadUserConfig, ...heads: HeadConfig[]) {
-  let head = HeadSchema.parse(defaults);
+  let head = HeadConfigSchema.parse(defaults);
   for (const next of heads) {
     head = mergeHead(head, next);
   }

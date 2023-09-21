@@ -1,7 +1,7 @@
 ---
 import type { InferGetStaticPropsType } from 'astro';
 import { getCollection } from 'astro:content'
-import MinecraftPage from './layouts/MinecraftPage.astro'
+import { Layout }  from 'virtual:astrocraft/components'
 
 export async function getStaticPaths() {
   const normalizeIndexSlug = (slug: string) => (slug === 'index' ? '' : slug);
@@ -21,6 +21,6 @@ const { page } = Astro.props
 const { Content } = await page.render()
 ---
 
-<MinecraftPage data={page.data}>
+<Layout data={page.data}>
   <Content />
-</MinecraftPage>
+</Layout>

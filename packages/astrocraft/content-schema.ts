@@ -1,25 +1,8 @@
+import { HeadConfigSchema } from './schemas';
 import { z } from 'astro/zod';
-import { HeadConfigSchema } from './schemas/head';
 
-type ImageFunction = () => z.ZodObject<{
-  src: z.ZodString;
-  width: z.ZodNumber;
-  height: z.ZodNumber;
-  format: z.ZodUnion<
-    [
-      z.ZodLiteral<'png'>,
-      z.ZodLiteral<'jpg'>,
-      z.ZodLiteral<'jpeg'>,
-      z.ZodLiteral<'tiff'>,
-      z.ZodLiteral<'webp'>,
-      z.ZodLiteral<'gif'>,
-      z.ZodLiteral<'svg'>
-    ]
-  >;
-}>;
-
-export function pageSchema() {
-  return ({ image }: { image: ImageFunction }) =>
+export default function contentSchema() {
+  return () =>
     z.object({
       /** The title of the current page. Required. */
       title: z.string(),
@@ -34,6 +17,6 @@ export function pageSchema() {
       content: z.boolean().default(true),
 
       /** Set custom `<head>` tags just for this page. */
-      head: HeadConfigSchema(),
+      head: HeadConfigSchema,
     });
 }

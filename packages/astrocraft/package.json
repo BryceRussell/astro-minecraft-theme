@@ -19,27 +19,28 @@
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./types": "./types.ts",
-    "./schema": "./schema.ts",
-    "./utils/virtual": "./utils/virtual.ts",
-    "./layouts": "./layouts.ts",
-    "./components": "./components.ts",
-    "./index.astro": "./index.astro",
-    "./404.astro": "./404.astro",
-    "./styles/base.css": "./styles/base.css",
-    "./styles/minecraft.css": "./styles/minecraft.css"
+    "./pages/*": "./pages/*",
+    "./layouts/*": "./layouts/*",
+    "./components/*": "./components/*",
+    "./styles/*": "./styles/*",
+    "./assets/*": "./assets/*",
+    "./schema": "./content-schema.ts"
   },
   "peerDependencies": {
-    "astro": "^2.6.2",
+    "astro": "^3.1.1",
+    "sharp": "^0.32.6",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "astro": "^2.8.5"
+    "@types/node": "^20.6.3",
+    "astro": "^3.1.1"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^4.0.0",
-    "@tailwindcss/typography": "^0.5.9",
-    "fast-glob": "^3.3.0",
-    "mime": "^3.0.0"
+    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "astro-theme-provider": "^0.0.3",
+    "fast-glob": "^3.3.1",
+    "sharp": "^0.32.6"
   }
 }

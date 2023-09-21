@@ -7,8 +7,8 @@ export default defineConfig({
     MinecraftTheme({
       config: {
         title: 'Astrocraft Docs',
-        description: 'Show off your server, document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is the Minecraft Theme for Astro ',
+        description: 'This is a description'
       }
     })
-  ],
+  ]
 });

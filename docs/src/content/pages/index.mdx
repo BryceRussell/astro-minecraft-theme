@@ -2,12 +2,15 @@
 title: Minecraft Theme
 content: false
 ---
+import { Image } from "astro:assets";
+import { logo } from "virtual:astrocraft/assets";
+import gif from '../../assets/blocks.gif'
 
 <div class="flex flex-col items-center justify-center gap-20 py-24 h-full">
   <div class="flex items-center justify-center">
     <div class="flex flex-col items-center justify-center text-center gap-8">
       <div class="relative -mb-8">
-        <img src="/logo.png" alt="" class="h-32 w-auto"/>
+        <Image src={logo} alt="Astrocraft logo" />
         <span class="-rotate-12 absolute bottom-1/4 right-0 animate-pulse text-mc-yellow text-lg">Using Tailwindcss</span>
       </div>
       <p class="max-w-[40ch] text-xl">Show off your server, document your projects! Build your website using blocks, items, icons, paintings, and create game-like UIs!</p>
@@ -17,7 +20,7 @@ content: false
       </ul>
     </div>
     <div class="flex items-center justify-center mt-12 p-2">
-      <img width="200" height="200" src="/blocks.gif" alt=""/>
+      <Image src={gif} alt="Animated minecraft blocks showcase" quality={100}/>
     </div>
   </div>
   <ul class="flex flex-col items-center gap-4 w-full max-w-[45ch] mx-auto p-4 text-lg">

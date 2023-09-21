@@ -1,9 +1,10 @@
 ---
-import type { CollectionEntry, z } from "astro:content";
-import config from "virtual:astrocraft/user-config";
-import { blocks, items } from "virtual:astrocraft/user-images";
-import type { HeadConfigSchema } from "../schemas/head";
+import type { CollectionEntry } from "astro:content";
+import type { HeadUserConfig } from "../types";
+import config from "virtual:astrocraft/config";
+import { blocks, items } from "../assets/images";
 import { createHead } from "../utils/head";
+import { fileWithBase } from "../utils/base";
 import { version } from "../package.json";
 
 interface Props {
@@ -18,7 +19,7 @@ const canonical = Astro.site
 const title = data?.title || config.title;
 const description = data?.description || config.description;
 
-const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
+const headDefaults: HeadUserConfig = [
   { tag: "meta", attrs: { charset: "utf-8" } },
   {
     tag: "meta",
@@ -32,16 +33,16 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
     attrs: { name: "generator", content: `Astrocraft v${version}` },
   },
   // Favicon
-  {
-    tag: "link",
-    attrs: {
-      rel: "shortcut icon",
-      href: { block: blocks, item: items }[config.favicon.type][
-        config.favicon.name
-      ].src,
-      type: "image/png",
-    },
-  },
+  // {
+  //   tag: "link",
+  //   attrs: {
+  //     rel: "shortcut icon",
+  //     href: { block: blocks, item: items }[config.favicon.type][
+  //       config.favicon.name
+  //     ].src,
+  //     type: "image/png",
+  //   },
+  // },
   // OpenGraph Tags
   { tag: "meta", attrs: { property: "og:title", content: title } },
   { tag: "meta", attrs: { property: "og:type", content: "article" } },

@@ -1,47 +1,27 @@
 ---
-import config from "virtual:astrocraft/user-config";
-import { logo } from "virtual:astrocraft/user-images";
+import { Image } from "astro:assets";
+import { logo } from "virtual:astrocraft/assets";
+import config from "virtual:astrocraft/config";
 ---
 
 <header class="bg-mc-block-dirt decoration-[.25em]">
-    <div class="bg-mc-block-grass-side bg-repeat-x">
-        <div
-            class="flex flex-col md:flex-row items-center justify-end h-3-block md:h-2-block w-full gap-1/8-block p-5 pt-0 md:pb-0 bg-gradient-to-t from-black/75 to-black/25"
+  <div class="bg-mc-block-grass-side bg-repeat-x">
+    <div
+      class="flex flex-col md:flex-row items-center justify-end h-3-block md:h-2-block w-full gap-1/8-block p-5 pt-0 md:pb-0 bg-gradient-to-t from-black/75 to-black/25"
+    >
+      <a href="/" class="h-auto w-6-block md:w-9-block mx-auto md:ml-0">
+        <Image src={logo} alt={config?.logo?.alt ?? ""} />
+      </a>
+      <nav class="flex items-center justify-end w-full md:w-min gap-3 text-2xl">
+        <slot />
+        <a href="/" class="text-white">Home</a>
+        <a href="/docs" class="text-white">Docs</a>
+        <a
+          href="https://github.com/BryceRussell/astro-minecraft-theme"
+          class="mc-button py-1 px-2 text-lg"
+          target="_blank">Github</a
         >
-            {
-                config.logo ? (
-                    <a
-                        href="/"
-                        class="h-auto w-6-block md:w-9-block mx-auto md:ml-0"
-                    >
-                        <img
-                            src={logo.src}
-                            width={logo.width}
-                            height={logo.height}
-                            alt={config.logo.alt}
-                        />
-                    </a>
-                ) : (
-                    <a
-                        href="/"
-                        class="h-auto w-6-block md:w-9-block mx-auto md:ml-0 text-3xl text-white"
-                    >
-                        {config.title}
-                    </a>
-                )
-            }
-            <nav
-                class="flex items-center justify-end w-full md:w-min gap-3 text-2xl"
-            >
-                <slot />
-                <a href="/" class="text-white">Home</a>
-                <a href="/docs" class="text-white">Docs</a>
-                <a
-                    href="https://github.com/BryceRussell/astro-minecraft-theme"
-                    class="mc-button py-1 px-2 text-lg"
-                    target="_blank">Github</a
-                >
-            </nav>
-        </div>
+      </nav>
     </div>
+  </div>
 </header>

@@ -1,7 +1,9 @@
 ---
-import CSSPropGenerator from "./components/CSSPropGenerator.astro";
-import config from "virtual:astrocraft/user-config";
-import { pathWithBase } from "./utils/base";
+import config from "virtual:astrocraft/config";
+import CSSProps from "../components/CSSProps.astro";
+import { pathWithBase } from "../utils/base";
+
+import 'virtual:astrocraft/css';
 
 const { lang, blockSize } = config;
 ---
@@ -15,7 +17,7 @@ const { lang, blockSize } = config;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Not found</title>
-    <CSSPropGenerator />
+    <CSSProps />
   </head>
   <body class="flex flex-col h-full scrollbar bg-mc-block-dirt select-none">
     <div class="grow bg-black/75">

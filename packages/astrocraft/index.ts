@@ -1,109 +1,58 @@
-import type {
-  AstroConfig,
-  AstroIntegration,
-  ViteUserConfig,
-} from 'astro';
+import type { AstroIntegration } from 'astro';
+import { AstrocraftConfigSchema } from './schemas';
+import { fileURLToPath } from 'node:url';
 import tailwind from '@astrojs/tailwind';
-import { fileURLToPath } from 'url';
-import {
-  AstrocraftUserConfig,
-  AstrocraftConfig,
-  AstrocraftConfigSchema,
-} from './utils/user-config'
-import { errorMap } from './utils/error-map';
+import mdx from '@astrojs/mdx';
+import ThemeProvider from 'astro-theme-provider';
 
-export function MinecraftTheme(opts: AstrocraftUserConfig) : AstroIntegration[] {
-  let config: AstroConfig
+const tailwindConfigPath = fileURLToPath(new URL('./tailwind.config.ts', import.meta.url))
 
-  const parsedConfig = AstrocraftConfigSchema.safeParse(opts, { errorMap });
-
-  if (!parsedConfig.success) {
-    throw new Error(
-      'Invalid config passed to astrocraft integration\n' +
-        parsedConfig.error.issues.map((i) => i.message).join('\n')
-    );
-  }
-
-  const userConfig = parsedConfig.data;
-
-  const tailwindConfigPath = fileURLToPath(new URL('./tailwind.config.ts', import.meta.url))
-
-  const Astrocraft: AstroIntegration = {
-    name: 'astrocraft',
-    hooks: {
-      'astro:config:setup': ({ config: _config, updateConfig, injectScript, injectRoute, addWatchFile }) => {
-        config = _config
-
-        addWatchFile(tailwindConfigPath)
-
-        injectRoute({
-          pattern: '404',
-          entryPoint: 'astrocraft/404.astro',
-        });
-        
-        injectRoute({
-          pattern: '[...slug]',
-          entryPoint: 'astrocraft/index.astro',
-        });
-
-        injectScript('page-ssr', `
-          import "astrocraft/styles/base.css";
-          import "astrocraft/styles/minecraft.css";
-        `);
-
-        updateConfig({
-          vite: {
-            plugins: [vitePluginUserConfig(userConfig, config)],
-          },
-          experimental: { assets: true },
-        });
-        config = _config
-      }
+const AstroCraftProvider = ThemeProvider({
+  name: 'astrocraft',
+  configSchema: AstrocraftConfigSchema,
+  entryPoints: {
+    '[...slug]': 'astrocraft/pages/index.astro',
+    '404': 'astrocraft/pages/404.astro'
+  },
+  exports: {
+    css: ['astrocraft/styles/base.css'],
+    components: {
+      Layout: 'astrocraft/layouts/Layout.astro',
+      Navbar: 'astrocraft/components/Navbar.astro',
+      Footer: 'astrocraft/components/Footer.astro',
+    },
+    assets: {
+      logo: 'astrocraft/assets/images/logo.png'
     }
   }
+})
 
-  return [Astrocraft, tailwind({ configFile: tailwindConfigPath, applyBaseStyles: false })]
+export default function AstroCraft(opts: Parameters<typeof AstroCraftProvider>[0]) : AstroIntegration[] {
+  return [
+    AstroCraftProvider(opts),
+    tailwind({ configFile: tailwindConfigPath, applyBaseStyles: false }),
+    mdx()
+  ]
 }
 
-function resolveVirtualModuleId(id: string) {
-  return '\0' + id;
-}
+// const fileName = (path: string) => path.split("/").pop()!.split(".")[0]!;
 
-function vitePluginUserConfig(
-  opts: AstrocraftConfig,
-  { root }: AstroConfig
-): NonNullable<ViteUserConfig['plugins']>[number] {
-  const modules = {
-    'virtual:astrocraft/user-config': `export default ${JSON.stringify(opts)}`,
-    'virtual:astrocraft/project-context': `export default ${JSON.stringify({ root })}`,
-    'virtual:astrocraft/user-css': opts.customCss.map((id) => `import "${id}";`).join(''),
-    'virtual:astrocraft/user-images': `
-      import { transformImageGlob } from 'astrocraft/utils/virtual';
-      ${opts?.logo?.src && `import logo from '${opts?.logo?.src}';` || 'const logo = {}'};
-      export { logo };
-      export const blocks = transformImageGlob(await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
-      export const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
-      export const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
-      export const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
-      export const gui = transformImageGlob(await import.meta.glob('/src/assets/gui/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
-    `
-  };
+// export function transformImageGlob(
+//   images: Record<string, { default: ImageMetadata }>
+// ) {
+//   return Object.entries(images).reduce((acc, [key, val]) => ({
+//     ...acc,
+//     [fileName(key)]: val.default,
+//   }), {});
+// }
 
-  const resolutionMap = Object.fromEntries(
-    (Object.keys(modules) as (keyof typeof modules)[]).map((key) => [
-      resolveVirtualModuleId(key),
-      key,
-    ])
-  );
-
-  return {
-    name: 'vite-plugin-astrocraft-user-config',
-    resolveId(id): string | void {
-      if (id in modules) return resolveVirtualModuleId(id);
-    },
-    load(id): string | void {
-      const resolution = resolutionMap[id];
-      if (resolution) return modules[resolution];
-    },
-  };
-}
+// 'virtual:astrocraft/user-images': `
+// import { transformImageGlob } from 'astrocraft/utils/virtual';
+// ${opts?.logo?.src && `import logo from '${opts?.logo?.src}';` || 'const logo = {}'};
+// export { logo };
+// export const blocks = transformImageGlob(await import.meta.glob('/src/assets/blocks/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
+// export const items = transformImageGlob(await import.meta.glob('/src/assets/items/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
+// export const paintings = transformImageGlob(await import.meta.glob('/src/assets/paintings/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
+// export const icons = transformImageGlob(await import.meta.glob('/src/assets/icons/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
+// export const gui = transformImageGlob(await import.meta.glob('/src/assets/gui/*.{png,jpg,jpeg,PNG,JPEG,gif}', { eager: true }));
+// `

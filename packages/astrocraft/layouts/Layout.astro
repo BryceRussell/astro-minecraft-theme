@@ -1,10 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import config from "virtual:astrocraft/config";
+import CSSProps from "../components/CSSProps.astro";
 import HeadSEO from "../components/HeadSEO.astro";
-import CSSPropGenerator from "../components/CSSPropGenerator.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
-import config from "virtual:astrocraft/user-config";
+import { Navbar, Footer} from "virtual:astrocraft/components";
+
+import 'virtual:astrocraft/css'
 
 type Props = {
 	data: CollectionEntry<"pages">["data"];
@@ -21,9 +22,9 @@ const { data } = Astro.props;
 >
 	<head>
 		<HeadSEO {data} />
-		<CSSPropGenerator />
-		<slot name="head" /></head
-	>
+		<CSSProps />
+		<slot name="head" />
+	</head>
 	<body class="flex flex-col h-full scrollbar bg-mc-block-stone">
 		<Navbar />
 		<div class="grow bg-black/75">
